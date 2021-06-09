@@ -15,6 +15,7 @@ namespace PROJECT
         public Form1()
         {
             InitializeComponent();
+            //Ngjitur me solution explorer....del 
         }
 
     }
