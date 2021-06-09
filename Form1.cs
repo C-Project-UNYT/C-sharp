@@ -22,7 +22,7 @@ namespace PROJECT
             //ben copy....del ngjitur me emrin Form1.cs
             //and its ok
 
-            
+            //porva me github desktop
         }
 
     }
