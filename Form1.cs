@@ -15,7 +15,9 @@ namespace PROJECT
         public Form1()
         {
             InitializeComponent();
-            //Ngjitur me solution explorer....del 
+            //Pasi mbaroni pune, beni save,
+            //ne git: commit or stash / commit all
+            
         }
 
     }
@@ -23,5 +25,6 @@ namespace PROJECT
     class Person
     {
         public string name;
+        public string surname;
     }
 }
