@@ -17,6 +17,11 @@ namespace PROJECT
             InitializeComponent();
             //Pasi mbaroni pune, beni save,
             //ne git: commit or stash / commit all / push / make pull request
+            //shtyp ate main@one day.... bla bla bla
+            //shkon te kodi ku kemi bere ndryshim
+            //ben copy....del ngjitur me emrin Form1.cs
+            //and its ok
+
             
         }
 
