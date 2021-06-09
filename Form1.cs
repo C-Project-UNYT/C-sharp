@@ -16,7 +16,7 @@ namespace PROJECT
         {
             InitializeComponent();
             //Pasi mbaroni pune, beni save,
-            //ne git: commit or stash / commit all
+            //ne git: commit or stash / commit all / push / make pull request
             
         }
 
