@@ -19,4 +19,9 @@ namespace PROJECT
         }
 
     }
+
+    class Person
+    {
+        public string name;
+    }
 }
