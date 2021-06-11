@@ -52,4 +52,41 @@ namespace PROJECT
             return false;
         }
     }
+
+    class Professor : Person, Login
+    {
+
+        public Professor(string name, string surname) : base(name, surname)
+        {
+
+        }
+
+        public bool passwordValid()
+        {
+            return false;
+        }
+
+        public bool usernameValid()
+        {
+            return false;
+        }
+    }
+
+    class Student: Person, Login
+    {
+        public Student (string name, string surname) : base(name, surname)
+        {
+
+        }
+
+        public bool passwordValid()
+        {
+            return false;
+        }
+
+        public bool usernameValid()
+        {
+            return false;
+        }
+    }
 }
