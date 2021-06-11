@@ -15,21 +15,41 @@ namespace PROJECT
         public Form1()
         {
             InitializeComponent();
-            //Pasi mbaroni pune, beni save,
-            //ne git: commit or stash / commit all / push / make pull request
-            //shtyp ate main@one day.... bla bla bla
-            //shkon te kodi ku kemi bere ndryshim
-            //ben copy....del ngjitur me emrin Form1.cs
-            //and its ok
-
-            //porva me github desktop
         }
 
     }
 
-    class Person
+    interface Login //take a look...
     {
-        public string name;
-        public string surname;
+        bool usernameValid();
+        bool passwordValid();
+    }
+
+    abstract class Person
+    {
+        private string name;
+        private string surname;
+
+        public Person(string name, string surname)
+        {
+            this.Name = name;
+            this.Surname = surname;
+        }
+
+        public string Name { get => name; set => name = value; }
+        public string Surname { get => surname; set => surname = value; }
+    }
+
+    class Admin : Login
+    {
+        public bool usernameValid()
+        {
+            return false;
+        }
+
+        public bool passwordValid()
+        {
+            return false;
+        }
     }
 }
