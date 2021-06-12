@@ -19,7 +19,7 @@ namespace PROJECT
 
     }
 
-    interface Login //take a look...
+    interface Login //take a look... //ms duhet e 1 klase abstract login info
     {
         bool usernameValid();
         bool passwordValid();
@@ -50,6 +50,31 @@ namespace PROJECT
         public bool passwordValid()
         {
             return false;
+        }
+
+        public void addProfessor()
+        {
+
+        }
+        public void removeProfessor()
+        {
+
+        }
+        public void addStudent()
+        {
+
+        }
+        public void removeStudent()
+        {
+
+        }
+        public void addCourse()
+        {
+
+        }
+        public void removeCourse()
+        {
+
         }
     }
 
