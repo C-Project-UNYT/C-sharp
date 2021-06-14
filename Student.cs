@@ -11,7 +11,7 @@ namespace PROJECT
         public Student(string name, string surname, string username, string password) : base(name, surname, username, password)
         {
 
-        }
+        } 
 
         public bool passwordValid(string password)
         {
