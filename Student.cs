@@ -54,10 +54,6 @@ namespace PROJECT
 
         public Student(string name, string surname, string username, string password, string major, string studentID, List<String> courses) : base(name, surname, username, password)
         {
-            this.Name = name;
-            this.Surname = surname;
-            this.Username = username;
-            this.Password = password;
             this.studentID = studentID;
             this.major = major;
             this.courses = courses;
@@ -65,16 +61,17 @@ namespace PROJECT
 
         public Student(string name, string surname, string username, string password, string major, string studentID) : base(name, surname, username, password)
         {
-            this.Name = name;
-            this.Surname = surname;
-            this.Username = username;
-            this.Password = password;
             this.studentID = studentID;
             this.major = major;
         }
 
         static string theStudentID = "";
+<<<<<<< HEAD
         public bool isUsernameAndPasswordValid(string username, string password)
+=======
+
+        public bool isusernameAndPasswordValid(string username, string password)
+>>>>>>> beb5a2a81286a0e980f4895fd3b21e1deb39a2fc
         {
             List<Student> student = readStudentFile();
 
