@@ -99,6 +99,9 @@ namespace PROJECT
 
     class Student: Person, Login
     {
+        string StudentID {set; get;}
+        string Major { } 
+
         public Student (string name, string surname) : base(name, surname)
         {
 
