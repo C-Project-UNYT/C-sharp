@@ -66,12 +66,7 @@ namespace PROJECT
         }
 
         static string theStudentID = "";
-<<<<<<< HEAD
         public bool isUsernameAndPasswordValid(string username, string password)
-=======
-
-        public bool isusernameAndPasswordValid(string username, string password)
->>>>>>> beb5a2a81286a0e980f4895fd3b21e1deb39a2fc
         {
             List<Student> student = readStudentFile();
 

@@ -29,7 +29,7 @@ namespace PROJECT
                 textBox_Password.UseSystemPasswordChar = true;
         }
 
-        private void button_GoOn_Click(object sender, EventArgs e)
+        private void button_Continue_Click(object sender, EventArgs e)
         {
             if (comboBox_Role.SelectedItem.Equals("Admin"))
             {
@@ -39,6 +39,11 @@ namespace PROJECT
                     formAdmin.Show();
                 }
             }
+        }
+
+        private void label_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 

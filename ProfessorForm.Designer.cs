@@ -35,7 +35,7 @@ namespace PROJECT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 296);
+            this.ClientSize = new System.Drawing.Size(422, 296);
             this.Name = "ProfessorForm";
             this.Text = "ProfessorForm";
             this.ResumeLayout(false);
