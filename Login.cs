@@ -8,7 +8,7 @@ namespace PROJECT
 {
     interface Login {
 
-        bool usernameValid(string username);
-        bool passwordValid(string password);
+        bool isusernameAndPasswordValid(string username, string password);
+        
     }
 }
