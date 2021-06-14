@@ -1,0 +1,8 @@
+Enes,Shehu,1111,Finance
+Saida,Jonuzaj,1112,Economics
+Viola,Guce,1113,Biology
+Eda,Godo,1114,Chemistry
+Vladimir,Hoxha,1115,Architecture
+Besmira,Lala,1116,Biotechnology
+Loksi,Papa,1117,Nurse
+Doris,Jakupi,1117,Dentistry
