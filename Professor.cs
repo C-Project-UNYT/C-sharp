@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,6 +18,7 @@ namespace PROJECT
         public List<string> Courses { get => courses; set => courses = value; }
         public string ActiveCourse { get => activeCourse; set => activeCourse = value; }
 
+        //constructors
         public Professor(string name, string surname, string username, string password) : base(name, surname, username, password)
         {
             this.Name = name;
@@ -25,25 +27,34 @@ namespace PROJECT
             this.Password = password;
         }
 
-        public bool isusernameAndPassworddValid(string username, string password)
+
+        public Professor(string username, string password)
         {
-            List<Professor> list = getInfoFromFile();
-
-            foreach (Professor prof in list)
+            if (isUsernameAndPasswordValid(username, password))
             {
-                if (prof.Username.Equals(username) && prof.Password.Equals(password))
-                    return true;
+                this.Username = username;
+                this.Password = password;
+
+                foreach(Professor prof in readProfessorFile())
+                {
+                    if (prof.Username.Equals(username) && prof.Password.Equals(password))
+                    {
+                        this.Name = prof.Name;
+                        this.Surname = prof.Surname;
+                        this.Courses = prof.Courses;
+                    }
+                }
+
             }
-            return false;
+
         }
-       
-
-
-        public List<Professor> getInfoFromFile()
+        // method to read data from Professor File
+        public List<Professor> readProfessorFile()
         {
             List<Professor> list = new List<Professor>();
 
-            StreamReader reader = new StreamReader("ProfessorFile.txt");
+            Assembly asm = Assembly.GetExecutingAssembly();
+            StreamReader reader = new StreamReader(asm.GetManifestResourceStream("PROJECT.Files.ProfessorFile.txt"));
 
             while (!reader.EndOfStream) {
 
@@ -63,9 +74,17 @@ namespace PROJECT
             return list;
         }
 
-        public bool isusernameAndPasswordValid(string username, string password)
+        // method to determine if the login info is valid
+        public bool isUsernameAndPasswordValid(string username, string password)
         {
-            throw new NotImplementedException();
+            List<Professor> list = readProfessorFile();
+
+            foreach (Professor prof in list)
+            {
+                if (prof.Username.Equals(username) && prof.Password.Equals(password))
+                    return true;
+            }
+            return false;
         }
     }
 }

@@ -32,7 +32,7 @@ namespace PROJECT
             return password;
         }
 
-        public bool isusernameAndPasswordValid(string username, string password)
+        public bool isUsernameAndPasswordValid(string username, string password)
         {
             return username.Equals(this.getUsername()) && password.Equals(this.getPassword());
         }
@@ -67,7 +67,7 @@ namespace PROJECT
             string ProffesorInput, StudentInput, CoursesInput;
 
             Assembly asm = Assembly.GetExecutingAssembly();
-            StreamReader ProfessorFile = new StreamReader(asm.GetManifestResourceStream("PROJECT.Files.StudentFile.txt"));
+            StreamReader ProfessorFile = new StreamReader(asm.GetManifestResourceStream("PROJECT.Files.ProfessorFile.txt"));
             while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
             {
                 string[] data = ProffesorInput.Split(',');
