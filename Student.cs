@@ -13,12 +13,12 @@ namespace PROJECT
 
         }
 
-        public bool passwordValid()
+        public bool passwordValid(string password)
         {
             return false;
         }
 
-        public bool usernameValid()
+        public bool usernameValid(string username)
         {
             return false;
         }

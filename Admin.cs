@@ -8,13 +8,17 @@ namespace PROJECT
 {
     class Admin : Login
     {
-        public bool usernameValid()
+        public bool usernameValid(string username)
         {
+            if (username.Equals("admin"))
+                return true;
             return false;
         }
 
-        public bool passwordValid()
+        public bool passwordValid(string password)
         {
+            if (password.Equals("admin123"))
+                return true;
             return false;
         }
 
