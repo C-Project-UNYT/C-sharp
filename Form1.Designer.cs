@@ -1,7 +1,7 @@
 ﻿
 namespace PROJECT
 {
-    partial class Form1
+    partial class Form_Login
     {
         /// <summary>
         ///  Required designer variable.
@@ -124,7 +124,7 @@ namespace PROJECT
             this.checkBox_ShowPass.UseVisualStyleBackColor = true;
             this.checkBox_ShowPass.CheckedChanged += new System.EventHandler(this.checkBox_ShowPass_CheckedChanged);
             // 
-            // Form1
+            // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,7 +139,7 @@ namespace PROJECT
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
+            this.Name = "Form_Login";
             this.Text = "University System";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
