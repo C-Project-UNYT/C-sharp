@@ -51,13 +51,14 @@ namespace PROJECT
             }
         }
 
-
         public Student(string name, string surname, string username, string password, string major, string studentID, string courses) : base(name, surname, username, password)
         {
             this.studentID = studentID;
             this.major = major;
             this.courses = courses;
         }
+
+        string filePath = ""
 
         public bool passwordValid(string password)
         {
@@ -69,9 +70,21 @@ namespace PROJECT
             return false;
         }
 
-        public void showAllCourses()
+        public void readStudentFile
         {
-            StreamReader file = new StreamReader(@"c:\test.txt");
+            List<Student> student = new List<Student>(); 
+            List<string> lines = File.ReadAllLines(filePath).ToList();
+            
+            foreach(string line in lines){
+                 string[] entries = line.Split(',');
+                 Student s = new Student(entries[0], entries[1], entries[2], entries[3], entries[4], entries[5], entries[6], entries[7], entries[8], entries[9])
+    }
+
+        StreamReader file = new StreamReader(@"C:\Users\Utente\Documents\GitHub\C-sharp\Student.txt");
+
+    }
+    public void showAllCourses()
+        {
 
             string line = file.ReadLine();
             string[] sub = line.split(",");
