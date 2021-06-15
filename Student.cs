@@ -68,16 +68,16 @@ namespace PROJECT
 
         public bool passwordAndUsernameValidation(string password)
         {
-            return false;
+            List<Student> student = 
         }
 
-        public void readStudentFile()
+        public List<Student> readStudentFile()
         {
             List<Student> student = new List<Student>();
             StreamReader input = new StreamReader("StudentFile.txt");
             string line;
 
-            while((line = input.Read()) != null)
+            while ((line = input.Read()) != null)
             {
                 string word = line.Split(',');
                 Student s = new Student(entries[0], entries[1], entries[2], entries[3], entries[4], entries[5], entries[6]);
@@ -88,7 +88,9 @@ namespace PROJECT
                 }
 
                 student.Add(s);
-
+            }
+            input.Close();
+            return student;
         }
 
     }
