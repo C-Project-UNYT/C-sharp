@@ -9,10 +9,10 @@ namespace PROJECT
 {
     class Student : Person, Login
     {
-        private string major;
-        private string studentID;
-        private List<string> courses;
-
+        public string major;
+        public string studentID;
+        public List<string> courses;
+        
         public string StudentID
         {
             set
@@ -54,6 +54,7 @@ namespace PROJECT
 
         public Student(string name, string surname, string username, string password, string major, string studentID, string courses) : base(name, surname, username, password)
         {
+            this.Username
             this.studentID = studentID;
             this.major = major;
             this.courses = courses;
@@ -65,10 +66,20 @@ namespace PROJECT
             this.major = major;
         }
 
-
-        public bool passwordAndUsernameValidation(string password)
+        static sting theStudentID = "";
+        public bool passwordAndUsernameValidation(string username, string password)
         {
-            List<Student> student = 
+            List<Student> student = readStudentFile();
+
+            foreach (Student stud in student)
+            {
+                if (stud.Username.Equals(username) && stud.Password.Equals(password))
+                {
+                    theStudentID = stud.studentID; 
+                    return true;
+                }
+            }
+            return false;
         }
 
         public List<Student> readStudentFile()
@@ -93,5 +104,22 @@ namespace PROJECT
             return student;
         }
 
+        public void showListOfCourses()
+        {
+            List<Student> student = readStudentFile();
+
+            foreach (Student stud in student){
+
+                if (stud.studentID.Equals(theStudentID) == true)
+                {
+                    foreach (string i in stud.Courses)
+                    {
+                        Console.Write(i + " ");
+                    }
+                }
+            }
+        }
+
+        public void 
     }
 }
