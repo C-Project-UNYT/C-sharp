@@ -11,6 +11,10 @@ namespace PROJECT
         private static string username = "admin";
         private static string password = "admin123";
 
+        List<Professor> proffessorList = new List<Professor>();
+        List<Student> studentList = new List<Student>();
+        List<Courses> coursesList = new List<Courses>();
+
         public string getUsername()
         {
             return username;
@@ -23,16 +27,12 @@ namespace PROJECT
 
         public bool usernameValid(string username)
         {
-            if (username.Equals(this.getUsername()))
-                return true;
-            return false;
+            return username.Equals(this.getUsername());
         }
 
         public bool passwordValid(string password)
         {
-            if (password.Equals(this.getPassword()))
-                return true;
-            return false;
+            return password.Equals(this.getPassword());
         }
 
         public void addProfessor()
@@ -59,6 +59,8 @@ namespace PROJECT
         {
 
         }
+
+
     }
 
 }
