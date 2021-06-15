@@ -11,7 +11,7 @@ namespace PROJECT
     {
         private string major;
         private string studentID;
-        private string[] courses;
+        private List<string> courses;
 
         public string StudentID
         {
@@ -26,7 +26,8 @@ namespace PROJECT
             }
         }
 
-        public string Major {
+        public string Major
+        {
             set
             {
                 major = value;
@@ -58,43 +59,37 @@ namespace PROJECT
             this.courses = courses;
         }
 
-        string filePath = ""
+        public Student(string name, string surname, string username, string password, string major, string studentID) : base(name, surname, username, password)
+        {
+            this.studentID = studentID;
+            this.major = major;
+        }
 
-        public bool passwordValid(string password)
+
+        public bool passwordAndUsernameValidation(string password)
         {
             return false;
         }
 
-        public bool usernameValid(string username)
+        public void readStudentFile()
         {
-            return false;
-        }
+            List<Student> student = new List<Student>();
+            StreamReader input = new StreamReader("StudentFile.txt");
+            string line;
 
-        public void readStudentFile
-        {
-            List<Student> student = new List<Student>(); 
-            List<string> lines = File.ReadAllLines(filePath).ToList();
-            
-            foreach(string line in lines){
-                 string[] entries = line.Split(',');
-                 Student s = new Student(entries[0], entries[1], entries[2], entries[3], entries[4], entries[5], entries[6], entries[7], entries[8], entries[9])
-    }
-
-        StreamReader file = new StreamReader(@"C:\Users\Utente\Documents\GitHub\C-sharp\Student.txt");
-
-    }
-    public void showAllCourses()
-        {
-
-            string line = file.ReadLine();
-            string[] sub = line.split(",");
-
-            while ( != null)
+            while((line = input.Read()) != null)
             {
-                System.Console.WriteLine(line);
-                counter++;
-            }
+                string word = line.Split(',');
+                Student s = new Student(entries[0], entries[1], entries[2], entries[3], entries[4], entries[5], entries[6]);
+
+                for (int i = 7; i < word.Length; i++)
+                {
+                    s.courses.Add(word[i])
+                }
+
+                student.Add(s);
 
         }
+
     }
 }
