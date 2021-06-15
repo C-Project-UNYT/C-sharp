@@ -16,5 +16,17 @@ namespace PROJECT
         {
             InitializeComponent();
         }
+
+        private void checkedListBox_Admin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int choiceIndex = checkedListBox_Admin.SelectedIndex;
+            int count = checkedListBox_Admin.Items.Count;
+
+            for (var i = 0; i < count; i++)
+            {
+                if (choiceIndex != i)
+                    checkedListBox_Admin.SetItemChecked(i, false);
+            }
+        }
     }
 }

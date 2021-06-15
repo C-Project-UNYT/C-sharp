@@ -130,7 +130,7 @@ namespace PROJECT
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(463, 354);
+            this.ClientSize = new System.Drawing.Size(441, 343);
             this.Controls.Add(this.checkBox_ShowPass);
             this.Controls.Add(this.button_GoOn);
             this.Controls.Add(this.comboBox_Role);

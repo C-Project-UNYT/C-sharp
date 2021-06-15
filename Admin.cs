@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,7 +68,35 @@ namespace PROJECT
 
         private void readFiles()
         {
+            StreamReader ProfessorFile = new StreamReader(@"C:\Users\user\Documents\GitHub\C-sharp\ProfessorFile.txt");
+            string ProffesorInput, StudentInput, CoursesInput;
+            while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
+            {
+                string[] data = ProffesorInput.Split(',');
 
+            }
+
+
+            StreamReader StudentFile = new StreamReader(@"C:\Users\user\Documents\GitHub\C-sharp\StudentFile.txt");
+            while ((StudentInput = ProfessorFile.ReadLine()) != null)
+            {
+                string[] data = StudentInput.Split(',');
+
+            }
+
+            StreamReader CoursesFile = new StreamReader(@"C:\Users\user\Documents\GitHub\C-sharp\CoursesFile.txt");
+            while ((CoursesInput = ProfessorFile.ReadLine()) != null)
+            {
+                string[] data = CoursesInput.Split(',');
+                int credits = Int32.Parse(data[2]);
+                int noOfStudents = Int32.Parse(data[4]);
+                Courses course = new Courses(data[0], data[1], credits, data[3], noOfStudents);
+                coursesList.Add(course);
+            }
+
+            ProfessorFile.Close();
+            StudentFile.Close();
+            CoursesFile.Close();
         }
     }
 

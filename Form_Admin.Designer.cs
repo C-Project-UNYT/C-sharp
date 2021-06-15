@@ -58,6 +58,7 @@ namespace PROJECT
             // checkedListBox_Admin
             // 
             this.checkedListBox_Admin.BackColor = System.Drawing.Color.Aquamarine;
+            this.checkedListBox_Admin.CheckOnClick = true;
             this.checkedListBox_Admin.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.checkedListBox_Admin.FormattingEnabled = true;
             this.checkedListBox_Admin.Items.AddRange(new object[] {
@@ -71,6 +72,7 @@ namespace PROJECT
             this.checkedListBox_Admin.Name = "checkedListBox_Admin";
             this.checkedListBox_Admin.Size = new System.Drawing.Size(251, 208);
             this.checkedListBox_Admin.TabIndex = 2;
+            this.checkedListBox_Admin.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_Admin_SelectedIndexChanged);
             // 
             // Form_Admin
             // 

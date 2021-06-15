@@ -14,12 +14,12 @@ namespace PROJECT
         string professor;
         int noOfStudents;
 
-        Courses(string subject, string time, int credits, string professorName, string professorSurname, int noOfStudents)
+        public Courses(string subject, string time, int credits, string professor, int noOfStudents)
         {
             this.subject = subject;
             this.time = time;
             this.credits = credits;
-            this.professor = professor + " " + professorSurname;
+            this.professor = professor;
             this.noOfStudents = noOfStudents;
         }
     }
