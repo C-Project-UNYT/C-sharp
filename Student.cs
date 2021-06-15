@@ -39,7 +39,7 @@ namespace PROJECT
             }
         }
 
-        public string[] Courses
+        public List<string> Courses
         {
             set
             {
@@ -52,9 +52,12 @@ namespace PROJECT
             }
         }
 
-        public Student(string name, string surname, string username, string password, string major, string studentID, string courses) : base(name, surname, username, password)
+        public Student(string name, string surname, string username, string password, string major, string studentID, List<String> courses) : base(name, surname, username, password)
         {
-            this.Username
+            this.Name = name;
+            this.Surname = surname;
+            this.Username = username;
+            this.Password = password;
             this.studentID = studentID;
             this.major = major;
             this.courses = courses;
@@ -62,12 +65,16 @@ namespace PROJECT
 
         public Student(string name, string surname, string username, string password, string major, string studentID) : base(name, surname, username, password)
         {
+            this.Name = name;
+            this.Surname = surname;
+            this.Username = username;
+            this.Password = password;
             this.studentID = studentID;
             this.major = major;
         }
 
-        static sting theStudentID = "";
-        public bool passwordAndUsernameValidation(string username, string password)
+        static string theStudentID = "";
+        public bool isusernameAndPasswordValid(string username, string password)
         {
             List<Student> student = readStudentFile();
 
@@ -88,14 +95,14 @@ namespace PROJECT
             StreamReader input = new StreamReader("StudentFile.txt");
             string line;
 
-            while ((line = input.Read()) != null)
+            while ((line = input.ReadLine()) != null)
             {
-                string word = line.Split(',');
-                Student s = new Student(entries[0], entries[1], entries[2], entries[3], entries[4], entries[5], entries[6]);
+                string[] entries = line.Split(',');
+                Student s = new Student(entries[0], entries[1], entries[2], entries[3], entries[4], entries[5]);
 
-                for (int i = 7; i < word.Length; i++)
+                for (int i = 6; i < entries.Length; i++)
                 {
-                    s.courses.Add(word[i])
+                    s.courses.Add(entries[i]);
                 }
 
                 student.Add(s);
@@ -120,6 +127,5 @@ namespace PROJECT
             }
         }
 
-        public void 
     }
 }
