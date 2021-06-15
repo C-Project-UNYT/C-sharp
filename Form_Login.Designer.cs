@@ -112,6 +112,7 @@ namespace PROJECT
             this.button_GoOn.TabIndex = 6;
             this.button_GoOn.Text = "Go on";
             this.button_GoOn.UseVisualStyleBackColor = false;
+            this.button_GoOn.Click += new System.EventHandler(this.button_GoOn_Click);
             // 
             // checkBox_ShowPass
             // 
