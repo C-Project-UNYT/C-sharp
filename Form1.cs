@@ -20,6 +20,14 @@ namespace PROJECT
         {
 
         }
+
+        private void checkBox_ShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_ShowPass.Checked)
+                textBox_Password.UseSystemPasswordChar = false;
+            else
+                textBox_Password.UseSystemPasswordChar = true;
+        }
     }
 
     
