@@ -8,6 +8,9 @@ namespace PROJECT
 {
     class Student : Person, Login
     {
+        string StudentID { set; get; }
+        //string Major { }
+
         public Student(string name, string surname, string username, string password) : base(name, surname, username, password)
         {
 
