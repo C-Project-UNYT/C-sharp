@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,14 +32,9 @@ namespace PROJECT
             return password;
         }
 
-        public bool usernameValid(string username)
+        public bool isusernameAndPasswordValid(string username, string password)
         {
-            return username.Equals(this.getUsername());
-        }
-
-        public bool passwordValid(string password)
-        {
-            return password.Equals(this.getPassword());
+            return username.Equals(this.getUsername()) && password.Equals(this.getPassword());
         }
 
         public void addProfessor()
@@ -68,23 +64,26 @@ namespace PROJECT
 
         private void readFiles()
         {
-            StreamReader ProfessorFile = new StreamReader(@"C:\Users\user\Documents\GitHub\C-sharp\ProfessorFile.txt");
             string ProffesorInput, StudentInput, CoursesInput;
+
+            Assembly asm = Assembly.GetExecutingAssembly();
+            StreamReader ProfessorFile = new StreamReader(asm.GetManifestResourceStream("PROJECT.Files.StudentFile.txt"));
             while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
             {
                 string[] data = ProffesorInput.Split(',');
 
             }
 
-
-            StreamReader StudentFile = new StreamReader(@"C:\Users\user\Documents\GitHub\C-sharp\StudentFile.txt");
+            Assembly asm1 = Assembly.GetExecutingAssembly();
+            StreamReader StudentFile = new StreamReader(asm1.GetManifestResourceStream("PROJECT.Files.StudentFile.txt"));
             while ((StudentInput = ProfessorFile.ReadLine()) != null)
             {
                 string[] data = StudentInput.Split(',');
 
             }
 
-            StreamReader CoursesFile = new StreamReader(@"C:\Users\user\Documents\GitHub\C-sharp\CoursesFile.txt");
+            Assembly asm2 = Assembly.GetExecutingAssembly();
+            StreamReader CoursesFile = new StreamReader(asm2.GetManifestResourceStream("PROJECT.Files.CoursesFile.txt"));
             while ((CoursesInput = ProfessorFile.ReadLine()) != null)
             {
                 string[] data = CoursesInput.Split(',');

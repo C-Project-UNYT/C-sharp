@@ -34,8 +34,7 @@ namespace PROJECT
             if (comboBox_Role.SelectedItem.Equals("Admin"))
             {
                 Admin admin = new Admin();
-                if (admin.passwordValid(textBox_Password.Text) && admin.usernameValid(textBox_Username.Text))
-                {
+                if (admin.isusernameAndPasswordValid(textBox_Username.Text, textBox_Password.Text)) {
                     Form_Admin formAdmin = new Form_Admin();
                     formAdmin.Show();
                 }
