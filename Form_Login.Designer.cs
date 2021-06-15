@@ -4,7 +4,7 @@ namespace PROJECT
     partial class Form_Login
     {
         /// <summary>
-        ///  Required designer variable.
+        ///  Required designer varia ble.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
