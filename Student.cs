@@ -11,8 +11,9 @@ namespace PROJECT
     {
         private string major;
         private string studentID;
+        private string[] courses;
 
-        string StudentID
+        public string StudentID
         {
             set
             {
@@ -25,7 +26,7 @@ namespace PROJECT
             }
         }
 
-        string Major {
+        public string Major {
             set
             {
                 major = value;
@@ -37,10 +38,25 @@ namespace PROJECT
             }
         }
 
-        public Student(string name, string surname, string username, string password, string major, string studentID) : base(name, surname, username, password)
+        public string[] Courses
+        {
+            set
+            {
+                courses = value;
+            }
+
+            get
+            {
+                return courses;
+            }
+        }
+
+
+        public Student(string name, string surname, string username, string password, string major, string studentID, string courses) : base(name, surname, username, password)
         {
             this.studentID = studentID;
             this.major = major;
+            this.courses = courses;
         }
 
         public bool passwordValid(string password)
@@ -56,7 +72,11 @@ namespace PROJECT
         public void showAllCourses()
         {
             StreamReader file = new StreamReader(@"c:\test.txt");
-            while ((line = file.ReadLine()) != null)
+
+            string line = file.ReadLine();
+            string[] sub = line.split(",");
+
+            while ( != null)
             {
                 System.Console.WriteLine(line);
                 counter++;

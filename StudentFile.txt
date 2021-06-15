@@ -1,8 +1,8 @@
-Enes,Shehu,1111,Finance
-Saida,Jonuzaj,1112,Economics
-Viola,Guce,1113,Biology
-Eda,Godo,1114,Chemistry
-Vladimir,Hoxha,1115,Architecture
-Besmira,Lala,1116,Biotechnology
-Loksi,Papa,1117,Nurse
-Doris,Jakupi,1117,Dentistry
+Enes,Shehu,Enes Shehu,enesshehu,1111,Finance,Principles of Management,Financial Accounting
+Saida,Jonuzaj,Saida Jonuzaj,saidajonuzaj,1112,Economics,Financial Accounting,Intro to Micro
+Viola,Guce,Viola Guce,violaguce,1113,Biology,Physics,Microbiology,Structural Biochemistry,Human Biology,Plant Science
+Eda,Godo,Eda Godo,edagodo,1114,Computer Science,Calculus,Java,C#
+Vladimir,Hoxha,Vladimir Hoxha,vladimirhoxha,1115,Architecture,Calculus,Intro to Architecture,Physics
+Besmira,Lala,Besmira Lala,besmiralala,1116,Biotechnology,Biology,Microbiology,Genetics,Physics
+Loksi,Papa,Loksi Papa,loksipapa,1117,Computer Engineering,Java,Calculus,Physics
+Doris,Jakupi,Doris Jakupi,dorisjakupi,1117,Dentistry,Biology,Physics,Human Biology
