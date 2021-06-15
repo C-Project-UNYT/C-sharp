@@ -1,7 +1,7 @@
 ﻿
 namespace PROJECT
 {
-    partial class Forn_Admin
+    partial class Form_Admin
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,7 @@ namespace PROJECT
             this.checkedListBox_Admin.Size = new System.Drawing.Size(251, 208);
             this.checkedListBox_Admin.TabIndex = 2;
             // 
-            // Forn_Admin
+            // Form_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +84,7 @@ namespace PROJECT
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Forn_Admin";
+            this.Name = "Form_Admin";
             this.Text = "Admin Page ";
             this.ResumeLayout(false);
             this.PerformLayout();

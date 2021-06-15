@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PROJECT
 {
-    public partial class Forn_Admin : Form
+    public partial class Form_Admin : Form
     {
-        public Forn_Admin()
+        public Form_Admin()
         {
             InitializeComponent();
         }

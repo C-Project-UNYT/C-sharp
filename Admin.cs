@@ -15,6 +15,11 @@ namespace PROJECT
         List<Student> studentList = new List<Student>();
         List<Courses> coursesList = new List<Courses>();
 
+        public Admin()
+        {
+            this.readFiles();
+        }
+
         public string getUsername()
         {
             return username;
@@ -60,7 +65,10 @@ namespace PROJECT
 
         }
 
+        private void readFiles()
+        {
 
+        }
     }
 
 }
