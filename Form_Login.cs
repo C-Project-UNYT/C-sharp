@@ -44,15 +44,19 @@ namespace PROJECT
             else if (comboBox_Role.SelectedIndex == 1)
             {
                  Professor prof = new Professor(textBox_Username.Text, textBox_Pass.Text);
-                 if (prof.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
-                  {
-                     Form_Professor formProf = new Form_Professor();
-                     this.Hide();
-                     formProf.Show();
-                  }
-                 else
+                try
+                {
+                    if (prof.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
+                    {
+                        Form_Professor formProf = new Form_Professor();
+                        this.Hide();
+                        formProf.Show();
+                    }
+                }
+                catch (InvalidLoginInfoException ex)
+                {
                     MessageBox.Show("You have not entered the correct username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                }
             }
             else if (comboBox_Role.SelectedIndex == 2)
             {
