@@ -80,6 +80,7 @@ namespace PROJECT
                         this.Surname = stud.Surname;
                         this.Courses = stud.Courses;
                         break;
+
                     }
                 }
 
