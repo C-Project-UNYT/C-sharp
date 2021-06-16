@@ -37,29 +37,56 @@ namespace PROJECT
             return username.Equals(this.getUsername()) && password.Equals(this.getPassword());
         }
 
-        public void addProfessor()
+        public void addProfessor(Professor prof)
         {
-
+            proffessorList.Add(prof);
         }
-        public void removeProfessor()
+        public void removeProfessor(Professor prof)
         {
-
+            if (proffessorList.Count > 0)
+            {
+                for (int i = 0; i < proffessorList.Count; i++)
+                {
+                    if (prof.Equals(proffessorList.ElementAt(i)))
+                    {
+                        proffessorList.RemoveAt(i);
+                    }
+                }
+            }
         }
-        public void addStudent()
+        public void addStudent(Student stud)
         {
-
+            studentList.Add(stud);
         }
-        public void removeStudent()
+        public void removeStudent(Student stud)
         {
-
+            if (studentList.Count > 0)
+            {
+                for (int i = 0; i < proffessorList.Count; i++)
+                {
+                    if (stud.Equals(studentList.ElementAt(i)))
+                    {
+                        studentList.RemoveAt(i);
+                    }
+                }
+            }
         }
-        public void addCourse()
+        public void addCourse(Courses course)
         {
-
+            coursesList.Add(course);
         }
-        public void removeCourse()
+        public void removeCourse(Courses course)
         {
-
+            if (coursesList.Count > 0)
+            {
+                for (int i = 0; i < proffessorList.Count; i++)
+                {
+                    if (course.Equals(coursesList.ElementAt(i)))
+                    {
+                        coursesList.RemoveAt(i);
+                    }
+                }
+            }
         }
 
         private void readFiles()
@@ -68,35 +95,60 @@ namespace PROJECT
 
             Assembly asm = Assembly.GetExecutingAssembly();
             StreamReader ProfessorFile = new StreamReader(asm.GetManifestResourceStream("PROJECT.Files.ProfessorFile.txt"));
-            while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
+            if (ProfessorFile.ReadToEnd() != "")
             {
-                string[] data = ProffesorInput.Split(',');
+                while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
+                {
+                    string[] data = ProffesorInput.Split(',');
 
+                    Professor prof = new Professor(data[0], data[1], data[2], data[3]);
+
+                    for (int i = 4; i < data.Length; i++)
+                        prof.Courses.Add(data[i]);
+
+                    proffessorList.Add(prof);
+                }
             }
 
             Assembly asm1 = Assembly.GetExecutingAssembly();
             StreamReader StudentFile = new StreamReader(asm1.GetManifestResourceStream("PROJECT.Files.StudentFile.txt"));
-            while ((StudentInput = ProfessorFile.ReadLine()) != null)
+            if (StudentFile.ReadToEnd() != "")
             {
-                string[] data = StudentInput.Split(',');
+                while ((StudentInput = StudentFile.ReadLine()) != null)
+                {
+                    string[] data = StudentInput.Split(',');
 
+                    Student stud = new Student(data[0], data[1], data[2], data[3], data[4], data[5]);
+
+                    for (int i = 6; i < data.Length; i++)
+                        stud.Courses.Add(data[i]);
+
+                    studentList.Add(stud);
+                }
             }
 
             Assembly asm2 = Assembly.GetExecutingAssembly();
             StreamReader CoursesFile = new StreamReader(asm2.GetManifestResourceStream("PROJECT.Files.CoursesFile.txt"));
-            while ((CoursesInput = ProfessorFile.ReadLine()) != null)
+            if (CoursesFile.ReadToEnd() != "")
             {
-                string[] data = CoursesInput.Split(',');
-                int credits = Int32.Parse(data[2]);
-                int noOfStudents = Int32.Parse(data[4]);
-                Courses course = new Courses(data[0], data[1], credits, data[3], noOfStudents);
-                coursesList.Add(course);
+                while ((CoursesInput = CoursesFile.ReadLine()) != null)
+                {
+                    string[] data = CoursesInput.Split(',');
+                    int credits = Int32.Parse(data[2]);
+                    int noOfStudents = Int32.Parse(data[4]);
+                    Courses course = new Courses(data[0], data[1], credits, data[3], noOfStudents);
+                    coursesList.Add(course);
+                }
             }
-
             ProfessorFile.Close();
             StudentFile.Close();
             CoursesFile.Close();
         }
+        public void writeFiles()
+        {
+
+        }
     }
 
+    
 }
