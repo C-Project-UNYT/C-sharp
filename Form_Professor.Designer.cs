@@ -40,6 +40,7 @@ namespace PROJECT
             this.button_LowestScore = new System.Windows.Forms.Button();
             this.button_Average = new System.Windows.Forms.Button();
             this.button_PassingStudents = new System.Windows.Forms.Button();
+            this.button_Back = new System.Windows.Forms.Button();
             this.panel_Output.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,8 +61,8 @@ namespace PROJECT
             this.textBox_Query.Location = new System.Drawing.Point(19, 60);
             this.textBox_Query.Multiline = true;
             this.textBox_Query.Name = "textBox_Query";
-            this.textBox_Query.PlaceholderText = "Select a course.\nClick one of the buttons on the right.\nThe output will be dis" +
-    "played here! ";
+            this.textBox_Query.PlaceholderText = "Select a course.\nClick one of the buttons on the right.\nThe output will be displa" +
+    "yed here! ";
             this.textBox_Query.ReadOnly = true;
             this.textBox_Query.Size = new System.Drawing.Size(303, 223);
             this.textBox_Query.TabIndex = 20;
@@ -102,11 +103,11 @@ namespace PROJECT
             this.buttonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonExit.Font = new System.Drawing.Font("Impact", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonExit.Location = new System.Drawing.Point(514, -3);
+            this.buttonExit.Location = new System.Drawing.Point(510, -3);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(45, 27);
+            this.buttonExit.Size = new System.Drawing.Size(49, 27);
             this.buttonExit.TabIndex = 13;
             this.buttonExit.Text = "X";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -211,12 +212,30 @@ namespace PROJECT
             this.button_PassingStudents.UseCompatibleTextRendering = true;
             this.button_PassingStudents.UseVisualStyleBackColor = true;
             // 
+            // button_Back
+            // 
+            this.button_Back.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button_Back.FlatAppearance.BorderSize = 0;
+            this.button_Back.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.button_Back.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Back.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_Back.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button_Back.Location = new System.Drawing.Point(-4, -3);
+            this.button_Back.Name = "button_Back";
+            this.button_Back.Size = new System.Drawing.Size(45, 29);
+            this.button_Back.TabIndex = 19;
+            this.button_Back.Text = "<";
+            this.button_Back.UseVisualStyleBackColor = true;
+            this.button_Back.Click += new System.EventHandler(this.button_Back_Click);
+            // 
             // Form_Professor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(559, 323);
+            this.Controls.Add(this.button_Back);
             this.Controls.Add(this.button_PassingStudents);
             this.Controls.Add(this.button_Average);
             this.Controls.Add(this.label1);
@@ -250,5 +269,6 @@ namespace PROJECT
         private System.Windows.Forms.Button button_PassingStudents;
         private System.Windows.Forms.TextBox textBox_Query;
         private System.Windows.Forms.ComboBox comboBox_Course;
+        private System.Windows.Forms.Button button_Back;
     }
 }

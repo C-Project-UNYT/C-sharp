@@ -29,8 +29,6 @@ namespace PROJECT
 
         public Professor(string username, string password)
         {
-            if (isUsernameAndPasswordValid(username, password))
-            {
                 this.Username = username;
                 this.Password = password;
 
@@ -43,9 +41,7 @@ namespace PROJECT
                         this.Courses = prof.Courses;
                         break;
                     }
-                }
-
-            }
+                }    
 
         }
 
@@ -75,7 +71,7 @@ namespace PROJECT
         }
 
         // method to determine if the login info is valid
-        public bool isUsernameAndPasswordValid(string username, string password)
+        public bool isUsernameAndPasswordValid(string username, string password) 
         {
             List<Professor> list = readProfessorFile();
 
@@ -84,7 +80,8 @@ namespace PROJECT
                 if (prof.Username.Equals(username) && prof.Password.Equals(password))
                     return true;
             }
-            return false;
+            throw new InvalidLoginInfoException("Username and Password do not match!");
         }
+
     }
 }
