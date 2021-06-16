@@ -57,12 +57,13 @@ namespace PROJECT
             // 
             this.textBox_Query.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_Query.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_Query.Location = new System.Drawing.Point(26, 60);
+            this.textBox_Query.Location = new System.Drawing.Point(19, 60);
             this.textBox_Query.Multiline = true;
             this.textBox_Query.Name = "textBox_Query";
-            this.textBox_Query.PlaceholderText = "The output will be displayed here! ";
+            this.textBox_Query.PlaceholderText = "Select a course.\nClick one of the buttons on the right.\nThe output will be dis" +
+    "played here! ";
             this.textBox_Query.ReadOnly = true;
-            this.textBox_Query.Size = new System.Drawing.Size(282, 223);
+            this.textBox_Query.Size = new System.Drawing.Size(303, 223);
             this.textBox_Query.TabIndex = 20;
             // 
             // comboBox_Course
