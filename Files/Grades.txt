@@ -1,1 +1,26 @@
-﻿
+﻿Financial Accoutning,1111
+Financial Accoutning,1112
+Financial Accoutning,1113
+Statistics,1111
+Money and Banking,1111
+Money and Banking,1118
+Intro to Micro,1112
+Intro to Micro,1113
+Intro to Micro,1118
+Physics,1113
+Physics,1115
+Physics,1116
+Physics,1117
+Calculus,1114
+Calculus,1115
+Calculus,1117
+Java,1114
+Java,1116
+Java,1117
+C#,1114
+C#,1116
+Data Structures,1114
+Photography,1115
+Photography,1116
+Intro to Psychology,1117
+Intro to Psychology,1117

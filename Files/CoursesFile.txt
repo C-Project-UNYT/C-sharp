@@ -1,10 +1,21 @@
-Calculus I,four hours,4,N.Gjini,23
-C#,three hours,3,N.Resulaj,42
-Computer Organization,three hours,E.Ramollari,36
-Intro to CS,three hours,M.Prifti,43
-Intro to Sociology,three hours,3,E.Gemi,32
-Visual Basic,three hours,3,N.Resulaj,25
-Business Information Systems,three hours,3,M.Prifti,21
-Mobile Applications,three hours,3,E.Ramollari,24
-Discrete Maths,four hours,4,N.Gjini,38
-Probability and Statistics,three hours,3,N.Gjini,27
+Visual Basic,4,4,NResulaj
+C#,3,3,NResulaj
+Calculus,4,4,NGjini
+Statistics,3,3,NGjini
+Intro to Psychology,3,3,BLahi
+Intro to Sociology,3,3,BLahi
+Photography,3,3,BLahi
+Physics,3,3,EGjebrea
+Biology,3,3,EGjebrea
+Financial Accounting,3,3,GJakupi
+Managerial Accounting,3,3,GJakupi
+Cost Accounting,3,3,ATori
+Auditing,3,3,ATori
+Risk Management,3,3,ATori
+Intro to Micro,3,3,JMiluka
+Intro to Macro,3,3,JMiluka
+Corporate Finance,4,4,ASinamati
+Money and Banking,3,3,ASinamati
+Java,4,4,IPapadhopulli
+Data Structures,3,3,IPapadhopulli
+System Analysis,3,3,IPapadhopulli
