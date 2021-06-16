@@ -88,13 +88,13 @@ namespace PROJECT
                 }
             }
         }
-        /*
+        
         private void readFiles()
         {
             string ProffesorInput, StudentInput, CoursesInput;
 
             Assembly asm = Assembly.GetExecutingAssembly();
-            StreamReader ProfessorFile = new StreamReader(asm.GetManifestResourceStream("PROJECT.Files.ProfessorFile.txt"));
+            StreamReader ProfessorFile = new StreamReader(asm.GetManifestResourceStream("ProfessorFile.txt"));
             if (ProfessorFile.ReadToEnd() != "")
             {
                 while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
@@ -109,7 +109,7 @@ namespace PROJECT
                     proffessorList.Add(prof);
                 }
             }
-
+/*
             Assembly asm1 = Assembly.GetExecutingAssembly();
             StreamReader StudentFile = new StreamReader(asm1.GetManifestResourceStream("PROJECT.Files.StudentFile.txt"));
             if (StudentFile.ReadToEnd() != "")
