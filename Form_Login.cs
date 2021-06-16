@@ -34,18 +34,17 @@ namespace PROJECT
             if (this.comboBox_Role.SelectedIndex == 0)
             {
                 Admin admin = new Admin();
-                if (admin.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Password.Text))
+                if (admin.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
                 {
                     Form_Admin formAdmin = new Form_Admin();
                     this.Hide();
                     formAdmin.Show();
-
                 }
             }
             else if (comboBox_Role.SelectedIndex == 1)
             {
-                 Professor prof = new Professor(textBox_Username.Text, textBox_Password.Text);
-                 if (prof.isUsernameAndPasswordValid(prof.Username, prof.Password))
+                 Professor prof = new Professor(textBox_Username.Text, textBox_Pass.Text);
+                 if (prof.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
                   {
                      Form_Professor formProf = new Form_Professor();
                      this.Hide();
@@ -61,7 +60,7 @@ namespace PROJECT
 
             }
             else
-                MessageBox.Show("You have selected a role!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You have not selected a role!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         
 
