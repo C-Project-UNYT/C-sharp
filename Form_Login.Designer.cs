@@ -40,7 +40,7 @@ namespace PROJECT
             this.button_Login = new System.Windows.Forms.Button();
             this.textBox_Pass = new System.Windows.Forms.TextBox();
             this.textBox_Username = new System.Windows.Forms.TextBox();
-            this.label_Exit = new System.Windows.Forms.Label();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +91,7 @@ namespace PROJECT
             // 
             // comboBox_Role
             // 
-            this.comboBox_Role.BackColor = System.Drawing.SystemColors.Info;
+            this.comboBox_Role.BackColor = System.Drawing.Color.Silver;
             this.comboBox_Role.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBox_Role.ForeColor = System.Drawing.Color.DarkBlue;
             this.comboBox_Role.FormattingEnabled = true;
@@ -103,7 +103,7 @@ namespace PROJECT
             this.comboBox_Role.Name = "comboBox_Role";
             this.comboBox_Role.Size = new System.Drawing.Size(178, 25);
             this.comboBox_Role.TabIndex = 5;
-            this.comboBox_Role.Text = "Select Role";
+            this.comboBox_Role.Text = "  Select Role";
             this.comboBox_Role.SelectedIndexChanged += new System.EventHandler(this.comboBox_Role_SelectedIndexChanged);
             // 
             // checkBox_ShowPass
@@ -174,17 +174,22 @@ namespace PROJECT
             this.textBox_Username.Size = new System.Drawing.Size(178, 23);
             this.textBox_Username.TabIndex = 10;
             // 
-            // label_Exit
+            // buttonExit
             // 
-            this.label_Exit.AutoSize = true;
-            this.label_Exit.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_Exit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label_Exit.Location = new System.Drawing.Point(523, 12);
-            this.label_Exit.Name = "label_Exit";
-            this.label_Exit.Size = new System.Drawing.Size(19, 22);
-            this.label_Exit.TabIndex = 11;
-            this.label_Exit.Text = "X";
-            this.label_Exit.Click += new System.EventHandler(this.label_Exit_Click);
+            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonExit.ForeColor = System.Drawing.Color.DarkBlue;
+            this.buttonExit.Location = new System.Drawing.Point(518, -6);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(45, 34);
+            this.buttonExit.TabIndex = 12;
+            this.buttonExit.Text = "X";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // Form_Login
             // 
@@ -192,7 +197,7 @@ namespace PROJECT
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(559, 323);
-            this.Controls.Add(this.label_Exit);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.textBox_Username);
             this.Controls.Add(this.textBox_Pass);
             this.Controls.Add(this.panel1);
@@ -228,7 +233,7 @@ namespace PROJECT
         private System.Windows.Forms.TextBox textBox_Pass;
         private System.Windows.Forms.TextBox textBox_Username;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label_Exit;
+        private System.Windows.Forms.Button buttonExit;
     }
 }
 

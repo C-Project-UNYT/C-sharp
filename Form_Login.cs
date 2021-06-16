@@ -41,14 +41,15 @@ namespace PROJECT
             }
         }
 
-        private void label_Exit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void comboBox_Role_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 
