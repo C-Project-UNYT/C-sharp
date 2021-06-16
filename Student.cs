@@ -65,6 +65,27 @@ namespace PROJECT
             this.major = major;
         }
 
+        public Student(string username, string password)
+        {
+            if (isUsernameAndPasswordValid(username, password))
+            {
+                this.Username = username;
+                this.Password = password;
+
+                foreach (Student stud in readStudentFile())
+                {
+                    if (stud.Username.Equals(username) && stud.Password.Equals(password))
+                    {
+                        this.Name = stud.Name;
+                        this.Surname = stud.Surname;
+                        this.Courses = stud.Courses;
+                        break;
+                    }
+                }
+
+            }
+
+        }
         static string theStudentID = "";
         public bool isUsernameAndPasswordValid(string username, string password)
         {

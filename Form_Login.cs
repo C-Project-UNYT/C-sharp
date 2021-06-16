@@ -44,6 +44,7 @@ namespace PROJECT
             else if (comboBox_Role.SelectedIndex == 1)
             {
                  Professor prof = new Professor(textBox_Username.Text, textBox_Pass.Text);
+
                  if (prof.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
                   {
                      Form_Professor formProf = new Form_Professor();
@@ -56,6 +57,16 @@ namespace PROJECT
             }
             else if (comboBox_Role.SelectedIndex == 2)
             {
+                Student stud = new Student(textBox_Username.Text, textBox_Pass.Text);
+
+                if (stud.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
+                {
+                    Form_Student formStud = new Form_Student();
+                    this.Hide();
+                    formStud.Show();
+                }
+                else
+                    MessageBox.Show("You have not entered the correct username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
             }
@@ -73,6 +84,11 @@ namespace PROJECT
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label_Login_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

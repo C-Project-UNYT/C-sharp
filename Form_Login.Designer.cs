@@ -55,6 +55,7 @@ namespace PROJECT
             this.label_Login.Size = new System.Drawing.Size(100, 43);
             this.label_Login.TabIndex = 0;
             this.label_Login.Text = "Login";
+            this.label_Login.Click += new System.EventHandler(this.label_Login_Click);
             // 
             // label_Username
             // 

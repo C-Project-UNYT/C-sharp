@@ -19,7 +19,7 @@ namespace PROJECT
 
         public Admin()
         {
-         //   this.readFiles();
+            //   this.readFiles();
         }
 
         public string getUsername()
@@ -88,13 +88,16 @@ namespace PROJECT
                 }
             }
         }
-        
+       
         private void readFiles()
         {
             string ProffesorInput, StudentInput, CoursesInput;
+            var path1 = Path.Combine(Directory.GetCurrentDirectory(), "\\StudentFile.txt");
+            var path2 = Path.Combine(Directory.GetCurrentDirectory(), "\\ProfessorFile.txt");
+            var path3 = Path.Combine(Directory.GetCurrentDirectory(), "\\CoursesFile.txt");
 
             Assembly asm = Assembly.GetExecutingAssembly();
-            StreamReader ProfessorFile = new StreamReader(asm.GetManifestResourceStream("ProfessorFile.txt"));
+            StreamReader ProfessorFile = new StreamReader(asm.GetManifestResourceStream(path2));
             if (ProfessorFile.ReadToEnd() != "")
             {
                 while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
@@ -109,9 +112,10 @@ namespace PROJECT
                     proffessorList.Add(prof);
                 }
             }
-/*
+           
+
             Assembly asm1 = Assembly.GetExecutingAssembly();
-            StreamReader StudentFile = new StreamReader(asm1.GetManifestResourceStream("PROJECT.Files.StudentFile.txt"));
+            StreamReader StudentFile = new StreamReader(asm1.GetManifestResourceStream(path1));
             if (StudentFile.ReadToEnd() != "")
             {
                 while ((StudentInput = StudentFile.ReadLine()) != null)
@@ -128,7 +132,7 @@ namespace PROJECT
             }
 
             Assembly asm2 = Assembly.GetExecutingAssembly();
-            StreamReader CoursesFile = new StreamReader(asm2.GetManifestResourceStream("PROJECT.Files.CoursesFile.txt"));
+            StreamReader CoursesFile = new StreamReader(asm2.GetManifestResourceStream(path3));
             if (CoursesFile.ReadToEnd() != "")
             {
                 while ((CoursesInput = CoursesFile.ReadLine()) != null)
@@ -140,15 +144,17 @@ namespace PROJECT
                     coursesList.Add(course);
                 }
             }
+
             ProfessorFile.Close();
             StudentFile.Close();
             CoursesFile.Close();
-        }*/
+
+        }
         public void writeFiles()
         {
 
         }
     }
 
-    
+
 }
