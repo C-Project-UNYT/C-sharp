@@ -1,8 +1,8 @@
 Enes,Shehu,Enes Shehu,enesshehu,1111,Finance,Principles of Management,Financial Accounting
-Saida,Jonuzaj,Saida Jonuzaj,saidajonuzaj,1112,Economics,Financial Accounting,Intro to Micro
-Viola,Guce,Viola Guce,violaguce,1113,Biology,Physics,Microbiology,Structural Biochemistry,Human Biology,Plant Science
-Eda,Godo,Eda Godo,edagodo,1114,Computer Science,Calculus,Java,C#
-Vladimir,Hoxha,Vladimir Hoxha,vladimirhoxha,1115,Architecture,Calculus,Intro to Architecture,Physics
-Besmira,Lala,Besmira Lala,besmiralala,1116,Biotechnology,Biology,Microbiology,Genetics,Physics
-Loksi,Papa,Loksi Papa,loksipapa,1117,Computer Engineering,Java,Calculus,Physics
-Doris,Jakupi,Doris Jakupi,dorisjakupi,1117,Dentistry,Biology,Physics,Human Biology
+Saida,Jonuzaj,Saida Jonuzaj,saidajonuzaj,1112,Accounting,Financial Accounting,Intro to Micro
+Viola,Guce,Viola Guce,violaguce,1113,Information Systems,Physics,Financial Accounting,Intro to Micro
+Eda,Godo,Eda Godo,edagodo,1114,Computer Science,Calculus,Java,C#,Data Structure
+Vladimir,Hoxha,Vladimir Hoxha,vladimirhoxha,1115,Computer Science,Calculus,Photography,Physics
+Besmira,Lala,Besmira Lala,besmiralala,1116,Information Systems,Biology,Microbiology,Photography,Physics
+Loksi,Papa,Loksi Papa,loksipapa,1117,Computer Science,Java,Calculus,Physics,Intro to Psychology
+Doris,Jakupi,Doris Jakupi,dorisjakupi,1117,Accounting,Biology,Intro to Psychology,Money and Banking,Intro to Micro

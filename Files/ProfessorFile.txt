@@ -1,5 +1,12 @@
 Nevila,Resulaj,NResulaj,unyt2020,Visual Basic,C#
 Ervin,Ramollari,ERamollari,unyt2021,Computer Organization,Mobile Applications
 Nertila,Gjini,NGjini,unyt111,Calculus,Discrete Maths,Probability and Statistics
-Eda,Gemi,EGemi,unyt777,Intro to Sociology
 Marjana,Prifti,MPrifti,unyt345,Intro to CS,Business Information Systems
+Besmira,Lahi,BLahi,unyt114,Intro to Psychology,Photography,Intro to Sociology
+Elona,Gjebrea,EGjebrea,unyt225,Biology,Physics
+Gerta,Jakupi,GJakupi,unyt226,Financial Accounting,Managerial Accounting,Financial Statement Analysis
+Athina,Tori,ATori,unyt227,Cost Accounting,Auditing,Risk Management
+Juna,Miluka,JMiluka,unyt228,Intro to Micro,Intro to Macro
+Arta,Sinamati,ASinamati,unyt229,Corporate Finance,Money and Banking
+Ina,Papadhopulli,IPapadhopulli,unyt230,Java,System Analysis,Data Structure
+Silvester,Hasani,SHasani,unyt231,Computer Application,Computer Ethics,Data Communication and Network
