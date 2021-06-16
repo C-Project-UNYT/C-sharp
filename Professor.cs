@@ -11,7 +11,7 @@ namespace PROJECT
     class Professor : Person, Login
     {
         // data fields
-        private List<string> courses;
+        private List<string> courses = new List<string>();
         private string activeCourse;
 
         //attributes
@@ -27,8 +27,6 @@ namespace PROJECT
             this.Password = password;
         }
 
-        public Professor() { }
-
         public Professor(string username, string password)
         {
             if (isUsernameAndPasswordValid(username, password))
@@ -43,19 +41,19 @@ namespace PROJECT
                         this.Name = prof.Name;
                         this.Surname = prof.Surname;
                         this.Courses = prof.Courses;
+                        break;
                     }
                 }
 
             }
 
         }
+
         // method to read data from Professor File
         public List<Professor> readProfessorFile()
         {
             List<Professor> list = new List<Professor>();
-
-            Assembly asm = Assembly.GetExecutingAssembly();
-            StreamReader reader = new StreamReader(asm.GetManifestResourceStream("PROJECT.Files.ProfessorFile.txt"));
+            StreamReader reader = new (@"C:\Users\sarah\Desktop\C-sharp\Files\ProfessorFile.txt");
 
             while (!reader.EndOfStream) {
 
@@ -70,6 +68,7 @@ namespace PROJECT
 
                 list.Add(prof);       
             }
+
             reader.Close();
 
             return list;

@@ -32,7 +32,6 @@ namespace PROJECT
             this.label_Login = new System.Windows.Forms.Label();
             this.label_Username = new System.Windows.Forms.Label();
             this.label_Password = new System.Windows.Forms.Label();
-            this.textBox_Password = new System.Windows.Forms.TextBox();
             this.comboBox_Role = new System.Windows.Forms.ComboBox();
             this.checkBox_ShowPass = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -79,15 +78,6 @@ namespace PROJECT
             this.label_Password.Size = new System.Drawing.Size(97, 25);
             this.label_Password.TabIndex = 2;
             this.label_Password.Text = "Password:";
-            // 
-            // textBox_Password
-            // 
-            this.textBox_Password.Font = new System.Drawing.Font("Yu Gothic UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_Password.Location = new System.Drawing.Point(276, 135);
-            this.textBox_Password.Name = "textBox_Password";
-            this.textBox_Password.Size = new System.Drawing.Size(1, 33);
-            this.textBox_Password.TabIndex = 4;
-            this.textBox_Password.UseSystemPasswordChar = true;
             // 
             // comboBox_Role
             // 
@@ -204,7 +194,6 @@ namespace PROJECT
             this.Controls.Add(this.checkBox_ShowPass);
             this.Controls.Add(this.button_Continue);
             this.Controls.Add(this.comboBox_Role);
-            this.Controls.Add(this.textBox_Password);
             this.Controls.Add(this.label_Password);
             this.Controls.Add(this.label_Username);
             this.Controls.Add(this.label_Login);
@@ -225,7 +214,6 @@ namespace PROJECT
         private System.Windows.Forms.Label label_Login;
         private System.Windows.Forms.Label label_Username;
         private System.Windows.Forms.Label label_Password;
-        private System.Windows.Forms.TextBox textBox_Password;
         private System.Windows.Forms.ComboBox comboBox_Role;
         private System.Windows.Forms.CheckBox checkBox_ShowPass;
         private System.Windows.Forms.Panel panel1;
