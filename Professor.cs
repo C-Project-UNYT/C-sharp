@@ -27,8 +27,6 @@ namespace PROJECT
             this.Password = password;
         }
 
-        public Professor() { }
-
         public Professor(string username, string password)
         {
             if (isUsernameAndPasswordValid(username, password))
@@ -50,6 +48,7 @@ namespace PROJECT
             }
 
         }
+
         // method to read data from Professor File
         public List<Professor> readProfessorFile()
         {
