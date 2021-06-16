@@ -104,6 +104,7 @@ namespace PROJECT
             this.comboBox_Role.Size = new System.Drawing.Size(178, 25);
             this.comboBox_Role.TabIndex = 5;
             this.comboBox_Role.Text = "Select Role";
+            this.comboBox_Role.SelectedIndexChanged += new System.EventHandler(this.comboBox_Role_SelectedIndexChanged);
             // 
             // checkBox_ShowPass
             // 
