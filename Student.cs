@@ -52,15 +52,23 @@ namespace PROJECT
             }
         }
 
-        public Student(string name, string surname, string username, string password, string major, string studentID, List<String> courses) : base(name, surname, username, password)
+        public Student(string name, string surname, string username, string password,  string studentID, string major, List<String> courses) : base(name, surname, username, password)
         {
+            this.Name = name;
+            this.Surname = surname;
+            this.Username = username;
+            this.Password = password;
             this.studentID = studentID;
             this.major = major;
             this.courses = courses;
         }
 
-        public Student(string name, string surname, string username, string password, string major, string studentID) : base(name, surname, username, password)
+        public Student(string name, string surname, string username, string password, string studentID, string major,) : base(name, surname, username, password)
         {
+            this.Name = name;
+            this.Surname = surname;
+            this.Username = username;
+            this.Password = password;
             this.studentID = studentID;
             this.major = major;
         }
@@ -76,17 +84,17 @@ namespace PROJECT
                 {
                     if (stud.Username.Equals(username) && stud.Password.Equals(password))
                     {
-                        this.Name = stud.Name;
-                        this.Surname = stud.Surname;
-                        this.Courses = stud.Courses;
+                        this.Name = name;
+                        this.Surname = surname;
+                        this.studentID = studentID;
+                        this.major = major;
+                        this.courses = courses;
                         break;
-
                     }
                 }
-
             }
-
         }
+
         static string theStudentID = "";
         public bool isUsernameAndPasswordValid(string username, string password)
         {

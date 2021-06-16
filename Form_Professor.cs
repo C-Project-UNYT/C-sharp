@@ -38,5 +38,20 @@ namespace PROJECT
             this.Hide();
             login.Show();
         }
+
+        private void comboBox_Course_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_Query_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_Output_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

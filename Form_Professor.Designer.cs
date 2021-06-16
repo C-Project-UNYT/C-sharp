@@ -41,6 +41,7 @@ namespace PROJECT
             this.button_Average = new System.Windows.Forms.Button();
             this.button_PassingStudents = new System.Windows.Forms.Button();
             this.button_Back = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel_Output.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@ namespace PROJECT
             this.panel_Output.Name = "panel_Output";
             this.panel_Output.Size = new System.Drawing.Size(332, 296);
             this.panel_Output.TabIndex = 0;
+            this.panel_Output.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Output_Paint);
             // 
             // textBox_Query
             // 
@@ -66,6 +68,7 @@ namespace PROJECT
             this.textBox_Query.ReadOnly = true;
             this.textBox_Query.Size = new System.Drawing.Size(303, 223);
             this.textBox_Query.TabIndex = 20;
+            this.textBox_Query.TextChanged += new System.EventHandler(this.textBox_Query_TextChanged);
             // 
             // comboBox_Course
             // 
@@ -78,6 +81,7 @@ namespace PROJECT
             this.comboBox_Course.Size = new System.Drawing.Size(178, 25);
             this.comboBox_Course.TabIndex = 19;
             this.comboBox_Course.Text = "Select Course";
+            this.comboBox_Course.SelectedIndexChanged += new System.EventHandler(this.comboBox_Course_SelectedIndexChanged);
             // 
             // button_Grades
             // 
@@ -270,5 +274,6 @@ namespace PROJECT
         private System.Windows.Forms.TextBox textBox_Query;
         private System.Windows.Forms.ComboBox comboBox_Course;
         private System.Windows.Forms.Button button_Back;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
