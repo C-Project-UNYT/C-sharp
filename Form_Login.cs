@@ -29,17 +29,21 @@ namespace PROJECT
                 textBox_Password.UseSystemPasswordChar = true;
         }
 
-        private void button_GoOn_Click(object sender, EventArgs e)
+        private void button_Continue_Click(object sender, EventArgs e)
         {
             if (comboBox_Role.SelectedItem.Equals("Admin"))
             {
                 Admin admin = new Admin();
-                if (admin.passwordValid(textBox_Password.Text) && admin.usernameValid(textBox_Username.Text))
-                {
+                if (admin.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Password.Text)) {
                     Form_Admin formAdmin = new Form_Admin();
                     formAdmin.Show();
                 }
             }
+        }
+
+        private void label_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 

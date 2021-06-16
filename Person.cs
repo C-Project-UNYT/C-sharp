@@ -22,6 +22,8 @@ namespace PROJECT
             this.Password = password;
         }
 
+        public Person() { }
+
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname = value; }
         public string Username { get => username; set => username = value; }

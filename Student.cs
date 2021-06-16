@@ -9,10 +9,10 @@ namespace PROJECT
 {
     class Student : Person, Login
     {
-        private string major;
-        private string studentID;
-        private List<string> courses;
-
+        public string major;
+        public string studentID;
+        public List<string> courses;
+        
         public string StudentID
         {
             set
@@ -39,7 +39,7 @@ namespace PROJECT
             }
         }
 
-        public string[] Courses
+        public List<string> Courses
         {
             set
             {
@@ -52,7 +52,7 @@ namespace PROJECT
             }
         }
 
-        public Student(string name, string surname, string username, string password, string major, string studentID, string courses) : base(name, surname, username, password)
+        public Student(string name, string surname, string username, string password, string major, string studentID, List<String> courses) : base(name, surname, username, password)
         {
             this.studentID = studentID;
             this.major = major;
@@ -65,10 +65,20 @@ namespace PROJECT
             this.major = major;
         }
 
-
-        public bool passwordAndUsernameValidation(string password)
+        static string theStudentID = "";
+        public bool isUsernameAndPasswordValid(string username, string password)
         {
-            List<Student> student = 
+            List<Student> student = readStudentFile();
+
+            foreach (Student stud in student)
+            {
+                if (stud.Username.Equals(username) && stud.Password.Equals(password))
+                {
+                    theStudentID = stud.studentID; 
+                    return true;
+                }
+            }
+            return false;
         }
 
         public List<Student> readStudentFile()
@@ -77,20 +87,36 @@ namespace PROJECT
             StreamReader input = new StreamReader("StudentFile.txt");
             string line;
 
-            while ((line = input.Read()) != null)
+            while ((line = input.ReadLine()) != null)
             {
-                string word = line.Split(',');
-                Student s = new Student(entries[0], entries[1], entries[2], entries[3], entries[4], entries[5], entries[6]);
+                string[] entries = line.Split(',');
+                Student s = new Student(entries[0], entries[1], entries[2], entries[3], entries[4], entries[5]);
 
-                for (int i = 7; i < word.Length; i++)
+                for (int i = 6; i < entries.Length; i++)
                 {
-                    s.courses.Add(word[i])
+                    s.courses.Add(entries[i]);
                 }
 
                 student.Add(s);
             }
             input.Close();
             return student;
+        }
+
+        public void showListOfCourses()
+        {
+            List<Student> student = readStudentFile();
+
+            foreach (Student stud in student){
+
+                if (stud.studentID.Equals(theStudentID) == true)
+                {
+                    foreach (string i in stud.Courses)
+                    {
+                        Console.Write(i + " ");
+                    }
+                }
+            }
         }
 
     }
