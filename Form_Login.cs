@@ -34,7 +34,7 @@ namespace PROJECT
             if (this.comboBox_Role.SelectedIndex == 0)
             {
                 Admin admin = new Admin();
-                if (admin.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Password.Text))
+                if (admin.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
                 {
                     Form_Admin formAdmin = new Form_Admin();
                     this.Hide();
