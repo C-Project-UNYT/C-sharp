@@ -31,15 +31,39 @@ namespace PROJECT
 
         private void button_Continue_Click(object sender, EventArgs e)
         {
-            if (comboBox_Role.SelectedItem.Equals("Admin"))
+            if (this.comboBox_Role.SelectedIndex == 0)
             {
                 Admin admin = new Admin();
-                if (admin.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Password.Text)) {
+                if (admin.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Password.Text))
+                {
                     Form_Admin formAdmin = new Form_Admin();
+                    this.Hide();
                     formAdmin.Show();
+
                 }
             }
+            else if (comboBox_Role.SelectedIndex == 1)
+            {
+                 Professor prof = new Professor(textBox_Username.Text, textBox_Password.Text);
+                 if (prof.isUsernameAndPasswordValid(prof.Username, prof.Password))
+                  {
+                     Form_Professor formProf = new Form_Professor();
+                     this.Hide();
+                     formProf.Show();
+                  }
+                 else
+                    MessageBox.Show("You have not entered the correct username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else if (comboBox_Role.SelectedIndex == 2)
+            {
+
+
+            }
+            else
+                MessageBox.Show("You have selected a role!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        
 
 
         private void comboBox_Role_SelectedIndexChanged(object sender, EventArgs e)

@@ -37,7 +37,7 @@ namespace PROJECT
             this.checkBox_ShowPass = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button_Login = new System.Windows.Forms.Button();
+            this.button_Continue = new System.Windows.Forms.Button();
             this.textBox_Pass = new System.Windows.Forms.TextBox();
             this.textBox_Username = new System.Windows.Forms.TextBox();
             this.buttonExit = new System.Windows.Forms.Button();
@@ -139,19 +139,19 @@ namespace PROJECT
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button_Login
+            // button_Continue
             // 
-            this.button_Login.BackColor = System.Drawing.Color.DarkBlue;
-            this.button_Login.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Login.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button_Login.ForeColor = System.Drawing.Color.White;
-            this.button_Login.Location = new System.Drawing.Point(400, 255);
-            this.button_Login.Name = "button_Login";
-            this.button_Login.Size = new System.Drawing.Size(136, 43);
-            this.button_Login.TabIndex = 6;
-            this.button_Login.Text = "Continue";
-            this.button_Login.UseVisualStyleBackColor = false;
-            this.button_Login.Click += new System.EventHandler(this.button_Continue_Click);
+            this.button_Continue.BackColor = System.Drawing.Color.DarkBlue;
+            this.button_Continue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Continue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_Continue.ForeColor = System.Drawing.Color.White;
+            this.button_Continue.Location = new System.Drawing.Point(400, 255);
+            this.button_Continue.Name = "button_Continue";
+            this.button_Continue.Size = new System.Drawing.Size(136, 43);
+            this.button_Continue.TabIndex = 6;
+            this.button_Continue.Text = "Continue";
+            this.button_Continue.UseVisualStyleBackColor = false;
+            this.button_Continue.Click += new System.EventHandler(this.button_Continue_Click);
             // 
             // textBox_Pass
             // 
@@ -202,7 +202,7 @@ namespace PROJECT
             this.Controls.Add(this.textBox_Pass);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkBox_ShowPass);
-            this.Controls.Add(this.button_Login);
+            this.Controls.Add(this.button_Continue);
             this.Controls.Add(this.comboBox_Role);
             this.Controls.Add(this.textBox_Password);
             this.Controls.Add(this.label_Password);
@@ -229,7 +229,7 @@ namespace PROJECT
         private System.Windows.Forms.ComboBox comboBox_Role;
         private System.Windows.Forms.CheckBox checkBox_ShowPass;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button_Login;
+        private System.Windows.Forms.Button button_Continue;
         private System.Windows.Forms.TextBox textBox_Pass;
         private System.Windows.Forms.TextBox textBox_Username;
         private System.Windows.Forms.PictureBox pictureBox1;

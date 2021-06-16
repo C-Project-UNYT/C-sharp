@@ -19,7 +19,7 @@ namespace PROJECT
 
         public Admin()
         {
-            this.readFiles();
+         //   this.readFiles();
         }
 
         public string getUsername()
@@ -88,7 +88,7 @@ namespace PROJECT
                 }
             }
         }
-
+        /*
         private void readFiles()
         {
             string ProffesorInput, StudentInput, CoursesInput;
@@ -143,7 +143,7 @@ namespace PROJECT
             ProfessorFile.Close();
             StudentFile.Close();
             CoursesFile.Close();
-        }
+        }*/
         public void writeFiles()
         {
 

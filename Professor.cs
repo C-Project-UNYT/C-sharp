@@ -27,6 +27,7 @@ namespace PROJECT
             this.Password = password;
         }
 
+        public Professor() { }
 
         public Professor(string username, string password)
         {
