@@ -162,6 +162,7 @@ namespace PROJECT
             this.textBox_Pass.Name = "textBox_Pass";
             this.textBox_Pass.Size = new System.Drawing.Size(178, 23);
             this.textBox_Pass.TabIndex = 9;
+            this.textBox_Pass.UseSystemPasswordChar = true;
             // 
             // textBox_Username
             // 
