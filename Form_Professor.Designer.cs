@@ -29,6 +29,7 @@ namespace PROJECT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Professor));
             this.panel_Output = new System.Windows.Forms.Panel();
             this.textBox_Query = new System.Windows.Forms.TextBox();
             this.comboBox_Course = new System.Windows.Forms.ComboBox();
@@ -251,6 +252,7 @@ namespace PROJECT
             this.Controls.Add(this.button_Grades);
             this.Controls.Add(this.panel_Output);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Professor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProfessorForm";
