@@ -12,14 +12,15 @@ namespace PROJECT
 {
     public partial class Form_Admin2 : Form
     {
-        public Form_Admin2()
-        {
-            InitializeComponent();
-        }
+        Admin admin;
+        int index;
 
-        public Form_Admin2(int index)
+        public Form_Admin2(int index, ref Admin admin)
         {
             InitializeComponent();
+            this.admin = admin;
+            this.index = index;
+
             if(index == 1)
             {
                 label5.Hide();
@@ -30,6 +31,7 @@ namespace PROJECT
                 label2.Text = "Surname: ";
                 label3.Text = "Username: ";
                 label4.Text = "Password: ";
+                //textBox1.Text = admin.proffessorList.ElementAt(2).Name;
             }
             if (index == 2)
             {
@@ -45,6 +47,7 @@ namespace PROJECT
                 label1.Text = "Subject: ";
                 label2.Text = "Time: ";
                 label3.Text = "Credits: ";
+                label4.Text = " Professor: ";
                 label5.Hide();
                 label6.Hide();
                 textBox5.Hide();
@@ -55,16 +58,31 @@ namespace PROJECT
 
         public void addProfessor()
         {
-
+            Professor prof = new Professor(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+            admin.addProfessor(prof);
         }
         public void addStudent()
         {
-
+            Student stud = new Student(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
+            admin.addStudent(stud);
         }
         public void addCourse()
         {
-
+            int credits = Int32.Parse(textBox3.Text);
+            Courses course = new Courses(textBox1.Text, textBox2.Text, credits, textBox4.Text);
+            admin.addCourse(course);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (index == 1)
+                this.addProfessor();
+            if (index == 2)
+                this.addStudent();
+            if (index == 3)
+                this.addCourse();
+            MessageBox.Show("Complete!");
+            this.Close();
+        }
     }
 }
