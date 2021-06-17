@@ -59,7 +59,7 @@ namespace PROJECT
             // 
             this.textBox_Query.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_Query.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_Query.Location = new System.Drawing.Point(19, 60);
+            this.textBox_Query.Location = new System.Drawing.Point(17, 50);
             this.textBox_Query.Multiline = true;
             this.textBox_Query.Name = "textBox_Query";
             this.textBox_Query.PlaceholderText = "Select a course.\nClick one of the buttons on the right.\nThe output will be displa" +

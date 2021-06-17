@@ -48,9 +48,11 @@ namespace PROJECT
         // method to read data from Professor File
         public List<Professor> readProfessorFile()
         {
-            var path1 = Path.Combine(Directory.GetCurrentDirectory(), "\\ProfessorFile.txt");
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "\\ProfessorFile.txt");
+
             List<Professor> list = new List<Professor>();
-            StreamReader reader = new StreamReader(path1);
+
+            StreamReader reader = new StreamReader(path);
 
             while (!reader.EndOfStream) {
 
