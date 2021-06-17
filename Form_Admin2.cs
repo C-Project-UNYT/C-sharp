@@ -16,5 +16,37 @@ namespace PROJECT
         {
             InitializeComponent();
         }
+
+        public Form_Admin2(int index)
+        {
+            InitializeComponent();
+            if(index == 1)
+            {
+                
+            }
+            if (index == 2)
+            {
+
+            }
+            if (index == 3)
+            {
+
+            }
+            
+        }
+
+        public void addProfessor()
+        {
+
+        }
+        public void addStudent()
+        {
+
+        }
+        public void addCourse()
+        {
+
+        }
+
     }
 }

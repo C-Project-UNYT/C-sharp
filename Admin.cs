@@ -49,6 +49,12 @@ namespace PROJECT
                     if (prof.Equals(proffessorList.ElementAt(i)))
                     {
                         proffessorList.RemoveAt(i);
+
+                        for (int j = 0; j < coursesList.Count; j++)
+                        {
+                            if (coursesList.ElementAt(j).Professor.Equals(proffessorList.ElementAt(i).Name + " " + proffessorList.ElementAt(i).Surname))
+                                coursesList.RemoveAt(j);
+                        }
                     }
                 }
             }
@@ -87,7 +93,7 @@ namespace PROJECT
                 }
             }
         }
-       
+
         private void readFiles()
         {
             string ProffesorInput, StudentInput, CoursesInput;
@@ -98,21 +104,21 @@ namespace PROJECT
             StreamReader ProfessorFile = new StreamReader(path2);
             if (ProfessorFile.ReadToEnd() != "")
 
-            if (ProfessorFile.ReadToEnd() != "")
-            {
-                while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
+                if (ProfessorFile.ReadToEnd() != "")
                 {
-                    string[] data = ProffesorInput.Split(',');
+                    while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
+                    {
+                        string[] data = ProffesorInput.Split(',');
 
-                    Professor prof = new Professor(data[0], data[1], data[2], data[3]);
+                        Professor prof = new Professor(data[0], data[1], data[2], data[3]);
 
-                    for (int i = 4; i < data.Length; i++)
-                        prof.Courses.Add(data[i]);
+                        for (int i = 4; i < data.Length; i++)
+                            prof.Courses.Add(data[i]);
 
-                    proffessorList.Add(prof);
+                        proffessorList.Add(prof);
+                    }
                 }
-            }
-           
+
 
             StreamReader StudentFile = new StreamReader(path1);
             if (StudentFile.ReadToEnd() != "")

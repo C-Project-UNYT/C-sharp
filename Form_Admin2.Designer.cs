@@ -40,6 +40,8 @@ namespace PROJECT
             this.label4 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +62,7 @@ namespace PROJECT
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(379, 217);
+            this.button1.Location = new System.Drawing.Point(364, 217);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 38);
             this.button1.TabIndex = 2;
@@ -131,12 +133,30 @@ namespace PROJECT
             this.label5.TabIndex = 9;
             this.label5.Text = "label5";
             // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(111, 204);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(226, 29);
+            this.textBox6.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(34, 207);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 21);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "label6";
+            // 
             // Form_Admin2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(469, 295);
+            this.ClientSize = new System.Drawing.Size(454, 277);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox4);
@@ -169,5 +189,7 @@ namespace PROJECT
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label6;
     }
 }
