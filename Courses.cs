@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PROJECT
 {
-    class Courses
+    public class Courses
     {
         string subject;
         string time;

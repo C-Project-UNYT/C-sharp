@@ -7,7 +7,7 @@ using System.IO;
 
 namespace PROJECT
 {
-    class Student : Person, Login
+    public class Student : Person, Login
     {
         public string major;
         public string studentID;

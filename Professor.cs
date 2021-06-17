@@ -9,15 +9,17 @@ using System.Windows.Forms;
 
 namespace PROJECT
 {
-    class Professor : Person, Login
+    public class Professor : Person, Login
     {
         // data fields
         private List<string> courses = new List<string>();
         private string activeCourse;
+        private static List<Professor> loggedProfessors = new List<Professor>();
 
         //attributes
         public List<string> Courses { get => courses; set => courses = value; }
         public string ActiveCourse { get => activeCourse; set => activeCourse = value; }
+        public static List<Professor> LoggedProfessors { get => loggedProfessors; set => loggedProfessors = value; }
 
         //constructors
         public Professor(string name, string surname, string username, string password) : base(name, surname, username, password)
@@ -42,7 +44,7 @@ namespace PROJECT
                         this.Courses = prof.Courses;
                         break;
                     }
-                }    
+                }
 
         }
 

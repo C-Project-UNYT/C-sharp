@@ -21,6 +21,7 @@ namespace PROJECT
             base.Dispose(disposing);
         }
 
+       
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -223,6 +224,7 @@ namespace PROJECT
         private System.Windows.Forms.TextBox textBox_Username;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonExit;
+   
     }
 }
 

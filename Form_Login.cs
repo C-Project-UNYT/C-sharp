@@ -54,6 +54,7 @@ namespace PROJECT
 
                     if (prof.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
                     {
+                        Professor.LoggedProfessors.Add(prof);
                         Form_Professor formProf = new Form_Professor();
                         this.Hide();
                         formProf.Show();
