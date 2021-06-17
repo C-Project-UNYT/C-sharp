@@ -1,6 +1,6 @@
-﻿Financial Accoutning,1111,97
-Financial Accoutning,1112,62
-Financial Accoutning,1113,50
+﻿Financial Accounting,1111
+Financial Accounting,1112,62
+Financial Accounting,1113,50
 Statistics,1111,89
 Money and Banking,1111,100
 Money and Banking,1118,88

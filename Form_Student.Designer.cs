@@ -38,6 +38,7 @@ namespace PROJECT
             this.button_Back = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@ namespace PROJECT
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(337, 13);
+            this.label1.Location = new System.Drawing.Point(345, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 24);
             this.label1.TabIndex = 0;
@@ -115,6 +116,7 @@ namespace PROJECT
             this.button4.TabIndex = 5;
             this.button4.Text = "4. Show the Grade for a Course";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button_Back
             // 
@@ -154,12 +156,27 @@ namespace PROJECT
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(22, 83);
+            this.richTextBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 83);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(223, 202);
+            this.richTextBox1.Size = new System.Drawing.Size(257, 202);
             this.richTextBox1.TabIndex = 22;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.DarkBlue;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.label2.Location = new System.Drawing.Point(24, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(234, 21);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Here, you can find the output";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form_Student
             // 
@@ -167,6 +184,7 @@ namespace PROJECT
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(559, 323);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.button_Back);
@@ -197,5 +215,6 @@ namespace PROJECT
         private System.Windows.Forms.Button button_Back;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

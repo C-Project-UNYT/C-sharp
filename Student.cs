@@ -12,7 +12,8 @@ namespace PROJECT
         public string major;
         public string studentID;
         public List<string> courses = new List<string>();
-        
+        static string theStudentID = "";
+
         public string StudentID
         {
             set
@@ -56,7 +57,7 @@ namespace PROJECT
         {
 
         }
-        public Student(string name, string surname, string username, string password,  string studentID, string major, List<String> courses) : base(name, surname, username, password)
+        public Student(string name, string surname, string username, string password, string studentID, string major, List<String> courses) : base(name, surname, username, password)
         {
             this.Name = name;
             this.Surname = surname;
@@ -99,7 +100,6 @@ namespace PROJECT
             }
         }
 
-        static string theStudentID = "";
         public bool isUsernameAndPasswordValid(string username, string password)
         {
             List<Student> student = readStudentFile();
@@ -108,7 +108,7 @@ namespace PROJECT
             {
                 if (stud.Username.Equals(username) && stud.Password.Equals(password))
                 {
-                    theStudentID = stud.studentID; 
+                    theStudentID = stud.studentID;
                     return true;
                 }
             }
@@ -127,7 +127,7 @@ namespace PROJECT
                 string[] entries = line.Split(',');
                 Student s = new Student(entries[0], entries[1], entries[2], entries[3], entries[4], entries[5]);
 
-             if (entries.Length > 5)
+                if (entries.Length > 5)
                 {
                     for (int i = 6; i < entries.Length; i++)
                     {
@@ -145,7 +145,8 @@ namespace PROJECT
             List<Student> student = readStudentFile();
             List<string> myCourse = new List<string>();
 
-            foreach (Student stud in student){
+            foreach (Student stud in student)
+            {
 
                 if (stud.studentID.Equals(theStudentID) == true)
                 {
@@ -158,7 +159,32 @@ namespace PROJECT
             return myCourse;
         }
 
+        public List<string> showCoursesGrade()
+        {
 
+            var path1 = Path.GetFullPath(@"GradesFile.txt");
+            List<string> grades = new List<string>();
+            StreamReader input = new StreamReader(path1);
+            string line;
 
+            while ((line = input.ReadLine()) != null)
+            {
+                string[] entries = line.Split(',');
+
+                if (theStudentID.Equals(entries[1]))
+                {
+
+                    if (entries.Length == 2)
+                    {
+                        grades.Add(entries[0] + ": " + "Pending...");
+                    }
+                    else
+                        grades.Add(entries[0] + ": " + entries[2]);
+                }
+
+            }
+            input.Close();
+            return grades;
+        }
     }
 }
