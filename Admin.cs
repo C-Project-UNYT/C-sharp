@@ -92,15 +92,14 @@ namespace PROJECT
         private void readFiles()
         {
             string ProffesorInput, StudentInput, CoursesInput;
-            var path1 = Path.Combine(Directory.GetCurrentDirectory(), "\\StudentFile.txt");
-            var path2 = Path.Combine(Directory.GetCurrentDirectory(), "\\ProfessorFile.txt");
-            var path3 = Path.Combine(Directory.GetCurrentDirectory(), "\\CoursesFile.txt");
+            var path1 = Path.GetFullPath(@"StudentFile.txt");
+            var path2= Path.GetFullPath(@"ProfessorFile.txt");
+            var path3 = Path.GetFullPath(@"CoursesFile.txt");
 
-            Assembly asm = Assembly.GetExecutingAssembly();
-            StreamReader ProfessorFile = new StreamReader(asm.GetManifestResourceStream(path2));
-            if (ProfessorFile.ReadToEnd() != "")
+            
+            if (path2.ReadToEnd() != "")
             {
-                while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
+                while ((ProffesorInput = path2.ReadLine()) != null)
                 {
                     string[] data = ProffesorInput.Split(',');
 

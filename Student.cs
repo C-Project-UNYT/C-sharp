@@ -113,7 +113,7 @@ namespace PROJECT
 
         public List<Student> readStudentFile()
         {
-            var path1 = Path.Combine(Directory.GetCurrentDirectory(), "\\StudentFile.txt");
+            var path1 = Path.GetFullPath(@"StudentFile.txt");
             List<Student> student = new List<Student>();
             StreamReader input = new StreamReader(path1);
             string line;

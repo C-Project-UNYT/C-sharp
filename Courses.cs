@@ -82,7 +82,7 @@ namespace PROJECT
         public List<Courses> getInfoFromFile()
         {
             List<Courses> list = new List<Courses>();
-            var path1 = Path.Combine(Directory.GetCurrentDirectory(), "\\CoursesFile.txt");
+            var path1 = Path.GetFullPath(@"CoursesFile.txt");
             StreamReader reader = new StreamReader(path1);
 
             while (!reader.EndOfStream)
