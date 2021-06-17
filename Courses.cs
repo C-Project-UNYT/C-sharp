@@ -70,8 +70,8 @@ namespace PROJECT
                 return noOfStudents;
             }
         }
-     
-        public Courses(string subject, string time,int credits, string professor, int noOfStudents)
+
+        public Courses(string subject, string time, int credits, string professor, int noOfStudents)
         {
             this.Subject = subject;
             this.Time = time;
@@ -92,7 +92,7 @@ namespace PROJECT
                 var data = line.Split(",");
 
 
-                Courses course = new Courses(data[0], data[1], credits, data[3],noOfStudents);
+                Courses course = new Courses(data[0], data[1], credits, data[3], noOfStudents);
 
                 for (int i = 5; i < data.Length; i++)
                     course.Add(data[i]);

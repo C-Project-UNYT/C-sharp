@@ -53,7 +53,7 @@ namespace PROJECT
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(12, 61);
+            this.label2.Location = new System.Drawing.Point(12, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(239, 31);
             this.label2.TabIndex = 1;
@@ -73,8 +73,8 @@ namespace PROJECT
             "Add course",
             "Remove professor",
             "Remove student",
-            "Remove Course"});
-            this.checkedListBox_Admin.Location = new System.Drawing.Point(12, 95);
+            "Remove course"});
+            this.checkedListBox_Admin.Location = new System.Drawing.Point(12, 102);
             this.checkedListBox_Admin.Name = "checkedListBox_Admin";
             this.checkedListBox_Admin.Size = new System.Drawing.Size(251, 206);
             this.checkedListBox_Admin.TabIndex = 2;
@@ -83,23 +83,24 @@ namespace PROJECT
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.DarkBlue;
             this.label3.Location = new System.Drawing.Point(65, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 34);
+            this.label3.Size = new System.Drawing.Size(139, 34);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Hello Admin!";
+            this.label3.Text = "Hello Boss!";
             // 
             // button_select
             // 
             this.button_select.BackColor = System.Drawing.Color.Silver;
-            this.button_select.Location = new System.Drawing.Point(140, 309);
+            this.button_select.Location = new System.Drawing.Point(165, 314);
             this.button_select.Name = "button_select";
             this.button_select.Size = new System.Drawing.Size(123, 38);
             this.button_select.TabIndex = 4;
             this.button_select.Text = "Select";
             this.button_select.UseVisualStyleBackColor = false;
+            this.button_select.Click += new System.EventHandler(this.button_select_Click);
             // 
             // buttonExit
             // 
@@ -110,9 +111,9 @@ namespace PROJECT
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonExit.Location = new System.Drawing.Point(243, 6);
+            this.buttonExit.Location = new System.Drawing.Point(269, 0);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(49, 24);
+            this.buttonExit.Size = new System.Drawing.Size(41, 37);
             this.buttonExit.TabIndex = 14;
             this.buttonExit.Text = "X";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -140,7 +141,7 @@ namespace PROJECT
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(288, 359);
+            this.ClientSize = new System.Drawing.Size(309, 364);
             this.Controls.Add(this.button_Back);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.button_select);
@@ -151,6 +152,7 @@ namespace PROJECT
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "Form_Admin";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Admin Page ";
