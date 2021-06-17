@@ -12,9 +12,11 @@ namespace PROJECT
 {
     public partial class Form_Admin : Form
     {
+        Admin admin;
         public Form_Admin()
         {
             InitializeComponent();
+            admin = new Admin();
         }
 
         private void checkedListBox_Admin_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,6 +51,7 @@ namespace PROJECT
                 //child1.MdiParent = this;
                 
                 child1.Show();
+
             }
             if (checkedListBox_Admin.SelectedItem.Equals("Add student"))
             {

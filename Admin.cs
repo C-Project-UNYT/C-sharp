@@ -112,8 +112,11 @@ namespace PROJECT
 
                         Professor prof = new Professor(data[0], data[1], data[2], data[3]);
 
-                        for (int i = 4; i < data.Length; i++)
-                            prof.Courses.Add(data[i]);
+                        if (data[4] != " ")
+                        {
+                            for (int i = 4; i < data.Length; i++)
+                                prof.Courses.Add(data[i]);
+                        }
 
                         proffessorList.Add(prof);
                     }
@@ -129,9 +132,11 @@ namespace PROJECT
 
                     Student stud = new Student(data[0], data[1], data[2], data[3], data[4], data[5]);
 
-                    for (int i = 6; i < data.Length; i++)
-                        stud.Courses.Add(data[i]);
-
+                    if (data[6] != " ")
+                    {
+                        for (int i = 6; i < data.Length; i++)
+                            stud.Courses.Add(data[i]);
+                    }
                     studentList.Add(stud);
                 }
             }
