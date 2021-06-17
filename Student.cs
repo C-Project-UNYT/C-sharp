@@ -11,7 +11,7 @@ namespace PROJECT
     {
         public string major;
         public string studentID;
-        public List<string> courses;
+        public List<string> courses = new List<string>();
         
         public string StudentID
         {
@@ -52,6 +52,10 @@ namespace PROJECT
             }
         }
 
+        public Student()
+        {
+
+        }
         public Student(string name, string surname, string username, string password,  string studentID, string major, List<String> courses) : base(name, surname, username, password)
         {
             this.Name = name;
@@ -123,9 +127,12 @@ namespace PROJECT
                 string[] entries = line.Split(',');
                 Student s = new Student(entries[0], entries[1], entries[2], entries[3], entries[4], entries[5]);
 
-                for (int i = 6; i < entries.Length; i++)
+             if (entries.Length > 5)
                 {
-                    s.courses.Add(entries[i]);
+                    for (int i = 6; i < entries.Length; i++)
+                    {
+                        s.Courses.Add(entries[i]);
+                    }
                 }
                 student.Add(s);
             }
@@ -133,9 +140,10 @@ namespace PROJECT
             return student;
         }
 
-        public void showListOfCourses()
+        public List<string> showListOfCourses()
         {
             List<Student> student = readStudentFile();
+            List<string> myCourse = new List<string>();
 
             foreach (Student stud in student){
 
@@ -143,10 +151,11 @@ namespace PROJECT
                 {
                     foreach (string i in stud.Courses)
                     {
-                         
+                        myCourse.Add(i);
                     }
                 }
             }
+            return myCourse;
         }
 
 

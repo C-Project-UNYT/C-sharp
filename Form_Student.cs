@@ -46,5 +46,43 @@ namespace PROJECT
         {
 
         }
+
+        private void button_Back_Click(object sender, EventArgs e)
+        {
+            Form_Login login = new Form_Login();
+            this.Hide();
+            login.Show();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+            Student stud = new Student();
+
+            List<string> studentCourses = stud.showListOfCourses();
+
+            if (studentCourses.Count != 0)
+            {
+                richTextBox1.AppendText("The courses that you are taking are: " + Environment.NewLine);
+
+                foreach (string courses in studentCourses)
+                {
+                    richTextBox1.AppendText(courses + Environment.NewLine);
+                }
+            }
+            else
+                richTextBox1.AppendText("You are not registered in any course" + Environment.NewLine);
+
+        }
     }
 }
