@@ -7,6 +7,7 @@ using System.IO;
 
 namespace PROJECT
 {
+    //endi ca je tu bo
     public class Student : Person, Login
     {
         public string major;
