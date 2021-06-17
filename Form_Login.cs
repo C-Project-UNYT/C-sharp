@@ -75,7 +75,7 @@ namespace PROJECT
 
             }
             else
-                MessageBox.Show("You have not selected a role!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You have not selected a valid role!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         
 

@@ -41,7 +41,6 @@ namespace PROJECT
             this.button_Average = new System.Windows.Forms.Button();
             this.button_PassingStudents = new System.Windows.Forms.Button();
             this.button_Back = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel_Output.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,9 +49,9 @@ namespace PROJECT
             this.panel_Output.BackColor = System.Drawing.Color.DarkBlue;
             this.panel_Output.Controls.Add(this.textBox_Query);
             this.panel_Output.Controls.Add(this.comboBox_Course);
-            this.panel_Output.Location = new System.Drawing.Point(227, 27);
+            this.panel_Output.Location = new System.Drawing.Point(227, 40);
             this.panel_Output.Name = "panel_Output";
-            this.panel_Output.Size = new System.Drawing.Size(332, 296);
+            this.panel_Output.Size = new System.Drawing.Size(332, 283);
             this.panel_Output.TabIndex = 0;
             this.panel_Output.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Output_Paint);
             // 
@@ -107,11 +106,11 @@ namespace PROJECT
             this.buttonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit.Font = new System.Drawing.Font("Impact", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonExit.Location = new System.Drawing.Point(510, -3);
+            this.buttonExit.Location = new System.Drawing.Point(510, 2);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(49, 27);
+            this.buttonExit.Size = new System.Drawing.Size(49, 24);
             this.buttonExit.TabIndex = 13;
             this.buttonExit.Text = "X";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -122,7 +121,7 @@ namespace PROJECT
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(149, 4);
+            this.label1.Location = new System.Drawing.Point(208, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 22);
             this.label1.TabIndex = 0;
@@ -223,11 +222,11 @@ namespace PROJECT
             this.button_Back.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.button_Back.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.button_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Back.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_Back.Font = new System.Drawing.Font("Lucida Console", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_Back.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button_Back.Location = new System.Drawing.Point(-4, -3);
+            this.button_Back.Location = new System.Drawing.Point(0, -3);
             this.button_Back.Name = "button_Back";
-            this.button_Back.Size = new System.Drawing.Size(45, 29);
+            this.button_Back.Size = new System.Drawing.Size(39, 37);
             this.button_Back.TabIndex = 19;
             this.button_Back.Text = "<";
             this.button_Back.UseVisualStyleBackColor = true;
@@ -274,6 +273,5 @@ namespace PROJECT
         private System.Windows.Forms.TextBox textBox_Query;
         private System.Windows.Forms.ComboBox comboBox_Course;
         private System.Windows.Forms.Button button_Back;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

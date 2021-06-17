@@ -174,7 +174,7 @@ namespace PROJECT
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonExit.Location = new System.Drawing.Point(518, -6);
+            this.buttonExit.Location = new System.Drawing.Point(518, -5);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(45, 34);
             this.buttonExit.TabIndex = 12;
