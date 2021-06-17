@@ -68,7 +68,7 @@ namespace PROJECT
         {
             richTextBox1.Clear();
             Student stud = new Student();
-
+            //
             List<string> studentCourses = stud.showListOfCourses();
 
             if (studentCourses.Count != 0)
