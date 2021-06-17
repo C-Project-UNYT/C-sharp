@@ -12,9 +12,9 @@ namespace PROJECT
         private static string username = "admin";
         private static string password = "admin123";
 
-        List<Professor> proffessorList = new List<Professor>();
-        List<Student> studentList = new List<Student>();
-        List<Courses> coursesList = new List<Courses>();
+        public List<Professor> proffessorList = new List<Professor>();
+        public List<Student> studentList = new List<Student>();
+        public List<Courses> coursesList = new List<Courses>();
 
         public Admin()
         {
