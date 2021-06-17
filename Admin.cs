@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PROJECT
-{//
+{
     public class Admin : Login
     {
         private static string username = "admin";
@@ -149,7 +149,7 @@ namespace PROJECT
                     string[] data = CoursesInput.Split(',');
                     int credits = Int32.Parse(data[2]);
                     int noOfStudents = Int32.Parse(data[4]);
-                    Courses course = new Courses(data[0], data[1], credits, data[3], noOfStudents);
+                    Courses course = new Courses(data[0], data[1], credits, data[3]);
                     coursesList.Add(course);
                 }
             }
