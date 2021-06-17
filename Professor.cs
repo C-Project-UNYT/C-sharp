@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PROJECT
 {
@@ -48,7 +49,7 @@ namespace PROJECT
         // method to read data from Professor File
         public List<Professor> readProfessorFile()
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "\\ProfessorFile.txt");
+           var path = Path.GetFullPath(@"ProfessorFile.txt");
 
             List<Professor> list = new List<Professor>();
 
