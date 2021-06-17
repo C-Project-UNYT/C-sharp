@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +18,7 @@ namespace PROJECT
 
         public Admin()
         {
-            //   this.readFiles();
+            this.readFiles();
         }
 
         public string getUsername()
@@ -93,13 +92,15 @@ namespace PROJECT
         {
             string ProffesorInput, StudentInput, CoursesInput;
             var path1 = Path.GetFullPath(@"StudentFile.txt");
-            var path2= Path.GetFullPath(@"ProfessorFile.txt");
+            var path2 = Path.GetFullPath(@"ProfessorFile.txt");
             var path3 = Path.GetFullPath(@"CoursesFile.txt");
 
-            
-            if (path2.ReadToEnd() != "")
+            StreamReader ProfessorFile = new StreamReader(path2);
+            if (ProfessorFile.ReadToEnd() != "")
+
+            if (ProfessorFile.ReadToEnd() != "")
             {
-                while ((ProffesorInput = path2.ReadLine()) != null)
+                while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
                 {
                     string[] data = ProffesorInput.Split(',');
 
@@ -113,8 +114,7 @@ namespace PROJECT
             }
            
 
-            Assembly asm1 = Assembly.GetExecutingAssembly();
-            StreamReader StudentFile = new StreamReader(asm1.GetManifestResourceStream(path1));
+            StreamReader StudentFile = new StreamReader(path1);
             if (StudentFile.ReadToEnd() != "")
             {
                 while ((StudentInput = StudentFile.ReadLine()) != null)
@@ -130,8 +130,7 @@ namespace PROJECT
                 }
             }
 
-            Assembly asm2 = Assembly.GetExecutingAssembly();
-            StreamReader CoursesFile = new StreamReader(asm2.GetManifestResourceStream(path3));
+            StreamReader CoursesFile = new StreamReader(path3);
             if (CoursesFile.ReadToEnd() != "")
             {
                 while ((CoursesInput = CoursesFile.ReadLine()) != null)

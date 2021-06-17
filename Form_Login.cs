@@ -34,12 +34,17 @@ namespace PROJECT
             if (this.comboBox_Role.SelectedIndex == 0)
             {
                 Admin admin = new Admin();
+
+
                 if (admin.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
                 {
                     Form_Admin formAdmin = new Form_Admin();
                     this.Hide();
                     formAdmin.Show();
                 }
+                else
+                    MessageBox.Show("You have not entered the correct username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             else if (comboBox_Role.SelectedIndex == 1)
             {
@@ -77,7 +82,7 @@ namespace PROJECT
             else
                 MessageBox.Show("You have not selected a valid role!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        
+
 
 
         private void comboBox_Role_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,5 +101,5 @@ namespace PROJECT
         }
     }
 
-    
+
 }

@@ -28,5 +28,17 @@ namespace PROJECT
                     checkedListBox_Admin.SetItemChecked(i, false);
             }
         }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button_Back_Click(object sender, EventArgs e)
+        {
+            Form_Login login = new Form_Login();
+            this.Hide();
+            login.Show();
+        }
     }
 }
