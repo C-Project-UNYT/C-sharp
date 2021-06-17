@@ -76,7 +76,7 @@ namespace PROJECT
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(190, 34);
             this.button1.TabIndex = 2;
-            this.button1.Text = "1. Enroll in a Class";
+            this.button1.Text = "1. Enroll or Drop in a Class";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

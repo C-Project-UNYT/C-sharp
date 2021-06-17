@@ -147,9 +147,7 @@ namespace PROJECT
                 while ((CoursesInput = CoursesFile.ReadLine()) != null)
                 {
                     string[] data = CoursesInput.Split(',');
-                    int credits = Int32.Parse(data[2]);
-                    int noOfStudents = Int32.Parse(data[4]);
-                    Courses course = new Courses(data[0], data[1], credits, data[3], noOfStudents);
+                    Courses course = new Courses(data[0], data[1], data[2], data[3]);
                     coursesList.Add(course);
                 }
             }

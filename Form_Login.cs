@@ -35,7 +35,6 @@ namespace PROJECT
             {
                 Admin admin = new Admin();
 
-
                 if (admin.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
                 {
                     Form_Admin formAdmin = new Form_Admin();

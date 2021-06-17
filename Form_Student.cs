@@ -34,7 +34,9 @@ namespace PROJECT
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Form_Student_Add form = new Form_Student_Add();
+            this.Hide();
+            form.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

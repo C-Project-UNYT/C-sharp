@@ -11,9 +11,8 @@ namespace PROJECT
     {
         string subject;
         string time;
-        int credits;
+        string credits;
         string professor;
-        int noOfStudents;
 
         public string Subject
         {
@@ -37,7 +36,7 @@ namespace PROJECT
                 return time;
             }
         }
-        public int Credits
+        public string Credits
         {
             set
             {
@@ -59,25 +58,17 @@ namespace PROJECT
                 return professor;
             }
         }
-        public int NoOfStudents
-        {
-            set
-            {
-                noOfStudents = value;
-            }
-            get
-            {
-                return noOfStudents;
-            }
-        }
 
-        public Courses(string subject, string time, int credits, string professor, int noOfStudents)
+        public Courses()
+        {
+
+        }
+        public Courses(string subject, string time, string credits, string professor)
         {
             this.Subject = subject;
             this.Time = time;
             this.Credits = credits;
             this.Professor = professor;
-            this.NoOfStudents = noOfStudents;
         }
         public List<Courses> getInfoFromFile()
         {
@@ -92,10 +83,7 @@ namespace PROJECT
                 var data = line.Split(",");
 
 
-                Courses course = new Courses(data[0], data[1], credits, data[3], noOfStudents);
-
-                for (int i = 5; i < data.Length; i++)
-                    course.Add(data[i]);
+                Courses course = new Courses(data[0], data[1], data[2], data[3]);
 
                 list.Add(course);
             }

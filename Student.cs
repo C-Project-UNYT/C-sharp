@@ -121,6 +121,7 @@ namespace PROJECT
             var path1 = Path.GetFullPath(@"StudentFile.txt");
             List<Student> student = new List<Student>();
             StreamReader input = new StreamReader(path1);
+           
             string line;
 
             while ((line = input.ReadLine()) != null)
@@ -186,6 +187,84 @@ namespace PROJECT
             }
             input.Close();
             return grades;
+        }
+
+        public void writeANewCourse(string text)
+        {
+            var path1 = Path.GetFullPath(@"StudentFile.txt");
+            var path2 = Path.GetFullPath(@"GradesFile.txt");
+
+            StreamWriter writer1 = new StreamWriter(path1);
+            StreamWriter writer2 = new StreamWriter(path2, true);
+
+            List<Student> student = readStudentFile();
+            List<string> myCourse = new List<string>();
+
+            foreach (Student stud in student)
+            {
+                if (stud.studentID.Equals(theStudentID) == true)
+                {
+                    stud.courses.Add(text);
+                    writer2.Write(text + "," + stud.StudentID);
+                }
+            }
+
+            foreach (Student stud in student)
+            {
+                writer1.Write(stud.Name + "," + stud.Surname + "," + stud.Username + "," + stud.Password + "," + stud.StudentID + "," +
+                    stud.Major);
+                
+                foreach(String cour in Courses)
+                {
+                    writer1.Write("," + cour);
+                    writer1.WriteLine();
+                }
+
+            }
+            writer1.Close();
+            writer2.Close();
+        }
+
+        public Boolean isInTheFile(string text)
+        {
+            Courses course = new Courses();
+            List<Courses> courses = course.getInfoFromFile();
+          
+            foreach(Courses c in courses)
+            {
+                if (c.Subject.Equals(text))
+                {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+        public int canBeAdded(string text)
+        {
+            List<Student> student = readStudentFile();
+
+            if (this.isInTheFile(text) == true)
+            {
+                foreach (Student stud in student)
+                {
+                    if (stud.StudentID.Equals(theStudentID) == true)
+                    {
+                        foreach (string i in stud.Courses)
+                        {
+                            if (i.Equals(text))
+                            {
+                                return 0;
+                            }
+
+                        }
+                    }
+                }
+            }
+            else
+                return 2;
+
+            return 1;
         }
     }
 }
