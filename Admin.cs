@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PROJECT
 {
-    class Admin : Login
+    public class Admin : Login
     {
         private static string username = "admin";
         private static string password = "admin123";

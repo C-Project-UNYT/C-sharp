@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace PROJECT
 {
 
-    abstract class Person
+   public abstract class Person
     {
         private string name;
         private string surname;
         private string username;
         private string password;
 
-        public Person(string name, string surname, string username, string password)
+        protected Person(string name, string surname, string username, string password)
         {
             this.Name = name;
             this.Surname = surname;

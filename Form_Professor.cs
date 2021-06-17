@@ -53,5 +53,19 @@ namespace PROJECT
         {
 
         }
+
+        private void button_Grades_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button_Students_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Form_Professor_Load(object sender, EventArgs e)
+        {
+            label1.Text = $"Welcome Professor {Professor.LoggedProfessors.Last().Name}";
+        }
     }
 }
