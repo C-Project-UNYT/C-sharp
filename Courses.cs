@@ -82,8 +82,8 @@ namespace PROJECT
         public List<Courses> getInfoFromFile()
         {
             List<Courses> list = new List<Courses>();
-
-            StreamReader reader = new StreamReader("CoursesFile.txt");
+            var path1 = Path.Combine(Directory.GetCurrentDirectory(), "\\CoursesFile.txt");
+            StreamReader reader = new StreamReader(path1);
 
             while (!reader.EndOfStream)
             {

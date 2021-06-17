@@ -48,8 +48,9 @@ namespace PROJECT
         // method to read data from Professor File
         public List<Professor> readProfessorFile()
         {
+            var path1 = Path.Combine(Directory.GetCurrentDirectory(), "\\ProfessorFile.txt");
             List<Professor> list = new List<Professor>();
-            StreamReader reader = new StreamReader(@"C:\Users\sarah\Desktop\C-sharp\ProfessorFile.txt");
+            StreamReader reader = new StreamReader(path1);
 
             while (!reader.EndOfStream) {
 
