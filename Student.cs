@@ -63,7 +63,7 @@ namespace PROJECT
             this.courses = courses;
         }
 
-        public Student(string name, string surname, string username, string password, string studentID, string major,) : base(name, surname, username, password)
+        public Student(string name, string surname, string username, string password, string studentID, string major) : base(name, surname, username, password)
         {
             this.Name = name;
             this.Surname = surname;
@@ -84,11 +84,11 @@ namespace PROJECT
                 {
                     if (stud.Username.Equals(username) && stud.Password.Equals(password))
                     {
-                        this.Name = name;
-                        this.Surname = surname;
-                        this.studentID = studentID;
-                        this.major = major;
-                        this.courses = courses;
+                        this.Name = stud.Name;
+                        this.Surname = stud.Surname;
+                        this.studentID = stud.studentID;
+                        this.major = stud.major;
+                        this.courses = stud.courses;
                         break;
                     }
                 }

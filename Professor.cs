@@ -49,7 +49,7 @@ namespace PROJECT
         public List<Professor> readProfessorFile()
         {
             List<Professor> list = new List<Professor>();
-            StreamReader reader = new (@"C:\Users\sarah\Desktop\C-sharp\Files\ProfessorFile.txt");
+            StreamReader reader = new StreamReader(@"C:\Users\sarah\Desktop\C-sharp\ProfessorFile.txt");
 
             while (!reader.EndOfStream) {
 
