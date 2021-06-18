@@ -32,11 +32,11 @@ namespace PROJECT
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Admin));
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.checkedListBox_Admin = new System.Windows.Forms.CheckedListBox();
             this.button_select = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_Back = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,23 @@ namespace PROJECT
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(335, 414);
             this.panel2.TabIndex = 25;
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonExit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonExit.Location = new System.Drawing.Point(205, 0);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(56, 40);
+            this.buttonExit.TabIndex = 14;
+            this.buttonExit.Text = "X";
+            this.buttonExit.UseVisualStyleBackColor = true;
             // 
             // checkedListBox_Admin
             // 
@@ -123,23 +140,6 @@ namespace PROJECT
             this.button_Back.Text = "<";
             this.button_Back.UseVisualStyleBackColor = true;
             // 
-            // buttonExit
-            // 
-            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonExit.FlatAppearance.BorderSize = 0;
-            this.buttonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonExit.Location = new System.Drawing.Point(205, 0);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(56, 40);
-            this.buttonExit.TabIndex = 14;
-            this.buttonExit.Text = "X";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            // 
             // Form_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
@@ -156,6 +156,7 @@ namespace PROJECT
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Admin";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Page ";
             this.Load += new System.EventHandler(this.Form_Admin_Load);
             this.panel2.ResumeLayout(false);
