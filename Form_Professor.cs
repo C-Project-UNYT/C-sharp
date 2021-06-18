@@ -36,7 +36,7 @@ namespace PROJECT
                     return;
                 }
 
-                richTextBox1.Text =$"The student with the lowest score of {Professor.getRecentProfessor().GetMinGrade()} is {Professor.getRecentProfessor().getLowestScoringStudent()}.";
+                richTextBox1.Text = $"The student with the lowest score of {Professor.getRecentProfessor().GetMinGrade()} is {Professor.getRecentProfessor().getLowestScoringStudent()}.";
             }
             else
                 MessageBox.Show("You have not selected a course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -73,8 +73,6 @@ namespace PROJECT
         {
             Professor.getRecentProfessor().ActiveCourse = (string) comboBox_Course.SelectedItem;
         }
-
-      
 
         private void panel_Output_Paint(object sender, PaintEventArgs e)
         {
@@ -127,8 +125,27 @@ namespace PROJECT
                     return;
                 }
 
-                richTextBox1.AppendText($"The course average is {average: F2}");
+                richTextBox1.AppendText($"The course score average is {average:F1}.");
              
+            }
+            else
+                MessageBox.Show("You have not selected a course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void button_PassingStudents_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+            if (comboBox_Course.SelectedIndex != -1)
+            {
+                List<Student> students = Professor.getRecentProfessor().getPassingStudents();
+
+                if (students.Count == 0)
+                {
+                    MessageBox.Show("There are no passing students for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                foreach (Student student in students)
+                    richTextBox1.AppendText(student.Name + " " + student.Surname + "\n");
             }
             else
                 MessageBox.Show("You have not selected a course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

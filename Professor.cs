@@ -16,12 +16,12 @@ namespace PROJECT
         private string activeCourse;
         private static List<Professor> loggedProfessors = new List<Professor>();
 
-        //attributes
+        // attributes
         public List<string> Courses { get => courses; set => courses = value; }
         public string ActiveCourse { get => activeCourse; set => activeCourse = value; }
         public static List<Professor> LoggedProfessors { get => loggedProfessors; set => loggedProfessors = value; }
 
-        //constructors
+        // constructors
         public Professor(string name, string surname, string username, string password) : base(name, surname, username, password)
         {
             this.Name = name;
@@ -46,6 +46,27 @@ namespace PROJECT
                     }
                 }
 
+        }
+
+        // method to show passing students
+
+        public List<Student> getPassingStudents()
+        {
+            List<Student> studentList = new List<Student>();
+            List<string> studentIds = new List<string>();
+
+            foreach(Grades grade in getGrades())
+            {
+                if (Math.Round(grade.Grade) > 59)
+                    studentIds.Add(grade.StudentID);
+            }
+
+            foreach(string Id in studentIds)
+            {
+                studentList.Add(getStudentFromID(Id));
+            }
+
+            return studentList;
         }
 
         // method to get the name of the lowest scoring student
@@ -122,6 +143,7 @@ namespace PROJECT
 
             return gradeList;
         }
+
 
         // method to get all the scores of a professor's course
         public List<Double> getScores()
@@ -201,6 +223,8 @@ namespace PROJECT
 
             return students;
         }
+
+
         // method to read data from Professor File
         public List<Professor> readProfessorFile()
         {
@@ -227,6 +251,18 @@ namespace PROJECT
             reader.Close();
 
             return list;
+        }
+
+        // method to get student object from ID
+        public Student getStudentFromID(string Id)
+        {
+            foreach(Student student in getStudents())
+            {
+                if (student.StudentID.Equals(Id))
+                    return student;
+            }
+
+            return null;
         }
 
         // method to determine if the login info is valid
