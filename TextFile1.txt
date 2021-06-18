@@ -1,5 +1,4 @@
-Nevila,Resulaj,NResulaj,unyt202,Visual Basic,C#,
-Nertila,Gjini,NGjini,unyt444, Calculus,Statistics
+Nertila,Gjini,NGjini,unyt111,Calculus,Statistics,
 Besmira,Lahi,BLahi,unyt114,Intro to Psychology,Photography,Intro to Sociology,
 Elona,Gjebrea,EGjebrea,unyt225,Biology,Physics,
 Gerta,Jakupi,GJakupi,unyt226,Financial Accounting,Managerial Accounting,
