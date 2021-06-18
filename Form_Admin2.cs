@@ -83,5 +83,10 @@ namespace PROJECT
             MessageBox.Show("Complete!");
             this.Close();
         }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -44,6 +44,7 @@ namespace PROJECT
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,9 +55,9 @@ namespace PROJECT
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(22, 33);
+            this.label1.Location = new System.Drawing.Point(36, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 28);
+            this.label1.Size = new System.Drawing.Size(56, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
@@ -64,9 +65,9 @@ namespace PROJECT
             // 
             this.textBox1.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.textBox1.Location = new System.Drawing.Point(169, 29);
+            this.textBox1.Location = new System.Drawing.Point(156, 40);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 40);
+            this.textBox1.Size = new System.Drawing.Size(226, 33);
             this.textBox1.TabIndex = 1;
             // 
             // button1
@@ -87,9 +88,9 @@ namespace PROJECT
             // 
             this.textBox2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox2.ForeColor = System.Drawing.Color.MediumBlue;
-            this.textBox2.Location = new System.Drawing.Point(169, 64);
+            this.textBox2.Location = new System.Drawing.Point(156, 75);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(226, 40);
+            this.textBox2.Size = new System.Drawing.Size(226, 33);
             this.textBox2.TabIndex = 4;
             // 
             // label2
@@ -99,9 +100,9 @@ namespace PROJECT
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(22, 68);
+            this.label2.Location = new System.Drawing.Point(36, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 28);
+            this.label2.Size = new System.Drawing.Size(56, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "label2";
             // 
@@ -109,9 +110,9 @@ namespace PROJECT
             // 
             this.textBox3.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox3.ForeColor = System.Drawing.Color.MediumBlue;
-            this.textBox3.Location = new System.Drawing.Point(169, 99);
+            this.textBox3.Location = new System.Drawing.Point(156, 110);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(226, 40);
+            this.textBox3.Size = new System.Drawing.Size(226, 33);
             this.textBox3.TabIndex = 6;
             // 
             // label3
@@ -121,9 +122,9 @@ namespace PROJECT
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(22, 103);
+            this.label3.Location = new System.Drawing.Point(36, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 28);
+            this.label3.Size = new System.Drawing.Size(56, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "label3";
             // 
@@ -131,9 +132,9 @@ namespace PROJECT
             // 
             this.textBox4.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox4.ForeColor = System.Drawing.Color.MediumBlue;
-            this.textBox4.Location = new System.Drawing.Point(169, 134);
+            this.textBox4.Location = new System.Drawing.Point(156, 145);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(226, 40);
+            this.textBox4.Size = new System.Drawing.Size(226, 33);
             this.textBox4.TabIndex = 8;
             // 
             // label4
@@ -143,9 +144,9 @@ namespace PROJECT
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(22, 138);
+            this.label4.Location = new System.Drawing.Point(36, 156);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 28);
+            this.label4.Size = new System.Drawing.Size(56, 23);
             this.label4.TabIndex = 7;
             this.label4.Text = "label4";
             // 
@@ -153,9 +154,9 @@ namespace PROJECT
             // 
             this.textBox5.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox5.ForeColor = System.Drawing.Color.MediumBlue;
-            this.textBox5.Location = new System.Drawing.Point(169, 169);
+            this.textBox5.Location = new System.Drawing.Point(156, 180);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(226, 40);
+            this.textBox5.Size = new System.Drawing.Size(226, 33);
             this.textBox5.TabIndex = 10;
             // 
             // label5
@@ -165,9 +166,9 @@ namespace PROJECT
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(22, 172);
+            this.label5.Location = new System.Drawing.Point(36, 191);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 28);
+            this.label5.Size = new System.Drawing.Size(56, 23);
             this.label5.TabIndex = 9;
             this.label5.Text = "label5";
             // 
@@ -175,9 +176,9 @@ namespace PROJECT
             // 
             this.textBox6.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox6.ForeColor = System.Drawing.Color.MediumBlue;
-            this.textBox6.Location = new System.Drawing.Point(169, 204);
+            this.textBox6.Location = new System.Drawing.Point(156, 215);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(226, 40);
+            this.textBox6.Size = new System.Drawing.Size(226, 33);
             this.textBox6.TabIndex = 12;
             // 
             // label6
@@ -187,9 +188,9 @@ namespace PROJECT
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(22, 207);
+            this.label6.Location = new System.Drawing.Point(36, 226);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 28);
+            this.label6.Size = new System.Drawing.Size(56, 23);
             this.label6.TabIndex = 11;
             this.label6.Text = "label6";
             // 
@@ -198,6 +199,8 @@ namespace PROJECT
             this.panel1.BackColor = System.Drawing.Color.DarkBlue;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(0, -1);
@@ -205,16 +208,33 @@ namespace PROJECT
             this.panel1.Size = new System.Drawing.Size(137, 296);
             this.panel1.TabIndex = 13;
             // 
+            // buttonExit
+            // 
+            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonExit.ForeColor = System.Drawing.Color.DarkBlue;
+            this.buttonExit.Location = new System.Drawing.Point(381, -1);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(47, 34);
+            this.buttonExit.TabIndex = 15;
+            this.buttonExit.Text = "X";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // Form_Admin2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(427, 295);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -249,5 +269,6 @@ namespace PROJECT
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonExit;
     }
 }

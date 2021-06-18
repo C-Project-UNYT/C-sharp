@@ -196,11 +196,8 @@ namespace PROJECT
             List<Student> student = readStudentFile();
             List<string> myCourse = new List<string>();
 
-            using (StreamWriter writer2 = new StreamWriter(path2, true))
+            using (StreamWriter writer2 = new StreamWriter(path2, false))
             {
-
-
-
                 foreach (Student stud in student)
                 {
                     if (stud.studentID.Equals(theStudentID) == true)
@@ -211,7 +208,7 @@ namespace PROJECT
                 }
                 writer2.Close();
             }
-            using (StreamWriter writer1 = new StreamWriter(path1))
+            using (StreamWriter writer1 = new StreamWriter(path1, false))
             {
                 foreach (Student stud in student)
                 {
