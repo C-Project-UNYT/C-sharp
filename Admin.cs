@@ -12,9 +12,9 @@ namespace PROJECT
         private static string username = "admin";
         private static string password = "admin123";
 
-        List<Professor> proffessorList = new List<Professor>();
-        List<Student> studentList = new List<Student>();
-        List<Courses> coursesList = new List<Courses>();
+        public List<Professor> proffessorList = new List<Professor>();
+        public List<Student> studentList = new List<Student>();
+        public List<Courses> coursesList = new List<Courses>();
 
         public Admin()
         {
@@ -102,17 +102,14 @@ namespace PROJECT
             var path3 = Path.GetFullPath(@"CoursesFile.txt");
 
             StreamReader ProfessorFile = new StreamReader(path2);
-            if (ProfessorFile.ReadToEnd() != "")
-
-                if (ProfessorFile.ReadToEnd() != "")
-                {
+            
                     while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
                     {
                         string[] data = ProffesorInput.Split(',');
 
                         Professor prof = new Professor(data[0], data[1], data[2], data[3]);
 
-                        if (data[4] != " ")
+                        if (data.Length > 4)
                         {
                             for (int i = 4; i < data.Length; i++)
                                 prof.Courses.Add(data[i]);
@@ -120,37 +117,29 @@ namespace PROJECT
 
                         proffessorList.Add(prof);
                     }
-                }
-
 
             StreamReader StudentFile = new StreamReader(path1);
-            if (StudentFile.ReadToEnd() != "")
-            {
                 while ((StudentInput = StudentFile.ReadLine()) != null)
                 {
                     string[] data = StudentInput.Split(',');
 
                     Student stud = new Student(data[0], data[1], data[2], data[3], data[4], data[5]);
 
-                    if (data[6] != " ")
+                    if (data.Length > 6)
                     {
                         for (int i = 6; i < data.Length; i++)
                             stud.Courses.Add(data[i]);
                     }
                     studentList.Add(stud);
                 }
-            }
 
             StreamReader CoursesFile = new StreamReader(path3);
-            if (CoursesFile.ReadToEnd() != "")
-            {
                 while ((CoursesInput = CoursesFile.ReadLine()) != null)
                 {
                     string[] data = CoursesInput.Split(',');
                     Courses course = new Courses(data[0], data[1], data[2], data[3]);
                     coursesList.Add(course);
                 }
-            }
 
             ProfessorFile.Close();
             StudentFile.Close();

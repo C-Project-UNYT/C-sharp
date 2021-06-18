@@ -52,11 +52,6 @@ namespace PROJECT
                 Form_Admin2 child1 = new Form_Admin2(1, ref admin);
                 //child1.MdiParent = this;
 
-                for (int i = 0; i < admin.proffessorList.Count; i++)
-                {
-                    Console.WriteLine(admin.proffessorList.ElementAt(i).Name);
-                }
-
                 child1.Show();
             }
             if (checkedListBox_Admin.SelectedItem.Equals("Add student"))

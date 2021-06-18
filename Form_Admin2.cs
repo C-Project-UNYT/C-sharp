@@ -68,8 +68,8 @@ namespace PROJECT
         }
         public void addCourse()
         {
-            int credits = Int32.Parse(textBox3.Text);
-            Courses course = new Courses(textBox1.Text, textBox2.Text, credits, textBox4.Text);
+            //int credits = Int32.Parse(textBox3.Text);
+            Courses course = new Courses(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
             admin.addCourse(course);
         }
 

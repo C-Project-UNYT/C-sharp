@@ -16,6 +16,9 @@
     <Compile Update="Form_Admin2.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Form_Admin3.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>

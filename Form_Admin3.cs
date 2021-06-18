@@ -30,12 +30,34 @@ namespace PROJECT
             
             if(index == 5)
             {
-
+                for(int i = 0; i < admin.studentList.Count; i++)
+                {
+                    comboBox1.Items.Add(admin.studentList.ElementAt(i).Name + " " + admin.studentList.ElementAt(i).Surname);
+                }
             }
 
             if(index == 6)
             {
+                for(int i = 0; i < admin.coursesList.Count; i++)
+                {
+                    comboBox1.Items.Add(admin.coursesList.ElementAt(i).Subject + " " + admin.coursesList.ElementAt(i).Professor);
+                }
+            }
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(index == 4)
+            {
+                admin.removeProfessor(admin.proffessorList.ElementAt(comboBox1.SelectedIndex));
+            }
+            if(index == 5)
+            {
+                admin.removeStudent(admin.studentList.ElementAt(comboBox1.SelectedIndex));
+            }
+            if(index == 6)
+            {
+                admin.removeCourse(admin.coursesList.ElementAt(comboBox1.SelectedIndex));
             }
         }
     }
