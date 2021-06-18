@@ -227,7 +227,7 @@ namespace PROJECT
         public Boolean isInTheFile(string text)
         {
             Courses course = new Courses();
-            List<Courses> courses = course.getInfoFromFile();
+            List<Courses> courses = course.readCoursesFromFile();
           
             foreach(Courses c in courses)
             {

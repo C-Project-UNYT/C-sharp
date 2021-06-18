@@ -48,6 +48,144 @@ namespace PROJECT
 
         }
 
+        // method to get the name of the lowest scoring student
+        public string getLowestScoringStudent()
+        {
+            string studentID = "";
+
+            string studentName = "";
+
+            foreach (Grades grade in getGrades())
+            {
+                if (grade.Grade == GetMinGrade())
+                {
+                    studentID = grade.StudentID;
+                    break;
+                }
+            }
+
+            List<Student> studentList = getStudents();
+
+            foreach (Student stud in studentList)
+            {
+                if (stud.StudentID.Equals(studentID))
+                {
+                    studentName = stud.Name + " " + stud.Surname;
+                    break;
+                }
+            }
+
+            return studentName;
+        }
+
+        // method to get the name of the highest scoring student
+        public string getHighestScoringStudent()
+        {
+            string studentID = "";
+
+            string studentName ="";
+
+            foreach (Grades grade in getGrades())
+            {
+                if (grade.Grade == GetMaxGrade())
+                {
+                    studentID = grade.StudentID;
+                    break;
+                }
+            }
+
+            List<Student> studentList = getStudents();
+
+            foreach (Student stud in studentList)
+            {
+                if (stud.StudentID.Equals(studentID)) 
+                { 
+                    studentName = stud.Name + " " + stud.Surname;
+                    break;
+                }
+            }
+
+            return studentName;
+        }
+
+        // method to get grades of course
+        public List<Grades> getGrades()
+        {
+            List<Grades> gradeList = new List<Grades>();
+            Grades grade = new Grades();
+
+            foreach (Grades grades in grade.readGradesFile())
+            {
+                if (grades.Subject.Equals(ActiveCourse))
+                    gradeList.Add(grades);
+            }
+
+            return gradeList;
+        }
+
+        // method to get all the scores of a professor's course
+        public List<Double> getScores()
+        {
+            List<Double> gradeList = new List<Double>();
+            Grades grade = new Grades();
+
+            foreach (Grades grades in grade.readGradesFile())
+            {
+                if (grades.Subject.Equals(ActiveCourse))
+                    gradeList.Add(grades.Grade);
+            }
+
+            return gradeList;
+        }
+
+        // method to get the minimum grade of a professor's course
+        public double GetMinGrade()
+        {
+            List<Double> gradeList = getScores();
+
+            double min = gradeList.ElementAt(0);
+            for(int i=1;i<gradeList.Count;i++)
+            {
+                if( gradeList.ElementAt(i) < min)
+                {
+                    min = gradeList.ElementAt(i);
+                }
+            }
+
+            return min;
+        }
+
+        // method to get the maximum grade of a professor's course
+
+        public double GetMaxGrade()
+        {
+            List<Double> gradeList = getScores();
+
+            double max = gradeList.ElementAt(0);
+            for (int i = 1; i < gradeList.Count; i++)
+            {
+                if (gradeList.ElementAt(i) > max)
+                {
+                    max = gradeList.ElementAt(i);
+                }
+            }
+            return max;
+        }
+
+        // method to get the average grade of a professor's course
+
+        public double GetAverage()
+        {
+            List<Double> gradeList = getScores();
+
+            double total = 0.0;
+            foreach (Double grade in gradeList)
+                total += grade;
+
+            return total / gradeList.Count;
+        }
+
+
         // method to show the students of a professor's course
 
         public List<Student> getStudents()
@@ -57,7 +195,7 @@ namespace PROJECT
 
             foreach(Student stud in student.readStudentFile())
             {
-                if (stud.Courses.Contains(getRecentProfessor().ActiveCourse))
+                if (stud.Courses.Contains(ActiveCourse))
                     students.Add(stud);
             }
 

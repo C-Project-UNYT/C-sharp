@@ -70,10 +70,12 @@ namespace PROJECT
             this.Credits = credits;
             this.Professor = professor;
         }
-        public List<Courses> getInfoFromFile()
+        public List<Courses> readCoursesFromFile()
         {
             List<Courses> list = new List<Courses>();
+
             var path1 = Path.GetFullPath(@"CoursesFile.txt");
+
             StreamReader reader = new StreamReader(path1);
 
             while (!reader.EndOfStream)
@@ -82,18 +84,14 @@ namespace PROJECT
                 var line = reader.ReadLine();
                 var data = line.Split(",");
 
-
                 Courses course = new Courses(data[0], data[1], data[2], data[3]);
 
                 list.Add(course);
             }
+
             reader.Close();
 
             return list;
-        }
-        private void Add(string v)
-        {
-            throw new NotImplementedException();
         }
     }
 }
