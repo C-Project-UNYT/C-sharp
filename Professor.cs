@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,19 +32,19 @@ namespace PROJECT
 
         public Professor(string username, string password)
         {
-                this.Username = username;
-                this.Password = password;
+            this.Username = username;
+            this.Password = password;
 
-                foreach(Professor prof in readProfessorFile())
+            foreach (Professor prof in readProfessorFile())
+            {
+                if (prof.Username.Equals(username) && prof.Password.Equals(password))
                 {
-                    if (prof.Username.Equals(username) && prof.Password.Equals(password))
-                    {
-                        this.Name = prof.Name;
-                        this.Surname = prof.Surname;
-                        this.Courses = prof.Courses;
-                        break;
-                    }
+                    this.Name = prof.Name;
+                    this.Surname = prof.Surname;
+                    this.Courses = prof.Courses;
+                    break;
                 }
+            }
 
         }
 
@@ -55,13 +55,13 @@ namespace PROJECT
             List<Student> studentList = new List<Student>();
             List<string> studentIds = new List<string>();
 
-            foreach(Grades grade in getGrades())
+            foreach (Grades grade in getGrades())
             {
                 if (Math.Round(grade.Grade) > 59)
                     studentIds.Add(grade.StudentID);
             }
 
-            foreach(string Id in studentIds)
+            foreach (string Id in studentIds)
             {
                 studentList.Add(getStudentFromID(Id));
             }
@@ -104,7 +104,7 @@ namespace PROJECT
         {
             string studentID = "";
 
-            string studentName ="";
+            string studentName = "";
 
             foreach (Grades grade in getGrades())
             {
@@ -119,8 +119,8 @@ namespace PROJECT
 
             foreach (Student stud in studentList)
             {
-                if (stud.StudentID.Equals(studentID)) 
-                { 
+                if (stud.StudentID.Equals(studentID))
+                {
                     studentName = stud.Name + " " + stud.Surname;
                     break;
                 }
@@ -166,9 +166,9 @@ namespace PROJECT
             List<Double> gradeList = getScores();
 
             double min = gradeList.ElementAt(0);
-            for(int i=1;i<gradeList.Count;i++)
+            for (int i = 1; i < gradeList.Count; i++)
             {
-                if( gradeList.ElementAt(i) < min)
+                if (gradeList.ElementAt(i) < min)
                 {
                     min = gradeList.ElementAt(i);
                 }
@@ -215,7 +215,7 @@ namespace PROJECT
             List<Student> students = new List<Student>();
             Student student = new Student();
 
-            foreach(Student stud in student.readStudentFile())
+            foreach (Student stud in student.readStudentFile())
             {
                 if (stud.Courses.Contains(ActiveCourse))
                     students.Add(stud);
@@ -228,24 +228,25 @@ namespace PROJECT
         // method to read data from Professor File
         public List<Professor> readProfessorFile()
         {
-           var path = Path.GetFullPath(@"ProfessorFile.txt");
+            var path = Path.GetFullPath(@"ProfessorFile.txt");
 
             List<Professor> list = new List<Professor>();
 
             StreamReader reader = new StreamReader(path);
 
-            while (!reader.EndOfStream) {
+            while (!reader.EndOfStream)
+            {
 
                 var line = reader.ReadLine();
                 var data = line.Split(",");
 
 
                 Professor prof = new Professor(data[0], data[1], data[2], data[3]);
-               
+
                 for (int i = 4; i < data.Length; i++)
                     prof.Courses.Add(data[i]);
 
-                list.Add(prof);       
+                list.Add(prof);
             }
 
             reader.Close();
@@ -256,7 +257,7 @@ namespace PROJECT
         // method to get student object from ID
         public Student getStudentFromID(string Id)
         {
-            foreach(Student student in getStudents())
+            foreach (Student student in getStudents())
             {
                 if (student.StudentID.Equals(Id))
                     return student;
@@ -266,7 +267,7 @@ namespace PROJECT
         }
 
         // method to determine if the login info is valid
-        public bool isUsernameAndPasswordValid(string username, string password) 
+        public bool isUsernameAndPasswordValid(string username, string password)
         {
             List<Professor> list = readProfessorFile();
 
