@@ -51,6 +51,7 @@ namespace PROJECT
             {
                 Form_Admin2 child1 = new Form_Admin2(1, ref admin);
                 //child1.MdiParent = this;
+                //hello
 
                 child1.Show();
             }
