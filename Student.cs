@@ -115,13 +115,13 @@ namespace PROJECT
             return false;
         }
 
-  
+
         public List<Student> readStudentFile()
         {
             var path1 = Path.GetFullPath(@"StudentFile.txt");
             List<Student> student = new List<Student>();
             StreamReader input = new StreamReader(path1);
-           
+
             string line;
 
             while ((line = input.ReadLine()) != null)
@@ -193,44 +193,48 @@ namespace PROJECT
         {
             var path1 = Path.GetFullPath(@"StudentFile.txt");
             var path2 = Path.GetFullPath(@"GradesFile.txt");
-
-            StreamWriter writer1 = new StreamWriter(path1);
-            StreamWriter writer2 = new StreamWriter(path2, true);
-
             List<Student> student = readStudentFile();
             List<string> myCourse = new List<string>();
 
-            foreach (Student stud in student)
+            using (StreamWriter writer2 = new StreamWriter(path2, true))
             {
-                if (stud.studentID.Equals(theStudentID) == true)
-                {
-                    stud.courses.Add(text);
-                    writer2.Write(text + "," + stud.StudentID);
-                }
-            }
 
-            foreach (Student stud in student)
-            {
-                writer1.Write(stud.Name + "," + stud.Surname + "," + stud.Username + "," + stud.Password + "," + stud.StudentID + "," +
-                    stud.Major);
-                
-                foreach(String cour in Courses)
+
+
+                foreach (Student stud in student)
                 {
-                    writer1.Write("," + cour);
+                    if (stud.studentID.Equals(theStudentID) == true)
+                    {
+                        stud.courses.Add(text);
+                        writer2.Write(text + "," + stud.StudentID);
+                    }
+                }
+                writer2.Close();
+            }
+            using (StreamWriter writer1 = new StreamWriter(path1))
+            {
+                foreach (Student stud in student)
+                {
+                    writer1.Write(stud.Name + "," + stud.Surname + "," + stud.Username + "," + stud.Password + "," + stud.StudentID + "," +
+                        stud.Major);
+
+                    foreach (String cour in Courses)
+                    {
+                        writer1.Write("," + cour);
+                    }
+                    writer1.Write("," + text);
                     writer1.WriteLine();
                 }
-
+                writer1.Close();
             }
-            writer1.Close();
-            writer2.Close();
         }
 
         public Boolean isInTheFile(string text)
         {
             Courses course = new Courses();
             List<Courses> courses = course.readCoursesFromFile();
-          
-            foreach(Courses c in courses)
+
+            foreach (Courses c in courses)
             {
                 if (c.Subject.Equals(text))
                 {
@@ -256,7 +260,6 @@ namespace PROJECT
                             {
                                 return 0;
                             }
-
                         }
                     }
                 }

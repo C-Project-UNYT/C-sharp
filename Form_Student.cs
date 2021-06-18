@@ -34,7 +34,7 @@ namespace PROJECT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form_Student_Add form = new Form_Student_Add();
+            Form_Student_Enroll form = new Form_Student_Enroll();
             this.Hide();
             form.Show();
         }
