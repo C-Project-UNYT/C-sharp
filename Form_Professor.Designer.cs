@@ -55,7 +55,7 @@ namespace PROJECT
             this.panel_Output.Name = "panel_Output";
             this.panel_Output.Size = new System.Drawing.Size(383, 384);
             this.panel_Output.TabIndex = 0;
-            this.panel_Output.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Output_Paint);
+   
             // 
             // richTextBox1
             // 

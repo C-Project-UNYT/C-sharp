@@ -74,10 +74,6 @@ namespace PROJECT
             Professor.getRecentProfessor().ActiveCourse = (string) comboBox_Course.SelectedItem;
         }
 
-        private void panel_Output_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button_Grades_Click(object sender, EventArgs e)
         {
