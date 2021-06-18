@@ -7,9 +7,6 @@
     <Compile Update="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form_Student_Enroll.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Form_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -29,6 +26,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Form_Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form_Student_Enroll.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
