@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PROJECT
 {
-    public partial class Form_Student_Add : Form
+    public partial class Form_Student_Enroll : Form
     {
-        public Form_Student_Add()
+        public Form_Student_Enroll()
         {
             InitializeComponent();
         }
@@ -46,7 +46,6 @@ namespace PROJECT
             {
                 stud.writeANewCourse(textBox1.Text);
                 MessageBox.Show("Added");
-
             }
 
         }
