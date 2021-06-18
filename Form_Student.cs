@@ -15,6 +15,8 @@ namespace PROJECT
         public Form_Student()
         {
             InitializeComponent();
+            Student stud = new Student();
+            label1.Text = "Welcome " + stud.showStudentName();
         }
 
         private void Form_Student_Load(object sender, EventArgs e)
@@ -41,7 +43,9 @@ namespace PROJECT
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Form_Student_Drop form = new Form_Student_Drop();
+            this.Hide();
+            form.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,20 +105,40 @@ namespace PROJECT
         {
             richTextBox1.Clear();
             Student stud = new Student();
+            List<string> grades = stud.showCoursesGrade();
 
-            List<string> studentGrades = stud.showCoursesGrade();
-
-            if (studentGrades.Count != 0)
+            if (grades.Count != 0)
             {
                 richTextBox1.AppendText("The grades of your courses are: " + Environment.NewLine);
 
-                foreach (string grade in studentGrades)
+                foreach (string grade in grades)
                 {
                     richTextBox1.AppendText(grade + Environment.NewLine);
                 }
             }
             else
                 richTextBox1.AppendText("You are not registered in any course" + Environment.NewLine);
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+
+            Student stud = new Student();
+            List<string> allCourses = stud.showAllCourses();
+
+            if (allCourses.Count != 0)
+            {
+                richTextBox1.AppendText("The courses in the university are: " + Environment.NewLine);
+
+                foreach (string s in allCourses)
+                {
+                    richTextBox1.AppendText(s + Environment.NewLine);
+                }
+            }
+            else
+                richTextBox1.AppendText("The university does not have any course" + Environment.NewLine);
 
         }
     }

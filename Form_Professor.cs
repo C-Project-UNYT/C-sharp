@@ -15,7 +15,6 @@ namespace PROJECT
         public Form_Professor()
         {
             InitializeComponent();
-           
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -145,6 +144,11 @@ namespace PROJECT
             }
             else
                 MessageBox.Show("You have not selected a course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -149,21 +149,46 @@ namespace PROJECT
 
             foreach (Student stud in student)
             {
-
-                if (stud.studentID.Equals(theStudentID) == true)
+                foreach (string i in stud.Courses)
                 {
-                    foreach (string i in stud.Courses)
-                    {
-                        myCourse.Add(i);
-                    }
+                    myCourse.Add(i);
                 }
             }
+
             return myCourse;
+        }
+
+        public string showStudentName() {
+
+            List<Student> stud = this.readStudentFile();
+
+            foreach(Student s in stud)
+            {
+                if (s.studentID.Equals(theStudentID))
+                {
+                    return (s.Name + " " + s.Surname);
+                }
+            }
+
+            return null;
+        }
+
+        public List<string> showAllCourses()
+        {
+            Courses course = new Courses();
+            List<Courses> theCourses = course.readCoursesFromFile();
+            List<string> allCourses = new List<string>();
+
+            foreach (Courses c in theCourses)
+            {
+               allCourses.Add(c.Subject);
+            }
+
+            return allCourses;
         }
 
         public List<string> showCoursesGrade()
         {
-
             var path1 = Path.GetFullPath(@"GradesFile.txt");
             List<string> grades = new List<string>();
             StreamReader input = new StreamReader(path1);
@@ -173,18 +198,25 @@ namespace PROJECT
             {
                 string[] entries = line.Split(',');
 
-                if (theStudentID.Equals(entries[1]))
+                try
                 {
-
-                    if (entries.Length == 2)
+                    if (theStudentID.Equals(entries[1]))
                     {
-                        grades.Add(entries[0] + ": " + "Pending...");
-                    }
-                    else
-                        grades.Add(entries[0] + ": " + entries[2]);
-                }
 
+                        if (entries.Length == 2)
+                        {
+                            grades.Add(entries[0] + ": " + "Pending...");
+                        }
+                        else
+                            grades.Add(entries[0] + ": " + entries[2]);
+                    }
+                }
+                catch (IndexOutOfRangeException e)
+                {
+                    grades.Add(e.Message);
+                }
             }
+
             input.Close();
             return grades;
         }
@@ -225,46 +257,60 @@ namespace PROJECT
                 writer1.Close();
             }
         }
-
-        public Boolean isInTheFile(string text)
+        public List<string> allCoursesExcludingStudentCourses()
         {
             Courses course = new Courses();
+            List<Student> students = readStudentFile();
             List<Courses> courses = course.readCoursesFromFile();
+            List<string> availableCourses = new List<string>();
+            int token = 0;
+
+            foreach(Courses c in courses)
+            {
+                foreach(Student s in students)
+                {
+                    if (s.studentID.Equals(theStudentID))
+                    {
+                        token = 0;
+                        foreach(string a in s.Courses)
+                        {
+                            if (a.Equals(c.Subject))
+                            {
+                                token++;
+                            }
+                        }
+                        if(token == 0)
+                            availableCourses.Add(c.Subject);
+                    }
+                }
+            }
+            return availableCourses;
+        }
+
+        public List<string> studentCourses()
+        {
+            Courses course = new Courses();
+            List<Student> students = readStudentFile();
+            List<Courses> courses = course.readCoursesFromFile();
+            List<string> myCourses = new List<string>();
 
             foreach (Courses c in courses)
             {
-                if (c.Subject.Equals(text))
+                foreach (Student s in students)
                 {
-                    return true;
-                }
-            }
-            return false;
-
-        }
-        public int canBeAdded(string text)
-        {
-            List<Student> student = readStudentFile();
-
-            if (this.isInTheFile(text) == true)
-            {
-                foreach (Student stud in student)
-                {
-                    if (stud.StudentID.Equals(theStudentID) == true)
+                    if (s.studentID.Equals(theStudentID))
                     {
-                        foreach (string i in stud.Courses)
+                        foreach (string a in s.Courses)
                         {
-                            if (i.Equals(text))
+                            if (a.Equals(c.Subject))
                             {
-                                return 0;
+                                myCourses.Add(c.Subject);
                             }
                         }
                     }
                 }
             }
-            else
-                return 2;
-
-            return 1;
+            return myCourses;
         }
 
         public string toString()
