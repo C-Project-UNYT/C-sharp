@@ -22,9 +22,9 @@ namespace PROJECT
 
             if(index == 4)
             {
-                for(int i = 0; i < admin.proffessorList.Count; i++)
+                for(int i = 0; i < admin.professorList.Count; i++)
                 {
-                    comboBox1.Items.Add(admin.proffessorList.ElementAt(i).Name + " " + admin.proffessorList.ElementAt(i).Surname);
+                    comboBox1.Items.Add(admin.professorList.ElementAt(i).Name + " " + admin.professorList.ElementAt(i).Surname);
                 }
             }
             
@@ -49,7 +49,7 @@ namespace PROJECT
         {
             if(index == 4)
             {
-                admin.removeProfessor(admin.proffessorList.ElementAt(comboBox1.SelectedIndex));
+                admin.removeProfessor(admin.professorList.ElementAt(comboBox1.SelectedIndex));
             }
             if(index == 5)
             {
@@ -59,6 +59,8 @@ namespace PROJECT
             {
                 admin.removeCourse(admin.coursesList.ElementAt(comboBox1.SelectedIndex));
             }
+            MessageBox.Show("Complete!");
+            this.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

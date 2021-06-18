@@ -93,5 +93,14 @@ namespace PROJECT
 
             return list;
         }
+        private void Add(string v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string toString()
+        {
+            return this.Subject + "," + this.Time + "," + this.Credits + "," + this.Professor;
+        }
     }
 }
