@@ -283,5 +283,21 @@ namespace PROJECT
         {
             return LoggedProfessors.Last();
         }
+
+        public string toString()
+        {
+            if (this.Courses == null)
+                return this.Name + "," + this.Surname + "," + this.Username + "," + this.Password;
+            else
+            {
+                string result = "";
+                result = this.Name + "," + this.Surname + "," + this.Username + "," + this.Password + ",";
+                for (int j = 0; j < this.Courses.Count; j++)
+                {
+                    result += this.Courses[j] + ",";
+                }
+                return result;
+            }
+        }
     }
 }
