@@ -60,5 +60,10 @@ namespace PROJECT
                 admin.removeCourse(admin.coursesList.ElementAt(comboBox1.SelectedIndex));
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -39,8 +39,9 @@ namespace PROJECT
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 63);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(456, 29);
+            this.comboBox1.Size = new System.Drawing.Size(456, 36);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -57,13 +58,13 @@ namespace PROJECT
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(62, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 21);
+            this.label1.Size = new System.Drawing.Size(207, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Select item to remove:";
             // 
             // Form_Admin3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 231);
             this.Controls.Add(this.label1);

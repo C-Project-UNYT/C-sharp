@@ -48,6 +48,21 @@ namespace PROJECT
 
         }
 
+        // method to show the students of a professor's course
+
+        public List<Student> getStudents()
+        {
+            List<Student> students = new List<Student>();
+            Student student = new Student();
+
+            foreach(Student stud in student.readStudentFile())
+            {
+                if (stud.Courses.Contains(getRecentProfessor().ActiveCourse))
+                    students.Add(stud);
+            }
+
+            return students;
+        }
         // method to read data from Professor File
         public List<Professor> readProfessorFile()
         {
@@ -89,5 +104,10 @@ namespace PROJECT
             throw new InvalidLoginInfoException("Username and Password do not match!");
         }
 
+        // method to get the most recently logged professor
+        public static Professor getRecentProfessor()
+        {
+            return LoggedProfessors.Last();
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace PROJECT
         public Form_Professor()
         {
             InitializeComponent();
+           
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -41,13 +42,10 @@ namespace PROJECT
 
         private void comboBox_Course_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Professor.getRecentProfessor().ActiveCourse = (string) comboBox_Course.SelectedItem;
         }
 
-        private void textBox_Query_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void panel_Output_Paint(object sender, PaintEventArgs e)
         {
@@ -61,12 +59,28 @@ namespace PROJECT
 
         private void button_Students_Click(object sender, EventArgs e)
         {
-            
+            richTextBox1.Clear();
+            if (comboBox_Course.SelectedIndex != -1)
+            {
+                List<Student> students = Professor.getRecentProfessor().getStudents();
+
+                foreach (Student student in students)
+                    richTextBox1.AppendText(student.Name + " " + student.Surname + "\n");
+            }
+            else
+                MessageBox.Show("You have not selected a course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         private void Form_Professor_Load(object sender, EventArgs e)
         {
-            label1.Text = $"Welcome Professor {Professor.LoggedProfessors.Last().Name}";
+            label1.Text = $"Welcome Professor {Professor.getRecentProfessor().Name}";
+
+            foreach (string course in Professor.getRecentProfessor().Courses)
+                comboBox_Course.Items.Add(course);
         }
+
+    
+     
     }
 }
