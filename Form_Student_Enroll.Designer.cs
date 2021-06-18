@@ -29,6 +29,7 @@ namespace PROJECT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Student_Enroll));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -120,15 +121,15 @@ namespace PROJECT
             // 
             // buttonExit
             // 
-            this.buttonExit.BackColor = System.Drawing.Color.DarkBlue;
+            this.buttonExit.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.buttonExit.FlatAppearance.BorderSize = 0;
             this.buttonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonExit.Location = new System.Drawing.Point(427, 0);
+            this.buttonExit.ForeColor = System.Drawing.Color.DarkBlue;
+            this.buttonExit.Location = new System.Drawing.Point(429, 0);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(50, 37);
             this.buttonExit.TabIndex = 22;
@@ -172,6 +173,7 @@ namespace PROJECT
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Student_Enroll";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add or Drop a Course";

@@ -55,7 +55,6 @@ namespace PROJECT
             this.panel_Output.Name = "panel_Output";
             this.panel_Output.Size = new System.Drawing.Size(383, 384);
             this.panel_Output.TabIndex = 0;
-   
             // 
             // richTextBox1
             // 
@@ -249,6 +248,7 @@ namespace PROJECT
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CancelButton = this.buttonExit;
             this.ClientSize = new System.Drawing.Size(639, 431);
             this.Controls.Add(this.button_Back);
             this.Controls.Add(this.button_PassingStudents);
