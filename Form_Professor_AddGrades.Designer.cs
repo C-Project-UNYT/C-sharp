@@ -52,6 +52,7 @@ namespace PROJECT
             // 
             // textBox_Input
             // 
+            this.textBox_Input.AcceptsReturn = true;
             this.textBox_Input.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox_Input.ForeColor = System.Drawing.Color.Black;
             this.textBox_Input.Location = new System.Drawing.Point(37, 107);
@@ -70,7 +71,7 @@ namespace PROJECT
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-9, -38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(461, 433);
+            this.panel1.Size = new System.Drawing.Size(460, 422);
             this.panel1.TabIndex = 3;
             // 
             // buttonExit
@@ -82,7 +83,7 @@ namespace PROJECT
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonExit.Location = new System.Drawing.Point(390, 51);
+            this.buttonExit.Location = new System.Drawing.Point(407, 39);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(56, 40);
@@ -127,7 +128,6 @@ namespace PROJECT
             // 
             // Form_Professor_AddGrades
             // 
-            this.AcceptButton = this.button_Add;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
