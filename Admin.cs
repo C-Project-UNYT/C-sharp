@@ -61,7 +61,7 @@ namespace PROJECT
         }
         public void removeStudent(Student stud)
         {
-            for (int i = 0; i < professorList.Count; i++)
+            for (int i = 0; i < studentList.Count; i++)
             {
                 if (stud.Equals(studentList.ElementAt(i)))
                 {
@@ -81,7 +81,7 @@ namespace PROJECT
         }
         public void removeCourse(Courses course)
         {
-            for (int i = 0; i < professorList.Count; i++)
+            for (int i = 0; i < coursesList.Count; i++)
             {
                 if (course.Equals(coursesList.ElementAt(i)))
                 {
@@ -153,21 +153,22 @@ namespace PROJECT
             var path2 = Path.GetFullPath(@"StudentFile.txt");
             var path3 = Path.GetFullPath(@"CoursesFile.txt");
 
-            StreamWriter ProfessorFile = new StreamWriter(path1);
+            StreamWriter ProfessorFile = new StreamWriter(path1, false);
 
             for (int i = 0; i < professorList.Count; i++)
             {
                 ProfessorFile.WriteLine(professorList.ElementAt(i).toString());
             }
+            ProfessorFile.WriteLine("Prova 123");
 
-            StreamWriter StudentFile = new StreamWriter(path2);
+            StreamWriter StudentFile = new StreamWriter(path2, false);
             for (int i = 0; i < studentList.Count; i++)
             {
                 StudentFile.WriteLine(studentList.ElementAt(i).toString());
             }
 
 
-            StreamWriter CoursesFile = new StreamWriter(path3);
+            StreamWriter CoursesFile = new StreamWriter(path3, false);
             for (int i = 0; i < coursesList.Count; i++)
             {
                 StudentFile.WriteLine(coursesList.ElementAt(i).toString());

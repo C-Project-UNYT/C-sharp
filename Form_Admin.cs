@@ -31,20 +31,6 @@ namespace PROJECT
             }
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            admin.writeFiles();
-            Application.Exit();
-        }
-
-        private void button_Back_Click(object sender, EventArgs e)
-        {
-            admin.writeFiles();
-            Form_Login login = new Form_Login();
-            this.Close();
-            login.Show();
-        }
-
         private void button_select_Click(object sender, EventArgs e)
         {
             if(checkedListBox_Admin.SelectedItem.Equals("Add professor"))
@@ -100,6 +86,20 @@ namespace PROJECT
         private void Form_Admin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonExit_Click_1(object sender, EventArgs e)
+        {
+            admin.writeFiles();
+            Application.Exit();
+        }
+
+        private void button_Back_Click_1(object sender, EventArgs e)
+        {
+            admin.writeFiles();
+            Form_Login login = new Form_Login();
+            this.Close();
+            login.Show();
         }
     }
 }
