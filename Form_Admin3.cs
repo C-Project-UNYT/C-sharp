@@ -59,6 +59,8 @@ namespace PROJECT
             {
                 admin.removeCourse(admin.coursesList.ElementAt(comboBox1.SelectedIndex));
             }
+            MessageBox.Show("Complete!");
+            this.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

@@ -72,6 +72,12 @@ namespace PROJECT
         public void addCourse(Courses course)
         {
             coursesList.Add(course);
+
+            for(int i = 0; i < professorList.Count; i++)
+            {
+                if (course.Professor.Equals(professorList.ElementAt(i).Name + " " + professorList.ElementAt(i).Surname))
+                    professorList.ElementAt(i).Courses.Add(course.Subject);
+            }
         }
         public void removeCourse(Courses course)
         {

@@ -31,7 +31,6 @@ namespace PROJECT
                 label2.Text = "Surname: ";
                 label3.Text = "Username: ";
                 label4.Text = "Password: ";
-                //textBox1.Text = admin.proffessorList.ElementAt(2).Name;
             }
             if (index == 2)
             {
