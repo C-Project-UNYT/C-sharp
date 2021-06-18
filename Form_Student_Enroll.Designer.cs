@@ -49,6 +49,7 @@ namespace PROJECT
             this.dataGridView1.Location = new System.Drawing.Point(-1, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(128, 285);
             this.dataGridView1.TabIndex = 2;
@@ -60,7 +61,7 @@ namespace PROJECT
             this.label1.Location = new System.Drawing.Point(407, 112);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 21);
+            this.label1.Size = new System.Drawing.Size(70, 28);
             this.label1.TabIndex = 3;
             this.label1.Text = "label1";
             // 
@@ -82,7 +83,7 @@ namespace PROJECT
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(205, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 24);
+            this.label2.Size = new System.Drawing.Size(175, 31);
             this.label2.TabIndex = 5;
             this.label2.Text = "Add a Course";
             // 
@@ -92,15 +93,15 @@ namespace PROJECT
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(134, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 19);
+            this.label3.Size = new System.Drawing.Size(136, 23);
             this.label3.TabIndex = 6;
             this.label3.Text = "Course Name: ";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(241, 77);
+            this.textBox1.Location = new System.Drawing.Point(276, 79);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 29);
+            this.textBox1.Size = new System.Drawing.Size(163, 34);
             this.textBox1.TabIndex = 7;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -109,11 +110,11 @@ namespace PROJECT
             this.button1.BackColor = System.Drawing.Color.DarkBlue;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(205, 166);
+            this.button1.Location = new System.Drawing.Point(232, 168);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 34);
+            this.button1.Size = new System.Drawing.Size(127, 34);
             this.button1.TabIndex = 8;
-            this.button1.Text = "Add the Course";
+            this.button1.Text = "ADD";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -127,7 +128,7 @@ namespace PROJECT
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonExit.Location = new System.Drawing.Point(366, 0);
+            this.buttonExit.Location = new System.Drawing.Point(427, 0);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(50, 37);
             this.buttonExit.TabIndex = 22;
@@ -155,10 +156,10 @@ namespace PROJECT
             // 
             // Form_Student_Enroll
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(416, 230);
+            this.ClientSize = new System.Drawing.Size(478, 230);
             this.Controls.Add(this.button_Back);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.button1);
@@ -172,6 +173,7 @@ namespace PROJECT
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Student_Enroll";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add or Drop a Course";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
