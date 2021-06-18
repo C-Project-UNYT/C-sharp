@@ -57,7 +57,7 @@ namespace PROJECT
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.richTextBox1.Font = new System.Drawing.Font("Oswald", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.richTextBox1.ForeColor = System.Drawing.Color.Black;
             this.richTextBox1.Location = new System.Drawing.Point(23, 49);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

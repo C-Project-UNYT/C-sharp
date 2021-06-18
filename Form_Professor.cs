@@ -76,7 +76,13 @@ namespace PROJECT
 
         private void button_Grades_Click(object sender, EventArgs e)
         {
-          
+            if (comboBox_Course.SelectedIndex != -1) {
+                Form_Professor_AddGrades form = new Form_Professor_AddGrades();
+            this.Hide();
+            form.Show();
+        }
+            else
+                MessageBox.Show("You have not selected a course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void button_Students_Click(object sender, EventArgs e)
