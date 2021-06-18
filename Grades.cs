@@ -20,6 +20,11 @@ namespace PROJECT
             StudentID = studentID;
             Grade =grade;
         }
+        public Grades(string subject, string studentID)
+        {
+            Subject = subject;
+            StudentID = studentID;
+        }
 
         public Grades() { }
 
@@ -37,9 +42,19 @@ namespace PROJECT
                 var line = reader.ReadLine();
                 var data = line.Split(",");
 
-                Grades grade = new Grades(data[0], data[1], Convert.ToDouble(data[2]));
+                if (data.Length == 3)
+                {
+                    Grades grade = new Grades(data[0], data[1], Convert.ToDouble(data[2]));
+                    list.Add(grade);
 
-                list.Add(grade);
+                }
+                else
+                {
+                    Grades grade = new Grades(data[0], data[1]);
+                    list.Add(grade);
+
+                }
+
             }
 
             reader.Close();
