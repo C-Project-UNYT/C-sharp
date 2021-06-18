@@ -91,5 +91,15 @@ namespace PROJECT
                 child1.Show();
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form_Admin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
