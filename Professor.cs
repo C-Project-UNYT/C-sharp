@@ -200,6 +200,9 @@ namespace PROJECT
             List<Double> gradeList = getScores();
 
             double total = 0.0;
+            if (gradeList.Count == 0)
+                return total;
+
             foreach (Double grade in gradeList)
                 total += grade;
 

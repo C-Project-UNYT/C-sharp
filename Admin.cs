@@ -174,7 +174,7 @@ namespace PROJECT
 
                 for (int i = 0; i < professorList.Count; i++)
                 {
-                    string profData = professorList.ElementAt(i).toString();
+                    string profData = professorList.ElementAt(i).ToString();
                     ProfessorFile.WriteLine(profData);
                 }
             }

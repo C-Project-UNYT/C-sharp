@@ -72,7 +72,7 @@ namespace PROJECT
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonExit.Location = new System.Drawing.Point(231, 0);
+            this.buttonExit.Location = new System.Drawing.Point(265, 0);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(56, 40);
@@ -96,7 +96,7 @@ namespace PROJECT
             "Remove professor",
             "Remove student",
             "Remove course"});
-            this.checkedListBox_Admin.Location = new System.Drawing.Point(17, 89);
+            this.checkedListBox_Admin.Location = new System.Drawing.Point(42, 89);
             this.checkedListBox_Admin.Name = "checkedListBox_Admin";
             this.checkedListBox_Admin.Size = new System.Drawing.Size(255, 198);
             this.checkedListBox_Admin.TabIndex = 2;
@@ -146,7 +146,7 @@ namespace PROJECT
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(539, 387);
+            this.ClientSize = new System.Drawing.Size(571, 387);
             this.Controls.Add(this.button_Back);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);

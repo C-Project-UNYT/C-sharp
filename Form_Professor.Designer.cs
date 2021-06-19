@@ -50,18 +50,19 @@ namespace PROJECT
             this.panel_Output.BackColor = System.Drawing.Color.DarkBlue;
             this.panel_Output.Controls.Add(this.richTextBox1);
             this.panel_Output.Controls.Add(this.comboBox_Course);
-            this.panel_Output.Location = new System.Drawing.Point(259, 53);
+            this.panel_Output.Location = new System.Drawing.Point(287, 48);
             this.panel_Output.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_Output.Name = "panel_Output";
-            this.panel_Output.Size = new System.Drawing.Size(383, 384);
+            this.panel_Output.Size = new System.Drawing.Size(383, 403);
             this.panel_Output.TabIndex = 0;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Oswald", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.richTextBox1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.richTextBox1.ForeColor = System.Drawing.Color.Black;
             this.richTextBox1.Location = new System.Drawing.Point(26, 65);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(334, 295);
             this.richTextBox1.TabIndex = 21;
             this.richTextBox1.Text = "";
@@ -108,7 +109,7 @@ namespace PROJECT
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonExit.Location = new System.Drawing.Point(586, 0);
+            this.buttonExit.Location = new System.Drawing.Point(614, 1);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(56, 40);
@@ -250,7 +251,7 @@ namespace PROJECT
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.buttonExit;
-            this.ClientSize = new System.Drawing.Size(639, 431);
+            this.ClientSize = new System.Drawing.Size(668, 436);
             this.Controls.Add(this.button_Back);
             this.Controls.Add(this.button_PassingStudents);
             this.Controls.Add(this.button_Average);

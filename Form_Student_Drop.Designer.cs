@@ -46,11 +46,11 @@ namespace PROJECT
             this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(-1, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(129, 231);
+            this.dataGridView1.Size = new System.Drawing.Size(147, 308);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -58,9 +58,10 @@ namespace PROJECT
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.MidnightBlue;
             this.pictureBox1.ImageLocation = "https://th.bing.com/th/id/OIP.s8q4V6wni0Ip_zQCISipNQHaMG?pid=ImgDet&rs=1";
-            this.pictureBox1.Location = new System.Drawing.Point(12, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 57);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(102, 137);
+            this.pictureBox1.Size = new System.Drawing.Size(117, 183);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -70,19 +71,19 @@ namespace PROJECT
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(205, 18);
+            this.label2.Location = new System.Drawing.Point(234, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 24);
+            this.label2.Size = new System.Drawing.Size(187, 31);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Drop in a Course";
+            this.label2.Text = "Drop a Course";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(134, 85);
+            this.label3.Location = new System.Drawing.Point(153, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 19);
+            this.label3.Size = new System.Drawing.Size(136, 23);
             this.label3.TabIndex = 7;
             this.label3.Text = "Course Name: ";
             // 
@@ -90,9 +91,10 @@ namespace PROJECT
             // 
             this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(250, 77);
+            this.comboBox1.Location = new System.Drawing.Point(286, 103);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(214, 27);
+            this.comboBox1.Size = new System.Drawing.Size(244, 30);
             this.comboBox1.TabIndex = 25;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -101,9 +103,10 @@ namespace PROJECT
             this.button1.BackColor = System.Drawing.Color.DarkBlue;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(232, 168);
+            this.button1.Location = new System.Drawing.Point(265, 224);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 34);
+            this.button1.Size = new System.Drawing.Size(145, 45);
             this.button1.TabIndex = 26;
             this.button1.Text = "DROP";
             this.button1.UseVisualStyleBackColor = false;
@@ -119,9 +122,10 @@ namespace PROJECT
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonExit.Location = new System.Drawing.Point(429, 0);
+            this.buttonExit.Location = new System.Drawing.Point(490, 0);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(50, 37);
+            this.buttonExit.Size = new System.Drawing.Size(57, 49);
             this.buttonExit.TabIndex = 27;
             this.buttonExit.Text = "X";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -138,8 +142,9 @@ namespace PROJECT
             this.button_Back.Font = new System.Drawing.Font("Lucida Console", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_Back.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.button_Back.Location = new System.Drawing.Point(-1, 0);
+            this.button_Back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_Back.Name = "button_Back";
-            this.button_Back.Size = new System.Drawing.Size(39, 37);
+            this.button_Back.Size = new System.Drawing.Size(45, 49);
             this.button_Back.TabIndex = 28;
             this.button_Back.Text = "<";
             this.button_Back.UseVisualStyleBackColor = false;
@@ -147,10 +152,10 @@ namespace PROJECT
             // 
             // Form_Student_Drop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(478, 230);
+            this.ClientSize = new System.Drawing.Size(546, 307);
             this.Controls.Add(this.button_Back);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.button1);
@@ -160,6 +165,7 @@ namespace PROJECT
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form_Student_Drop";
             this.Text = "Form_Student_Drop";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

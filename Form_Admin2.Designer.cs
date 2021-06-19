@@ -231,7 +231,7 @@ namespace PROJECT
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(458, 301);
+            this.ClientSize = new System.Drawing.Size(464, 307);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);

@@ -107,7 +107,7 @@ namespace PROJECT
 
         private void Form_Professor_Load(object sender, EventArgs e)
         {
-            label1.Text = $"Welcome Professor {Professor.getRecentProfessor().Name}";
+            label1.Text = $"Welcome Professor {Professor.getRecentProfessor().Name} !";
 
             foreach (string course in Professor.getRecentProfessor().Courses)
                 comboBox_Course.Items.Add(course);
@@ -119,13 +119,18 @@ namespace PROJECT
             if (comboBox_Course.SelectedIndex != -1)
             {
                 Double average = Professor.getRecentProfessor().GetAverage();
+                List<Student> students = Professor.getRecentProfessor().getStudents();
 
                 if (average == 0)
                 {
                     MessageBox.Show("There are no grades in the system for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
+                else if (students.Count == 0)
+                {
+                    MessageBox.Show("There are no students for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 richTextBox1.AppendText($"The course score average is {average:F1}.");
              
             }
