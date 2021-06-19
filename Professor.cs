@@ -49,7 +49,6 @@ namespace PROJECT
         }
 
         // method to show passing students
-
         public List<Student> getPassingStudents()
         {
             List<Student> studentList = new List<Student>();
@@ -57,7 +56,7 @@ namespace PROJECT
 
             foreach (Grades grade in getGrades())
             {
-                if (Math.Round(grade.Grade) > 59)
+                if (grade.Grade > 59)
                     studentIds.Add(grade.StudentID);
             }
 
@@ -108,7 +107,7 @@ namespace PROJECT
 
             foreach (Grades grade in getGrades())
             {
-                if (grade.Grade == GetMaxGrade())
+                if (Convert.ToDouble(grade.Grade) == GetMaxGrade())
                 {
                     studentID = grade.StudentID;
                     break;
@@ -232,13 +231,14 @@ namespace PROJECT
 
             List<Professor> list = new List<Professor>();
 
-            StreamReader reader = new StreamReader(path);
+            using (StreamReader reader = new StreamReader(path))
+            {
 
             while (!reader.EndOfStream)
             {
 
-                var line = reader.ReadLine();
-                var data = line.Split(",");
+                    var line = reader.ReadLine();
+                    var data = line.Split(",");
 
 
                 Professor prof = new Professor(data[0], data[1], data[2], data[3]);
@@ -249,8 +249,8 @@ namespace PROJECT
                 list.Add(prof);
             }
 
-            reader.Close();
-
+                reader.Close();
+            }
             return list;
         }
 
@@ -285,7 +285,9 @@ namespace PROJECT
             return LoggedProfessors.Last();
         }
 
-        public string toString()
+
+        // method to get a string representation of Professor
+        public override string ToString()
         {
             if (this.Courses == null)
                 return this.Name + "," + this.Surname + "," + this.Username + "," + this.Password;
