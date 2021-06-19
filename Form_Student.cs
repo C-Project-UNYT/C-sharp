@@ -75,13 +75,13 @@ namespace PROJECT
             richTextBox1.Clear();
             Student stud = new Student();
             
-            List<string> studentCourses = stud.showListOfCourses();
+            List<string> studentCourse = stud.studentCourses();
 
-            if (studentCourses.Count != 0)
+            if (studentCourse.Count != 0)
             {
                 richTextBox1.AppendText("The courses that you are taking are: " + Environment.NewLine);
 
-                foreach (string courses in studentCourses)
+                foreach (string courses in studentCourse)
                 {
                     richTextBox1.AppendText(courses + Environment.NewLine);
                 }

@@ -50,11 +50,11 @@ namespace PROJECT
 
             if (comboBox1.Text.Length == 0)
             {
-                MessageBox.Show("Error! You need to select a course." + MessageBoxButtons.OK);
+                MessageBox.Show("You need to select a course", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("The course is dropped successfully." + MessageBoxButtons.OK);
+                MessageBox.Show("The course is dropped successfully.", "Done ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 stud.writeANewCourse(comboBox1.Text);
             }
         }
