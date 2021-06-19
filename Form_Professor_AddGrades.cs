@@ -20,6 +20,7 @@ namespace PROJECT
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            Professor.LoggedProfessors.RemoveAt(Professor.LoggedProfessors.Count-1);
             Application.Exit();
         }
 
@@ -37,6 +38,7 @@ namespace PROJECT
             try
             {
                 Professor.getRecentProfessor().AddGrades(data);
+                MessageBox.Show("Grades entered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
 
             catch(InvalidInputException ex)
@@ -44,7 +46,7 @@ namespace PROJECT
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            MessageBox.Show("Grades entered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+           
 
         }
 

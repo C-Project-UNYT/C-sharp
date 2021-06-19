@@ -196,18 +196,26 @@ namespace PROJECT
         // method to add grades of a professor's course
         public void AddGrades(string[] data)
         {
-            var path = Path.GetFullPath(@"GradesFile.txt");
 
-            string[] data = textBox_Input.Text.Split("\n");
+            if (data.Length == 0)
+                throw new InvalidInputException("You did not enter any grades!\nThe format is: STUDENTID,GRADE");
+
+            foreach (string grade in data)
+            {
+                var inputs = grade.Split(",");
+                if (inputs.Length != 2)
+                    throw new InvalidInputException("The input given was not correctly written!\nThe format is: STUDENTID,GRADE");
+
+            }
+            var path = Path.GetFullPath(@"GradesFile.txt");
 
             using (StreamWriter writer = new StreamWriter(path, true))
             {
-                if (data.Length % 2 == 0)
-                    throw new InvalidInputException("The input given in Add Grades method was not correct!");
+               
 
                 foreach (string grade in data)
                 {
-                    writer.WriteLine(Professor.getRecentProfessor().ActiveCourse + "," + grade);
+                    writer.WriteLine("\n"+Professor.getRecentProfessor().ActiveCourse + "," + grade);
                 }
 
                 writer.Close();
