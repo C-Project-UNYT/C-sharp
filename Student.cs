@@ -223,21 +223,24 @@ namespace PROJECT
 
         public void writeANewCourse(string text)
         {
-            var path1 = Path.GetFullPath(@"StudentFile.txt");
-            var path2 = Path.GetFullPath(@"GradesFile.txt");
+            // var path1 = Path.GetFullPath(@"StudentFile.txt");
+            //var path2 = Path.GetFullPath(@"GradesFile.txt");
+            var path1 = Path.Combine(Directory.GetCurrentDirectory(), "\\StudentFile.txt");
+            var path2 = Path.Combine(Directory.GetCurrentDirectory(), "\\GradesFile.txt");
             List<Student> student = readStudentFile();
             List<string> myCourse = new List<string>();
 
-            using (StreamWriter writer2 = new StreamWriter(path2, false))
+            using (StreamWriter writer2 = new StreamWriter(path2, true))
             {
                 foreach (Student stud in student)
                 {
                     if (stud.studentID.Equals(theStudentID) == true)
                     {
                         stud.courses.Add(text);
-                        writer2.Write(text + "," + stud.StudentID);
+                        writer2.WriteLine(text + "," + stud.StudentID);
                     }
                 }
+                writer2.Flush();
                 writer2.Close();
             }
             using (StreamWriter writer1 = new StreamWriter(path1, false))
@@ -246,14 +249,19 @@ namespace PROJECT
                 {
                     writer1.Write(stud.Name + "," + stud.Surname + "," + stud.Username + "," + stud.Password + "," + stud.StudentID + "," +
                         stud.Major);
-
                     foreach (String cour in Courses)
                     {
                         writer1.Write("," + cour);
                     }
-                    writer1.Write("," + text);
+                    if (stud.studentID.Equals(theStudentID))
+                    {
+                        writer1.WriteLine("," + text);
+                    }
+                    else
                     writer1.WriteLine();
+                    
                 }
+                writer1.Flush();
                 writer1.Close();
             }
         }
