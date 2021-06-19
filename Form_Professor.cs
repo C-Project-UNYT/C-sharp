@@ -27,11 +27,17 @@ namespace PROJECT
             richTextBox1.Clear();
             if (comboBox_Course.SelectedIndex != -1)
             {
+                List<Double> scores = Professor.getRecentProfessor().getScores();
                 List<Student> students = Professor.getRecentProfessor().getStudents();
 
-                if (students.Count == 0)
+                if (scores.Count == 0)
                 {
-                    MessageBox.Show("There are no students enrolled for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There are no grades in the system for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if (students.Count == 0)
+                {
+                    MessageBox.Show("There are no students for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -45,13 +51,19 @@ namespace PROJECT
         private void button_HighestScore_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
-            if (comboBox_Course.SelectedIndex != -1)
-            {
+            if (comboBox_Course.SelectedIndex != -1) { 
+           
+                List<Double> scores = Professor.getRecentProfessor().getScores();
                 List<Student> students = Professor.getRecentProfessor().getStudents();
 
-                if (students.Count == 0)
+                if (scores.Count == 0)
                 {
-                    MessageBox.Show("There are no students enrolled for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There are no grades in the system for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if (students.Count == 0)
+                {
+                    MessageBox.Show("There are no students for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -118,10 +130,10 @@ namespace PROJECT
             richTextBox1.Clear();
             if (comboBox_Course.SelectedIndex != -1)
             {
-                Double average = Professor.getRecentProfessor().GetAverage();
+                List<Double> scores = Professor.getRecentProfessor().getScores();
                 List<Student> students = Professor.getRecentProfessor().getStudents();
 
-                if (average == 0)
+                if (scores.Count == 0)
                 {
                     MessageBox.Show("There are no grades in the system for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -131,7 +143,7 @@ namespace PROJECT
                     MessageBox.Show("There are no students for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                richTextBox1.AppendText($"The course score average is {average:F1}.");
+                richTextBox1.AppendText($"The course score average is {Professor.getRecentProfessor().GetAverage():F1}.");
              
             }
             else
