@@ -49,7 +49,6 @@ namespace PROJECT
         }
 
         // method to show passing students
-
         public List<Student> getPassingStudents()
         {
             List<Student> studentList = new List<Student>();
@@ -286,7 +285,9 @@ namespace PROJECT
             return LoggedProfessors.Last();
         }
 
-        public string toString()
+
+        // method to get a string representation of Professor
+        public override string ToString()
         {
             if (this.Courses == null)
                 return this.Name + "," + this.Surname + "," + this.Username + "," + this.Password;
