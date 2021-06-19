@@ -13,6 +13,7 @@ namespace PROJECT
         public string studentID;
         public List<string> courses = new List<string>();
         static string theStudentID = "";
+        static string path = Path.Combine(Directory.GetCurrentDirectory());
 
         public string StudentID
         {
@@ -118,9 +119,9 @@ namespace PROJECT
 
         public List<Student> readStudentFile()
         {
-            var path1 = Path.GetFullPath(@"StudentFile.txt");
+
             List<Student> student = new List<Student>();
-            StreamReader input = new StreamReader(path1);
+            StreamReader input = new StreamReader((path + "\\StudentFiles.txt"));
 
             string line;
 
@@ -189,9 +190,9 @@ namespace PROJECT
 
         public List<string> showCoursesGrade()
         {
-            var path1 = Path.GetFullPath(@"GradesFile.txt");
+            var path = Path.Combine(Directory.GetCurrentDirectory());
             List<string> grades = new List<string>();
-            StreamReader input = new StreamReader(path1);
+            StreamReader input = new StreamReader((path + "\\GradesFile.txt"));
             string line;
 
             while ((line = input.ReadLine()) != null)
@@ -224,8 +225,6 @@ namespace PROJECT
         public void writeANewCourse(string text)
         {
             var path = Path.Combine(Directory.GetCurrentDirectory());
-            var path1 = Path.GetFullPath("StudentFile.txt");
-            var path2 = Path.GetFullPath("GradesFile.txt");
             
             List<Student> student = readStudentFile();
             List<string> myCourse = new List<string>();
@@ -244,6 +243,7 @@ namespace PROJECT
                 writer2.Flush();
                 writer2.Close();
             }
+
             using (StreamWriter writer1 = new StreamWriter((path + "\\StudentFiles.txt"), false))
             {
                 foreach (Student stud in student)
@@ -254,13 +254,7 @@ namespace PROJECT
                     {
                         writer1.Write("," + cour);
                     }
-                    if (stud.studentID.Equals(theStudentID))
-                    {
-                        writer1.WriteLine("," + text);
-                    }
-                    else
                     writer1.WriteLine();
-                    
                 }
                 writer1.Flush();
                 writer1.Close();
