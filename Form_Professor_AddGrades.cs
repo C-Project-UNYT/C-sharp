@@ -32,22 +32,24 @@ namespace PROJECT
 
         private void button_Add_Click(object sender, EventArgs e)
         {
-                var path = Path.GetFullPath(@"GradesFile.txt");
-  
-                string[] data = textBox_Input.Text.Split("\n");
+            string[] data = textBox_Input.Text.Split("\n");
 
-            using(StreamWriter writer = new StreamWriter(path,true))
+            try
             {
-                foreach(string grade in data)
-                {
-                    writer.WriteLine(Professor.getRecentProfessor().ActiveCourse + ","+ grade);
-                }
-
-                writer.Close();
+                Professor.getRecentProfessor().AddGrades(data);
             }
 
- 
+            catch(InvalidInputException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             MessageBox.Show("Grades entered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+        }
+
+        private void textBox_Input_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

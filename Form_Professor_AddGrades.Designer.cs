@@ -61,6 +61,7 @@ namespace PROJECT
             this.textBox_Input.PlaceholderText = "Enter grades here in the format:\nSTUDENT ID,GRADE";
             this.textBox_Input.Size = new System.Drawing.Size(257, 301);
             this.textBox_Input.TabIndex = 2;
+            this.textBox_Input.TextChanged += new System.EventHandler(this.textBox_Input_TextChanged);
             // 
             // panel1
             // 

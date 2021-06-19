@@ -193,6 +193,26 @@ namespace PROJECT
             return max;
         }
 
+        // method to add grades of a professor's course
+        public void AddGrades(string[] data)
+        {
+            var path = Path.GetFullPath(@"GradesFile.txt");
+
+            string[] data = textBox_Input.Text.Split("\n");
+
+            using (StreamWriter writer = new StreamWriter(path, true))
+            {
+                if (data.Length % 2 == 0)
+                    throw new InvalidInputException("The input given in Add Grades method was not correct!");
+
+                foreach (string grade in data)
+                {
+                    writer.WriteLine(Professor.getRecentProfessor().ActiveCourse + "," + grade);
+                }
+
+                writer.Close();
+            }
+        }
         // method to get the average grade of a professor's course
 
         public double GetAverage()
