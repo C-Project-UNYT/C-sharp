@@ -57,17 +57,22 @@ namespace PROJECT
 
         public void addProfessor()
         {
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
+                throw new InvalidInputException("Invalid input");
             Professor prof = new Professor(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
             admin.addProfessor(prof);
         }
         public void addStudent()
         {
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
+                throw new InvalidInputException("Invalid input");
             Student stud = new Student(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
             admin.addStudent(stud);
         }
         public void addCourse()
         {
-            //int credits = Int32.Parse(textBox3.Text);
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
+                throw new InvalidInputException("Invalid input");
             Courses course = new Courses(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
             admin.addCourse(course);
         }

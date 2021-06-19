@@ -10,23 +10,21 @@ using System.Windows.Forms;
 
 namespace PROJECT
 {
-    public partial class Form_Student_Enroll : Form
+    public partial class Form_Student_Drop : Form
     {
-        public Form_Student_Enroll()
+        public Form_Student_Drop()
         {
             InitializeComponent();
-
             Student stud = new Student();
-            foreach (string s in stud.allCoursesExcludingStudentCourses())
+            foreach (string s in stud.studentCourses())
             {
                 comboBox1.Items.Add(s);
             }
-                
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Application.Exit();
+
         }
 
         private void button_Back_Click(object sender, EventArgs e)
@@ -36,9 +34,14 @@ namespace PROJECT
             student.Show();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void buttonExit_Click(object sender, EventArgs e)
         {
-            
+            Application.Exit();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,20 +54,9 @@ namespace PROJECT
             }
             else
             {
-                MessageBox.Show("The course is added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("The course is dropped successfully.", "Done ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 stud.writeANewCourse(comboBox1.Text);
             }
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
-    
 }
