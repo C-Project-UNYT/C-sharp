@@ -223,19 +223,20 @@ namespace PROJECT
 
         public void writeANewCourse(string text)
         {
-            // var path1 = Path.GetFullPath(@"StudentFile.txt");
-            //var path2 = Path.GetFullPath(@"GradesFile.txt");
-            var path1 = Path.Combine(Directory.GetCurrentDirectory(), "\\StudentFile.txt");
-            var path2 = Path.Combine(Directory.GetCurrentDirectory(), "\\GradesFile.txt");
+            var path = Path.Combine(Directory.GetCurrentDirectory());
+            var path1 = Path.GetFullPath("StudentFile.txt");
+            var path2 = Path.GetFullPath("GradesFile.txt");
+            
             List<Student> student = readStudentFile();
             List<string> myCourse = new List<string>();
 
-            using (StreamWriter writer2 = new StreamWriter(path2, true))
+            using (StreamWriter writer2 = new StreamWriter((path + "//GradesFile.txt"), true))
             {
                 foreach (Student stud in student)
                 {
                     if (stud.studentID.Equals(theStudentID) == true)
                     {
+                        writer2.WriteLine();
                         stud.courses.Add(text);
                         writer2.WriteLine(text + "," + stud.StudentID);
                     }
@@ -243,13 +244,13 @@ namespace PROJECT
                 writer2.Flush();
                 writer2.Close();
             }
-            using (StreamWriter writer1 = new StreamWriter(path1, false))
+            using (StreamWriter writer1 = new StreamWriter((path + "\\StudentFiles.txt"), false))
             {
                 foreach (Student stud in student)
                 {
                     writer1.Write(stud.Name + "," + stud.Surname + "," + stud.Username + "," + stud.Password + "," + stud.StudentID + "," +
                         stud.Major);
-                    foreach (String cour in Courses)
+                    foreach (String cour in stud.Courses)
                     {
                         writer1.Write("," + cour);
                     }
