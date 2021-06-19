@@ -35,7 +35,7 @@ namespace PROJECT
                     return;
                 }
 
-                richTextBox1.Text = $"The student with the lowest score of {Professor.getRecentProfessor().GetMinGrade()} is {Professor.getRecentProfessor().getLowestScoringStudent()}.";
+                richTextBox1.Text = $"The student with the lowest score is {Professor.getRecentProfessor().getLowestScoringStudent()}.\nThey have a score of {Professor.getRecentProfessor().GetMinGrade()}.";
             }
             else
                 MessageBox.Show("You have not selected a course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -55,7 +55,7 @@ namespace PROJECT
                     return;
                 }
 
-                richTextBox1.Text = $"The student with the lowest score of {Professor.getRecentProfessor().GetMaxGrade()} is {Professor.getRecentProfessor().getHighestScoringStudent()}.";
+                richTextBox1.Text = $"The student with the highest score is {Professor.getRecentProfessor().getHighestScoringStudent()}.\nThey have a score of {Professor.getRecentProfessor().GetMaxGrade()}.";
             }
             else
                 MessageBox.Show("You have not selected a course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
