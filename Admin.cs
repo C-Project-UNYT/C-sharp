@@ -42,16 +42,21 @@ namespace PROJECT
         }
         public void removeProfessor(Professor prof)
         {
+            string name = prof.Name;
+            string surname = prof.Surname;
             for (int i = 0; i < professorList.Count; i++)
             {
                 if (prof.Equals(professorList.ElementAt(i)))
                 {
-                    for (int j = 0; j < coursesList.Count; j++)
-                    {
-                        if (coursesList.ElementAt(j).Professor.Equals(professorList.ElementAt(i).Name + " " + professorList.ElementAt(i).Surname))
-                            coursesList.RemoveAt(j);
-                    }
                     professorList.RemoveAt(i);
+                }
+            }
+            for (int j = 0; j < coursesList.Count; j++)
+            {
+                if (coursesList.ElementAt(j).Professor.Equals(name + " " + surname))
+                {
+                    coursesList.RemoveAt(j);
+                    j--;
                 }
             }
         }
@@ -149,21 +154,22 @@ namespace PROJECT
         }
         public void writeFiles()
         {
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\user\Documents\GitHub\C-sharp\ProfessorFile.txt"))
+           /* using (StreamWriter writer = new StreamWriter(@"C:\Users\user\Documents\GitHub\C-sharp\ProfessorFile.txt"))
             {
                 for (int i = 0; i < professorList.Count; i++)
                 {
                     string profData = professorList.ElementAt(i).toString();
                     writer.WriteLine(profData);
                 }
-            }
-
+            }*/
 
             var path1 = Path.GetFullPath(@"ProfessorFile.txt");
             var path2 = Path.GetFullPath(@"StudentFile.txt");
             var path3 = Path.GetFullPath(@"CoursesFile.txt");
 
-            using (StreamWriter ProfessorFile = new StreamWriter(path1))
+            Encoding encoding = Encoding.ASCII;
+
+            using (StreamWriter ProfessorFile = new StreamWriter(path1, true, encoding))
             {
 
                 for (int i = 0; i < professorList.Count; i++)

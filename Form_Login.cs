@@ -33,17 +33,21 @@ namespace PROJECT
         {
             if (this.comboBox_Role.SelectedIndex == 0)
             {
-                Admin admin = new Admin();
-
-                if (admin.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
+                try
                 {
-                    Form_Admin formAdmin = new Form_Admin();
-                    this.Hide();
-                    formAdmin.Show();
-                }
-                else
-                    MessageBox.Show("You have not entered the correct username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Admin admin = new Admin();
 
+                    if (admin.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
+                    {
+                        Form_Admin formAdmin = new Form_Admin();
+                        this.Hide();
+                        formAdmin.Show();
+                    }
+                }
+                catch (InvalidLoginInfoException ex)
+                {
+                    MessageBox.Show("You have not entered the correct username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (comboBox_Role.SelectedIndex == 1)
             {
@@ -66,16 +70,21 @@ namespace PROJECT
             }
             else if (comboBox_Role.SelectedIndex == 2)
             {
-                Student stud = new Student(textBox_Username.Text, textBox_Pass.Text);
-
-                if (stud.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
+                try
                 {
-                    Form_Student formStud = new Form_Student();
-                    this.Hide();
-                    formStud.Show();
+                    Student stud = new Student(textBox_Username.Text, textBox_Pass.Text);
+
+                    if (stud.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
+                    {
+                        Form_Student formStud = new Form_Student();
+                        this.Hide();
+                        formStud.Show();
+                    }
                 }
-                else
+                catch (InvalidLoginInfoException ex)
+                {
                     MessageBox.Show("You have not entered the correct username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
 
             }
