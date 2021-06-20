@@ -66,6 +66,7 @@ namespace PROJECT
             this.richTextBox1.Size = new System.Drawing.Size(334, 295);
             this.richTextBox1.TabIndex = 21;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // comboBox_Course
             // 
@@ -123,7 +124,7 @@ namespace PROJECT
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(197, 11);
+            this.label1.Location = new System.Drawing.Point(207, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 27);
             this.label1.TabIndex = 0;
