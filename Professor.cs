@@ -205,8 +205,6 @@ namespace PROJECT
             if (data.Length == 0)
                 throw new InvalidInputException("You did not enter any grades!\nThe format is: STUDENTID,GRADE");
 
-            var path = Path.Combine(Directory.GetCurrentDirectory());
-
             using (StreamWriter writer = new StreamWriter((path + "\\GradesFile.txt"), true))
             {
                 writer.WriteLine();

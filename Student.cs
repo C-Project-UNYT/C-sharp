@@ -120,6 +120,7 @@ namespace PROJECT
         public List<Student> readStudentFile()
         {
             List<Student> student = new List<Student>();
+       
             StreamReader input = new StreamReader((path + "\\StudentFile.txt"));
 
             string line;
@@ -186,7 +187,6 @@ namespace PROJECT
 
         public List<string> showCoursesGrade()
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory());
             List<string> grades = new List<string>();
             StreamReader input = new StreamReader((path + "\\GradesFile.txt"));
             string line;
@@ -220,11 +220,10 @@ namespace PROJECT
 
         public void writeANewCourse(string text)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory());
             
             List<Student> student = readStudentFile();
 
-            using (StreamWriter writer1 = new StreamWriter((path + "\\StudentFile.txt"), false))
+            using (StreamWriter writer1 = new StreamWriter(path + "\\StudentFile.txt", false))
             {
                 foreach (Student stud in student)
                 {
@@ -249,7 +248,6 @@ namespace PROJECT
 
         public void exitANewCourse(string text)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory());
             List<Student> student = readStudentFile();
 
             using (StreamWriter writer1 = new StreamWriter((path + "\\StudentFile.txt"), false))
