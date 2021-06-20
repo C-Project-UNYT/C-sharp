@@ -45,9 +45,6 @@ namespace PROJECT
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-           
-
         }
 
         private void textBox_Input_TextChanged(object sender, EventArgs e)

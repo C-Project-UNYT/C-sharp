@@ -212,7 +212,8 @@ namespace PROJECT
                     throw new InvalidInputException("The input given was not correctly written!\nThe format is: STUDENTID,GRADE");
 
             }
-            var path = Path.GetFullPath(@"GradesFile.txt");
+
+            var path = Path.Combine(Directory.GetCurrentDirectory());
 
             using (StreamWriter writer = new StreamWriter((path + "\\GradesFile.txt"), true))
             {
