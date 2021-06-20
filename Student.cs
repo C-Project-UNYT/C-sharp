@@ -333,10 +333,10 @@ namespace PROJECT
             {
                 string result = "";
                 result = this.Name + "," + this.Surname + "," + this.Username + "," + this.Password + "," +
-                this.StudentID + "," + this.Major + ",";
+                this.StudentID + "," + this.Major;
                 for (int j = 0; j < this.Courses.Count; j++)
                 {
-                    result += this.Courses[j] + ",";
+                    result += "," + this.Courses[j];
                 }
                 return result;
             }
