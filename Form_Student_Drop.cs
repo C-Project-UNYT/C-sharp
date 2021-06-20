@@ -16,10 +16,12 @@ namespace PROJECT
         {
             InitializeComponent();
             Student stud = new Student();
+
             foreach (string s in stud.studentCourses())
             {
                 comboBox1.Items.Add(s);
             }
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -50,12 +52,16 @@ namespace PROJECT
 
             if (comboBox1.Text.Length == 0)
             {
+
                 MessageBox.Show("You need to select a course", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 MessageBox.Show("The course is dropped successfully.", "Done ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 stud.exitANewCourse(comboBox1.Text);
+                Form_Student student = new Form_Student();
+                this.Hide();
+                student.Show();
             }
         }
     }

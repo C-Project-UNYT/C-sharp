@@ -115,14 +115,13 @@ namespace PROJECT
                     return true;
                 }
             }
-            return false;
+            throw new InvalidLoginInfoException("Username and Password do not match!");
         }
 
 
         public List<Student> readStudentFile()
         {
             List<Student> student = new List<Student>();
-       
             StreamReader input = new StreamReader(path[0] + "StudentFile.txt");
 
             string line;
@@ -157,6 +156,10 @@ namespace PROJECT
                     myCourse.Add(i);
                 }
             }
+
+            if (myCourse.Count == 0)
+                throw new InvalidInputException("You are not enrolled in any course");
+
             return myCourse;
         }
 

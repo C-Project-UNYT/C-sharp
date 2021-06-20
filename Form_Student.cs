@@ -87,7 +87,7 @@ namespace PROJECT
                 }
             }
             else
-                richTextBox1.AppendText("You are not registered in any course" + Environment.NewLine);
+                MessageBox.Show("You are not registered in any course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
@@ -117,8 +117,7 @@ namespace PROJECT
                 }
             }
             else
-                richTextBox1.AppendText("You are not registered in any course" + Environment.NewLine);
-
+                MessageBox.Show("You do not have any grade in the system!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -138,7 +137,8 @@ namespace PROJECT
                 }
             }
             else
-                richTextBox1.AppendText("The university does not have any course" + Environment.NewLine);
+                MessageBox.Show("The university does not have any course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
         }
     }

@@ -46,7 +46,7 @@ namespace PROJECT
                 }
                 catch (InvalidLoginInfoException ex)
                 {
-                    MessageBox.Show("You have not entered the correct username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (comboBox_Role.SelectedIndex == 1)
@@ -79,10 +79,8 @@ namespace PROJECT
                 }
                 catch (InvalidLoginInfoException ex)
                 {
-                    MessageBox.Show("You have not entered the correct username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-
             }
             else
                 MessageBox.Show("You have not selected a valid role!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
