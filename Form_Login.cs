@@ -53,19 +53,15 @@ namespace PROJECT
             {
                 try
                 {
-                    Professor prof = new Professor(textBox_Username.Text, textBox_Pass.Text);
-
-                    if (prof.isUsernameAndPasswordValid(textBox_Username.Text, textBox_Pass.Text))
-                    {
+                        Professor prof = new Professor(textBox_Username.Text, textBox_Pass.Text);
                         Professor.LoggedProfessors.Add(prof);
                         Form_Professor formProf = new Form_Professor();
                         this.Hide();
-                        formProf.Show();
-                    }
+                    formProf.Show();   
                 }
                 catch (InvalidLoginInfoException ex)
                 {
-                    MessageBox.Show("You have not entered the correct username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (comboBox_Role.SelectedIndex == 2)

@@ -35,16 +35,21 @@ namespace PROJECT
             this.Username = username;
             this.Password = password;
 
-            foreach (Professor prof in readProfessorFile())
+            if (isUsernameAndPasswordValid(Username, Password))
             {
-                if (prof.Username.Equals(username) && prof.Password.Equals(password))
+                foreach (Professor prof in readProfessorFile())
                 {
-                    this.Name = prof.Name;
-                    this.Surname = prof.Surname;
-                    this.Courses = prof.Courses;
-                    break;
+                    if (prof.Username.Equals(username) && prof.Password.Equals(password))
+                    {
+                        this.Name = prof.Name;
+                        this.Surname = prof.Surname;
+                        this.Courses = prof.Courses;
+                        break;
+                    }
                 }
             }
+            else
+                throw new InvalidLoginInfoException("Username and Password do not match!"); 
 
         }
 
