@@ -53,6 +53,9 @@ namespace PROJECT
             {
                 stud.writeANewCourse(comboBox1.Text);
                 MessageBox.Show("The course is added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Form_Student student = new Form_Student();
+                this.Hide();
+                student.Show();
             }
         }
 

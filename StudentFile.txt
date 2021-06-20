@@ -1,9 +1,9 @@
-Enes,Shehu,Enes Shehu,enesshehu,1111,Finance,Statistics,Financial Accounting,Money and Banking,C#
-Saida,Jonuzaj,Saida Jonuzaj,saidajonuzaj,1112,Accounting,Financial Accounting,Intro to Micro
-Viola,Guce,Viola Guce,violaguce,1113,Information Systems,Physics,Financial Accounting,Intro to Micro
-Eda,Godo,Eda Godo,edagodo,1114,Computer Science,Calculus,Java,C#,Data Structure
-Vladimir,Hoxha,Vladimir Hoxha,vladimirhoxha,1115,Computer Science,Calculus,Photography,Physics
-Besmira,Lala,Besmira Lala,besmiralala,1116,Information Systems,Biology,Photography,Physics,C#,Java
-Loksi,Papa,Loksi Papa,loksipapa,1117,Computer Science,Java,Calculus,Physics,Intro to Psychology
-Doris,Jakupi,Doris Jakupi,dorisjakupi,1118,Accounting,Biology,Intro to Psychology,Money and Banking,Intro to Micro
-Dajna,Nako,Dajna Nako,dajnanako,1119,Information Systems
+Enes,Shehu,Enes Shehu,enesshehu,1111,Finance,Statistics,Financial Accounting,Money and Banking,C#,
+Saida,Jonuzaj,Saida Jonuzaj,saidajonuzaj,1112,Accounting,Financial Accounting,Intro to Micro,
+Viola,Guce,Viola Guce,violaguce,1113,Information Systems,Physics,Financial Accounting,Intro to Micro,
+Eda,Godo,Eda Godo,edagodo,1114,Computer Science,Calculus,Java,C#,Data Structure,
+Vladimir,Hoxha,Vladimir Hoxha,vladimirhoxha,1115,Computer Science,Calculus,Photography,Physics,
+Besmira,Lala,Besmira Lala,besmiralala,1116,Information Systems,Biology,Photography,Physics,C#,Java,
+Loksi,Papa,Loksi Papa,loksipapa,1117,Computer Science,Java,Calculus,Physics,Intro to Psychology,
+Doris,Jakupi,Doris Jakupi,dorisjakupi,1118,Accounting,Biology,Intro to Psychology,Money and Banking,Intro to Micro,
+Dajna,Nako,Dajna Nako,dajnanako,1119,Information Systems,Intro to Micro,,Statistics
