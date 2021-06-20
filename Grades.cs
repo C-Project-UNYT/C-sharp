@@ -32,8 +32,6 @@ namespace PROJECT
         public List<Grades> readGradesFile()
         {
             List<Grades> list = new List<Grades>();
-
-
             StreamReader reader = new StreamReader(path[0] + "GradesFile.txt");
 
             while (!reader.EndOfStream)

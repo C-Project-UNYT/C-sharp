@@ -189,41 +189,33 @@ namespace PROJECT
 
         public List<string> showCoursesGrade()
         {
-            List<string> grades = new List<string>();
-            StreamReader input = new StreamReader(path[0] + "GradesFile.txt");
-            string line;
+            Grades grade = new Grades();
 
-            while ((line = input.ReadLine()) != null)
-            {
-                string[] entries = line.Split(',');
+            List<Grades> theStudentGrades = grade.readGradesFile();
+            List<string> yourGrades = new List<string>();
 
+            foreach(Grades grades in theStudentGrades) 
+            { 
                 try
                 {
-                    if (theStudentID.Equals(entries[1]))
+                    if (theStudentID.Equals(grades.StudentID))
                     {
-
-                        if (entries.Length == 2)
-                        {
-                            grades.Add(entries[0] + ": " + "Pending...");
-                        }
-                        else
-                            grades.Add(entries[0] + ": " + entries[2]);
+                        yourGrades.Add(grades.Subject + " " + grades.Grade);
                     }
                 }
                 catch (IndexOutOfRangeException e)
                 {
-                    grades.Add(e.Message);
+                    yourGrades.Add(e.Message);
                 }
             }
 
-            input.Close();
-            return grades;
+            return yourGrades;
         }
 
         public void writeANewCourse(string text)
         {
-            
             List<Student> student = readStudentFile();
+            
             using (StreamWriter writer1 = new StreamWriter(path[0] + "StudentFile.txt"))
             {
                 foreach (Student stud in student)

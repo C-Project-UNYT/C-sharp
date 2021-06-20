@@ -16,7 +16,7 @@ namespace PROJECT
         {
             InitializeComponent();
             Student stud = new Student();
-            label1.Text = "Welcome " + stud.showStudentName();
+            label1.Text = stud.showStudentName();
         }
 
         private void Form_Student_Load(object sender, EventArgs e)
