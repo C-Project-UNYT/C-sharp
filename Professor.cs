@@ -31,7 +31,7 @@ namespace PROJECT
             this.Password = password;
         }
 
-        public Professor(string username, string password)
+        public Professor(string username, string password) 
         {
             this.Username = username;
             this.Password = password;
