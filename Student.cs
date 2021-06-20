@@ -12,8 +12,10 @@ namespace PROJECT
         public string major;
         public string studentID;
         public List<string> courses = new List<string>();
+
         static string theStudentID = "";
-        static string path = Path.Combine(Directory.GetCurrentDirectory());
+        static string path1 = Path.Combine(Directory.GetCurrentDirectory());
+        static string[] path = path1.Split("bin");
 
         public string StudentID
         {
@@ -121,7 +123,7 @@ namespace PROJECT
         {
             List<Student> student = new List<Student>();
        
-            StreamReader input = new StreamReader((path + "\\StudentFile.txt"));
+            StreamReader input = new StreamReader(path[0] + "StudentFile.txt");
 
             string line;
 
@@ -188,7 +190,7 @@ namespace PROJECT
         public List<string> showCoursesGrade()
         {
             List<string> grades = new List<string>();
-            StreamReader input = new StreamReader((path + "\\GradesFile.txt"));
+            StreamReader input = new StreamReader(path[0] + "GradesFile.txt");
             string line;
 
             while ((line = input.ReadLine()) != null)
@@ -222,19 +224,18 @@ namespace PROJECT
         {
             
             List<Student> student = readStudentFile();
-
-            using (StreamWriter writer1 = new StreamWriter(path + "\\StudentFile.txt", false))
+            using (StreamWriter writer1 = new StreamWriter(path[0] + "StudentFile.txt"))
             {
                 foreach (Student stud in student)
                 {
                     writer1.Write(stud.Name + "," + stud.Surname + "," + stud.Username + "," + stud.Password + "," + stud.StudentID + "," +
                         stud.Major);
                    
-                   /* if (stud.studentID.Equals(theStudentID) == true)
+                    if (stud.studentID.Equals(theStudentID) == true)
                     {
                         stud.courses.Add(text);
                     }
-                    */
+                    
                     foreach (String cour in stud.Courses)
                     {
                         writer1.Write("," + cour);
@@ -250,7 +251,7 @@ namespace PROJECT
         {
             List<Student> student = readStudentFile();
 
-            using (StreamWriter writer1 = new StreamWriter((path + "\\StudentFile.txt"), false))
+            using (StreamWriter writer1 = new StreamWriter(path[0] + "StudentFile.txt", false))
             {
                 foreach (Student stud in student)
                 {

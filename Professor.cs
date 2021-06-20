@@ -15,7 +15,8 @@ namespace PROJECT
         private List<string> courses = new List<string>();
         private string activeCourse;
         private static List<Professor> loggedProfessors = new List<Professor>();
-        static string path = Path.Combine(Directory.GetCurrentDirectory());
+        static string path1 = Path.Combine(Directory.GetCurrentDirectory());
+        static string[] path = path1.Split("bin");
 
         // attributes
         public List<string> Courses { get => courses; set => courses = value; }
@@ -205,7 +206,7 @@ namespace PROJECT
             if (data.Length == 0)
                 throw new InvalidInputException("You did not enter any grades!\nThe format is: STUDENTID,GRADE");
 
-            using (StreamWriter writer = new StreamWriter((path + "\\GradesFile.txt"), true))
+            using (StreamWriter writer = new StreamWriter(path[0] + "GradesFile.txt", true))
             {
                 writer.WriteLine();
 
@@ -261,7 +262,7 @@ namespace PROJECT
 
             List<Professor> list = new List<Professor>();
 
-            using (StreamReader reader = new StreamReader((path + "\\ProfessorFile.txt")))
+            using (StreamReader reader = new StreamReader(path[0] + "ProfessorFile.txt"))
             {
 
                 while (!reader.EndOfStream)
