@@ -15,8 +15,8 @@ namespace PROJECT
         private List<string> courses = new List<string>();
         private string activeCourse;
         private static List<Professor> loggedProfessors = new List<Professor>();
-        static string path1 = Path.Combine(Directory.GetCurrentDirectory());
-        static string[] path = path1.Split("bin");
+        static string[] path = Path.Combine(Directory.GetCurrentDirectory()).Split("bin");
+     
 
         // attributes
         public List<string> Courses { get => courses; set => courses = value; }
@@ -54,84 +54,83 @@ namespace PROJECT
 
         }
 
-        // method to show passing students
-        public List<Student> getPassingStudents()
+
+        // method to determine if the login info is valid
+        public bool isUsernameAndPasswordValid(string username, string password)
         {
-            List<Student> studentList = new List<Student>();
-            List<string> studentIds = new List<string>();
+            List<Professor> list = readProfessorFile();
 
-            foreach (Grades grade in getGrades())
+            foreach (Professor prof in list)
             {
-                if (grade.Grade > 59)
-                    studentIds.Add(grade.StudentID);
+                if (prof.Username.Equals(username) && prof.Password.Equals(password))
+                    return true;
             }
-
-            foreach (string Id in studentIds)
-            {
-                studentList.Add(getStudentFromID(Id));
-            }
-
-            return studentList;
+            throw new InvalidLoginInfoException("Username and Password do not match!");
         }
 
-        // method to get the name of the lowest scoring student
-        public string getLowestScoringStudent()
+        // method to get the most recently logged professor
+        public static Professor getRecentProfessor()
         {
-            string studentID = "";
-
-            string studentName = "";
-
-            foreach (Grades grade in getGrades())
-            {
-                if (grade.Grade == GetMinGrade())
-                {
-                    studentID = grade.StudentID;
-                    break;
-                }
-            }
-
-            List<Student> studentList = getStudents();
-
-            foreach (Student stud in studentList)
-            {
-                if (stud.StudentID.Equals(studentID))
-                {
-                    studentName = stud.Name + " " + stud.Surname;
-                    break;
-                }
-            }
-
-            return studentName;
+            return LoggedProfessors.Last();
         }
 
-        // method to get the name of the highest scoring student
-        public string getHighestScoringStudent()
+        // method to read data from Professor File
+        public List<Professor> readProfessorFile()
         {
-            string studentID = "";
 
-            string studentName = "";
+            List<Professor> list = new List<Professor>();
 
-            foreach (Grades grade in getGrades())
+            using (StreamReader reader = new StreamReader(path[0] + "ProfessorFile.txt"))
             {
-                if (Convert.ToDouble(grade.Grade) == GetMaxGrade())
+
+                while (!reader.EndOfStream)
                 {
-                    studentID = grade.StudentID;
-                    break;
+
+                    var line = reader.ReadLine();
+                    var data = line.Split(",");
+
+
+                    Professor prof = new Professor(data[0], data[1], data[2], data[3]);
+
+                    for (int i = 4; i < data.Length; i++)
+                        prof.Courses.Add(data[i]);
+
+                    list.Add(prof);
                 }
+
+                reader.Close();
+            }
+            return list;
+        }
+
+        // method to show the students of a professor's course
+
+        public List<Student> getStudents()
+        {
+            List<Student> students = new List<Student>();
+            Student student = new Student();
+
+            foreach (Student stud in student.readStudentFile())
+            {
+                if (stud.Courses.Contains(ActiveCourse))
+                    students.Add(stud);
             }
 
-            List<Student> studentList = getStudents();
+            return students;
+        }
 
-            foreach (Student stud in studentList)
+
+
+        // method to get student object from ID
+        public Student getStudentFromID(string Id)
+        {
+            foreach (Student student in getStudents())
             {
-                if (stud.StudentID.Equals(studentID))
-                {
-                    studentName = stud.Name + " " + stud.Surname;
-                    break;
-                }
+                if (student.StudentID.Equals(Id))
+                    return student;
             }
 
-            return studentName;
+            return null;
         }
 
         // method to get grades of course
@@ -165,8 +164,116 @@ namespace PROJECT
             return gradeList;
         }
 
+        // method to add grades of a professor's course
+        public void AddGrades(string[] data)
+        {
+
+            if (data.Length == 0)
+                throw new InvalidInputException("You did not enter any grades!\nThe format is: STUDENTID,GRADE");
+
+            using (StreamWriter writer = new StreamWriter(path[0] + "GradesFile.txt", true))
+            {
+
+                foreach (string grade in data)
+                {
+                    var inputs = grade.Split(",");
+
+                    if (inputs.Length != 2)
+                        throw new InvalidInputException("The input given was not correctly written!\nThe format is: STUDENTID,GRADE");
+
+                    if (getStudentFromID(inputs[0]) == null)
+                        throw new InvalidInputException("The student whose ID you entered is not enrolled in the course!");
+
+                    writer.WriteLine(Professor.getRecentProfessor().ActiveCourse + "," + grade);
+                }
+
+                writer.Close();
+            }
+        }
+
+        // method to show passing students
+        public List<Student> PassingStudents()
+        {
+            List<Student> studentList = new List<Student>();
+            List<string> studentIds = new List<string>();
+
+            foreach (Grades grade in getGrades())
+            {
+                if (grade.Grade > 59)
+                    studentIds.Add(grade.StudentID);
+            }
+
+            foreach (string Id in studentIds)
+            {
+                studentList.Add(getStudentFromID(Id));
+            }
+
+            return studentList;
+        }
+
+        // method to get the name of the lowest scoring student
+        public string LowestScoringStudent()
+        {
+            string studentID = "";
+
+            string studentName = "";
+
+            foreach (Grades grade in getGrades())
+            {
+                if (grade.Grade == MinGrade())
+                {
+                    studentID = grade.StudentID;
+                    break;
+                }
+            }
+
+            List<Student> studentList = getStudents();
+
+            foreach (Student stud in studentList)
+            {
+                if (stud.StudentID.Equals(studentID))
+                {
+                    studentName = stud.Name + " " + stud.Surname;
+                    break;
+                }
+            }
+
+            return studentName;
+        }
+
+        // method to get the name of the highest scoring student
+        public string HighestScoringStudent()
+        {
+            string studentID = "";
+
+            string studentName = "";
+
+            foreach (Grades grade in getGrades())
+            {
+                if (Convert.ToDouble(grade.Grade) == MaxGrade())
+                {
+                    studentID = grade.StudentID;
+                    break;
+                }
+            }
+
+            List<Student> studentList = getStudents();
+
+            foreach (Student stud in studentList)
+            {
+                if (stud.StudentID.Equals(studentID))
+                {
+                    studentName = stud.Name + " " + stud.Surname;
+                    break;
+                }
+            }
+
+            return studentName;
+        }
+
+      
         // method to get the minimum grade of a professor's course
-        public double GetMinGrade()
+        public double MinGrade()
         {
             List<Double> gradeList = getScores();
 
@@ -184,7 +291,7 @@ namespace PROJECT
 
         // method to get the maximum grade of a professor's course
 
-        public double GetMaxGrade()
+        public double MaxGrade()
         {
             List<Double> gradeList = getScores();
 
@@ -199,32 +306,10 @@ namespace PROJECT
             return max;
         }
 
-        // method to add grades of a professor's course
-        public void AddGrades(string[] data)
-        {
 
-            if (data.Length == 0)
-                throw new InvalidInputException("You did not enter any grades!\nThe format is: STUDENTID,GRADE");
-
-            using (StreamWriter writer = new StreamWriter(path[0] + "GradesFile.txt", true))
-            {
-                writer.WriteLine();
-
-                foreach (string grade in data)
-                {
-                    var inputs = grade.Split(",");
-                    if (inputs.Length != 2)
-                        throw new InvalidInputException("The input given was not correctly written!\nThe format is: STUDENTID,GRADE");
-
-                    writer.WriteLine(Professor.getRecentProfessor().ActiveCourse + "," + grade);
-                }
-
-                writer.Close();
-            }
-        }
         // method to get the average grade of a professor's course
 
-        public double GetAverage()
+        public double Average()
         {
             List<Double> gradeList = getScores();
 
@@ -236,84 +321,6 @@ namespace PROJECT
                 total += grade;
 
             return total / gradeList.Count;
-        }
-
-
-        // method to show the students of a professor's course
-
-        public List<Student> getStudents()
-        {
-            List<Student> students = new List<Student>();
-            Student student = new Student();
-
-            foreach (Student stud in student.readStudentFile())
-            {
-                if (stud.Courses.Contains(ActiveCourse))
-                    students.Add(stud);
-            }
-
-            return students;
-        }
-
-
-        // method to read data from Professor File
-        public List<Professor> readProfessorFile()
-        {
-
-            List<Professor> list = new List<Professor>();
-
-            using (StreamReader reader = new StreamReader(path[0] + "ProfessorFile.txt"))
-            {
-
-                while (!reader.EndOfStream)
-                {
-
-                    var line = reader.ReadLine();
-                    var data = line.Split(",");
-
-
-                    Professor prof = new Professor(data[0], data[1], data[2], data[3]);
-
-                    for (int i = 4; i < data.Length; i++)
-                        prof.Courses.Add(data[i]);
-
-                    list.Add(prof);
-                }
-
-                reader.Close();
-            }
-            return list;
-        }
-
-        // method to get student object from ID
-        public Student getStudentFromID(string Id)
-        {
-            foreach (Student student in getStudents())
-            {
-                if (student.StudentID.Equals(Id))
-                    return student;
-            }
-
-            return null;
-        }
-
-        // method to determine if the login info is valid
-        public bool isUsernameAndPasswordValid(string username, string password)
-        {
-            List<Professor> list = readProfessorFile();
-
-            foreach (Professor prof in list)
-            {
-                if (prof.Username.Equals(username) && prof.Password.Equals(password))
-                    return true;
-            }
-            throw new InvalidLoginInfoException("Username and Password do not match!");
-        }
-
-        // method to get the most recently logged professor
-        public static Professor getRecentProfessor()
-        {
-            return LoggedProfessors.Last();
         }
 
 

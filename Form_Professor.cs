@@ -42,7 +42,7 @@ namespace PROJECT
                     return;
                 }
 
-                richTextBox1.Text = $"The student with the lowest score is {Professor.getRecentProfessor().getLowestScoringStudent()}.\nThey have a score of {Professor.getRecentProfessor().GetMinGrade()}.";
+                richTextBox1.Text = $"The student with the lowest score is {Professor.getRecentProfessor().LowestScoringStudent()}.\nThey have a score of {Professor.getRecentProfessor().MinGrade()}.";
             }
             else
                 MessageBox.Show("You have not selected a course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -68,7 +68,7 @@ namespace PROJECT
                     return;
                 }
 
-                richTextBox1.Text = $"The student with the highest score is {Professor.getRecentProfessor().getHighestScoringStudent()}.\nThey have a score of {Professor.getRecentProfessor().GetMaxGrade()}.";
+                richTextBox1.Text = $"The student with the highest score is {Professor.getRecentProfessor().HighestScoringStudent()}.\nThey have a score of {Professor.getRecentProfessor().MaxGrade()}.";
             }
             else
                 MessageBox.Show("You have not selected a course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -144,7 +144,7 @@ namespace PROJECT
                     MessageBox.Show("There are no students for this course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                richTextBox1.AppendText($"The course score average is {Professor.getRecentProfessor().GetAverage():F1}.");
+                richTextBox1.AppendText($"The course score average is {Professor.getRecentProfessor().Average():F1}.");
              
             }
             else
@@ -156,7 +156,7 @@ namespace PROJECT
             richTextBox1.Clear();
             if (comboBox_Course.SelectedIndex != -1)
             {
-                List<Student> students = Professor.getRecentProfessor().getPassingStudents();
+                List<Student> students = Professor.getRecentProfessor().PassingStudents();
 
                 if (students.Count == 0)
                 {
@@ -171,6 +171,11 @@ namespace PROJECT
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
