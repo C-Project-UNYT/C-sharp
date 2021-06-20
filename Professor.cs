@@ -205,14 +205,6 @@ namespace PROJECT
             if (data.Length == 0)
                 throw new InvalidInputException("You did not enter any grades!\nThe format is: STUDENTID,GRADE");
 
-            foreach (string grade in data)
-            {
-                var inputs = grade.Split(",");
-                if (inputs.Length != 2)
-                    throw new InvalidInputException("The input given was not correctly written!\nThe format is: STUDENTID,GRADE");
-
-            }
-
             var path = Path.Combine(Directory.GetCurrentDirectory());
 
             using (StreamWriter writer = new StreamWriter((path + "\\GradesFile.txt"), true))
@@ -221,6 +213,10 @@ namespace PROJECT
 
                 foreach (string grade in data)
                 {
+                    var inputs = grade.Split(",");
+                    if (inputs.Length != 2)
+                        throw new InvalidInputException("The input given was not correctly written!\nThe format is: STUDENTID,GRADE");
+
                     writer.WriteLine(Professor.getRecentProfessor().ActiveCourse + "," + grade);
                 }
 
