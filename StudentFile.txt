@@ -6,4 +6,4 @@ Vladimir,Hoxha,Vladimir Hoxha,vladimirhoxha,1115,Computer Science,Calculus,Photo
 Besmira,Lala,Besmira Lala,besmiralala,1116,Information Systems,Biology,Photography,Physics,C#,Java,
 Loksi,Papa,Loksi Papa,loksipapa,1117,Computer Science,Java,Calculus,Physics,Intro to Psychology,
 Doris,Jakupi,Doris Jakupi,dorisjakupi,1118,Accounting,Biology,Intro to Psychology,Money and Banking,Intro to Micro,
-Dajna,Nako,Dajna Nako,dajnanako,1119,Information Systems,Intro to Micro,,Statistics
+Dajna,Nako,Dajna Nako,dajnanako,1119,Information Systems,Intro to Micro,Statistics

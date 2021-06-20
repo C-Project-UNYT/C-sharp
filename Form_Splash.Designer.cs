@@ -42,32 +42,32 @@ namespace PROJECT
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(111, 12);
+            this.label1.Location = new System.Drawing.Point(112, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 25);
+            this.label1.Size = new System.Drawing.Size(431, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "University System Application";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(186, 49);
+            this.label2.Location = new System.Drawing.Point(242, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 23);
+            this.label2.Size = new System.Drawing.Size(145, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Version 1.0";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.ImageLocation = "https://www.pngfind.com/pngs/b/154-1541183_school-circle-hd-png-download.png";
-            this.pictureBox1.Location = new System.Drawing.Point(158, 91);
+            this.pictureBox1.ImageLocation = "https://th.bing.com/th/id/OIP.s8q4V6wni0Ip_zQCISipNQHaMG?pid=ImgDet&rs=1";
+            this.pictureBox1.Location = new System.Drawing.Point(193, 133);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(235, 240);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -79,10 +79,10 @@ namespace PROJECT
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(-3, 203);
+            this.progressBar1.Location = new System.Drawing.Point(2, 403);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(453, 31);
+            this.progressBar1.Size = new System.Drawing.Size(637, 30);
             this.progressBar1.TabIndex = 3;
             // 
             // Form_Splash
@@ -90,7 +90,7 @@ namespace PROJECT
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(448, 224);
+            this.ClientSize = new System.Drawing.Size(639, 431);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
