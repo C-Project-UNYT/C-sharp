@@ -15,6 +15,7 @@ namespace PROJECT
         private List<string> courses = new List<string>();
         private string activeCourse;
         private static List<Professor> loggedProfessors = new List<Professor>();
+        static string path = Path.Combine(Directory.GetCurrentDirectory());
 
         // attributes
         public List<string> Courses { get => courses; set => courses = value; }
@@ -214,7 +215,7 @@ namespace PROJECT
             }
             var path = Path.GetFullPath(@"GradesFile.txt");
 
-            using (StreamWriter writer = new StreamWriter(path, true))
+            using (StreamWriter writer = new StreamWriter((path + "\\GradesFile.txt"), true))
             {
                
 
@@ -263,27 +264,26 @@ namespace PROJECT
         // method to read data from Professor File
         public List<Professor> readProfessorFile()
         {
-            var path = Path.GetFullPath(@"ProfessorFile.txt");
 
             List<Professor> list = new List<Professor>();
 
-            using (StreamReader reader = new StreamReader(path))
+            using (StreamReader reader = new StreamReader((path + "\\ProfessorFile.txt")))
             {
 
-            while (!reader.EndOfStream)
-            {
+                while (!reader.EndOfStream)
+                {
 
                     var line = reader.ReadLine();
                     var data = line.Split(",");
 
 
-                Professor prof = new Professor(data[0], data[1], data[2], data[3]);
+                    Professor prof = new Professor(data[0], data[1], data[2], data[3]);
 
-                for (int i = 4; i < data.Length; i++)
-                    prof.Courses.Add(data[i]);
+                    for (int i = 4; i < data.Length; i++)
+                        prof.Courses.Add(data[i]);
 
-                list.Add(prof);
-            }
+                    list.Add(prof);
+                }
 
                 reader.Close();
             }

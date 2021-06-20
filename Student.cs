@@ -13,6 +13,7 @@ namespace PROJECT
         public string studentID;
         public List<string> courses = new List<string>();
         static string theStudentID = "";
+        static string path = Path.Combine(Directory.GetCurrentDirectory());
 
         public string StudentID
         {
@@ -118,9 +119,8 @@ namespace PROJECT
 
         public List<Student> readStudentFile()
         {
-            var path1 = Path.GetFullPath(@"StudentFile.txt");
             List<Student> student = new List<Student>();
-            StreamReader input = new StreamReader(path1);
+            StreamReader input = new StreamReader((path + "\\StudentFile.txt"));
 
             string line;
 
@@ -154,7 +154,6 @@ namespace PROJECT
                     myCourse.Add(i);
                 }
             }
-
             return myCourse;
         }
 
@@ -169,7 +168,6 @@ namespace PROJECT
                     return (s.Name + " " + s.Surname);
                 }
             }
-
             return null;
         }
 
@@ -183,15 +181,14 @@ namespace PROJECT
             {
                allCourses.Add(c.Subject);
             }
-
             return allCourses;
         }
 
         public List<string> showCoursesGrade()
         {
-            var path1 = Path.GetFullPath(@"GradesFile.txt");
+            var path = Path.Combine(Directory.GetCurrentDirectory());
             List<string> grades = new List<string>();
-            StreamReader input = new StreamReader(path1);
+            StreamReader input = new StreamReader((path + "\\GradesFile.txt"));
             string line;
 
             while ((line = input.ReadLine()) != null)
@@ -224,43 +221,54 @@ namespace PROJECT
         public void writeANewCourse(string text)
         {
             var path = Path.Combine(Directory.GetCurrentDirectory());
-            var path1 = Path.GetFullPath("StudentFile.txt");
-            var path2 = Path.GetFullPath("GradesFile.txt");
             
             List<Student> student = readStudentFile();
-            List<string> myCourse = new List<string>();
 
-            using (StreamWriter writer2 = new StreamWriter((path + "//GradesFile.txt"), true))
-            {
-                foreach (Student stud in student)
-                {
-                    if (stud.studentID.Equals(theStudentID) == true)
-                    {
-                        writer2.WriteLine();
-                        stud.courses.Add(text);
-                        writer2.WriteLine(text + "," + stud.StudentID);
-                    }
-                }
-                writer2.Flush();
-                writer2.Close();
-            }
-            using (StreamWriter writer1 = new StreamWriter((path + "\\StudentFiles.txt"), false))
+            using (StreamWriter writer1 = new StreamWriter((path + "\\StudentFile.txt"), false))
             {
                 foreach (Student stud in student)
                 {
                     writer1.Write(stud.Name + "," + stud.Surname + "," + stud.Username + "," + stud.Password + "," + stud.StudentID + "," +
                         stud.Major);
+                   
+                   /* if (stud.studentID.Equals(theStudentID) == true)
+                    {
+                        stud.courses.Add(text);
+                    }
+                    */
                     foreach (String cour in stud.Courses)
                     {
                         writer1.Write("," + cour);
                     }
-                    if (stud.studentID.Equals(theStudentID))
-                    {
-                        writer1.WriteLine("," + text);
-                    }
-                    else
                     writer1.WriteLine();
-                    
+                }
+                writer1.Flush();
+                writer1.Close();
+            }
+        }
+
+        public void exitANewCourse(string text)
+        {
+            var path = Path.Combine(Directory.GetCurrentDirectory());
+            List<Student> student = readStudentFile();
+
+            using (StreamWriter writer1 = new StreamWriter((path + "\\StudentFile.txt"), false))
+            {
+                foreach (Student stud in student)
+                {
+                    writer1.Write(stud.Name + "," + stud.Surname + "," + stud.Username + "," + stud.Password + "," + stud.StudentID + "," +
+                        stud.Major);
+
+                    if (stud.studentID.Equals(theStudentID) == true)
+                    {
+                        stud.Courses.Remove(text);
+                    }
+
+                    foreach (String cour in stud.Courses)
+                    {
+                        writer1.Write("," + cour);
+                    }
+                    writer1.WriteLine();
                 }
                 writer1.Flush();
                 writer1.Close();

@@ -1,4 +1,4 @@
-﻿Financial Accounting,1111,45
+Financial Accounting,1111,45
 Financial Accounting,1112,62
 Financial Accounting,1113,50
 Statistics,1111,89

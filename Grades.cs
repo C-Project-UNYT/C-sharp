@@ -12,7 +12,7 @@ namespace PROJECT
         string subject;
         string studentID;
         double grade;
-
+        static string path = Path.Combine(Directory.GetCurrentDirectory());
 
         public Grades(string subject, string studentID, double grade)
         {
@@ -32,9 +32,8 @@ namespace PROJECT
         {
             List<Grades> list = new List<Grades>();
 
-            var path1 = Path.GetFullPath(@"GradesFile.txt");
 
-            StreamReader reader = new StreamReader(path1);
+            StreamReader reader = new StreamReader((path + "\\GradesFile.txt"));
 
             while (!reader.EndOfStream)
             {
