@@ -51,8 +51,8 @@ namespace PROJECT
             }
             else
             {
-                MessageBox.Show("The course is added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 stud.writeANewCourse(comboBox1.Text);
+                MessageBox.Show("The course is added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

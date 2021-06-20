@@ -15,7 +15,9 @@ namespace PROJECT
         public List<Professor> professorList = new List<Professor>();
         public List<Student> studentList = new List<Student>();
         public List<Courses> coursesList = new List<Courses>();
-        static string path = Path.Combine(Directory.GetCurrentDirectory());
+
+        static string path1 = Path.Combine(Directory.GetCurrentDirectory());
+        static string[] path = path1.Split("bin");
 
         public Admin()
         {
@@ -105,7 +107,7 @@ namespace PROJECT
         {
             string ProffesorInput, StudentInput, CoursesInput;
 
-            StreamReader ProfessorFile = new StreamReader((path + "\\ProfessorFile.txt"));
+            StreamReader ProfessorFile = new StreamReader(path[0] + "ProfessorFile.txt");
 
             while ((ProffesorInput = ProfessorFile.ReadLine()) != null)
             {
@@ -122,7 +124,7 @@ namespace PROJECT
                 professorList.Add(prof);
             }
 
-            StreamReader StudentFile = new StreamReader((path + "\\StudentFile.txt"));
+            StreamReader StudentFile = new StreamReader(path[0] + "StudentFile.txt");
             while ((StudentInput = StudentFile.ReadLine()) != null)
             {
                 string[] data = StudentInput.Split(',');
@@ -137,7 +139,7 @@ namespace PROJECT
                 studentList.Add(stud);
             }
 
-            StreamReader CoursesFile = new StreamReader((path + "\\CoursesFile.txt"));
+            StreamReader CoursesFile = new StreamReader(path[0] + "CoursesFile.txt");
             while ((CoursesInput = CoursesFile.ReadLine()) != null)
             {
                 string[] data = CoursesInput.Split(',');
@@ -163,7 +165,7 @@ namespace PROJECT
 
             Encoding encoding = Encoding.ASCII;
 
-            using (StreamWriter ProfessorFile = new StreamWriter((path + "\\ProfesoorFile.txt"), true, encoding))
+            using (StreamWriter ProfessorFile = new StreamWriter(path[0] + "ProfesoorFile.txt", true, encoding))
             {
 
                 for (int i = 0; i < professorList.Count; i++)
@@ -173,14 +175,14 @@ namespace PROJECT
                 }
             }
 
-            StreamWriter StudentFile = new StreamWriter((path + "\\StudentFile.txt"), false);
+            StreamWriter StudentFile = new StreamWriter(path[0] + "StudentFile.txt", false);
             for (int i = 0; i < studentList.Count; i++)
             {
                 StudentFile.WriteLine(studentList.ElementAt(i).toString());
             }
 
 
-            StreamWriter CoursesFile = new StreamWriter((path + "\\CoursesFile.txt"), false);
+            StreamWriter CoursesFile = new StreamWriter(path[0] + "CoursesFile.txt", false);
             for (int i = 0; i < coursesList.Count; i++)
             {
                 StudentFile.WriteLine(coursesList.ElementAt(i).toString());

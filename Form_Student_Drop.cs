@@ -55,7 +55,7 @@ namespace PROJECT
             else
             {
                 MessageBox.Show("The course is dropped successfully.", "Done ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                stud.writeANewCourse(comboBox1.Text);
+                stud.exitANewCourse(comboBox1.Text);
             }
         }
     }
