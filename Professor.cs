@@ -49,8 +49,7 @@ namespace PROJECT
                     }
                 }
             }
-            else
-                throw new InvalidLoginInfoException("Username and Password do not match!"); 
+            
 
         }
 
@@ -217,11 +216,11 @@ namespace PROJECT
 
             using (StreamWriter writer = new StreamWriter((path + "\\GradesFile.txt"), true))
             {
-               
+                writer.WriteLine();
 
                 foreach (string grade in data)
                 {
-                    writer.WriteLine("\n"+Professor.getRecentProfessor().ActiveCourse + "," + grade);
+                    writer.WriteLine(Professor.getRecentProfessor().ActiveCourse + "," + grade);
                 }
 
                 writer.Close();
