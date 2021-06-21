@@ -48,7 +48,7 @@ namespace PROJECT
             this.label4.ForeColor = System.Drawing.Color.DarkBlue;
             this.label4.Location = new System.Drawing.Point(36, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 27);
+            this.label4.Size = new System.Drawing.Size(135, 22);
             this.label4.TabIndex = 22;
             this.label4.Text = "Welcome Admin !";
             // 
@@ -62,6 +62,7 @@ namespace PROJECT
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(335, 414);
             this.panel2.TabIndex = 25;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // buttonExit
             // 
@@ -98,7 +99,7 @@ namespace PROJECT
             "Remove course"});
             this.checkedListBox_Admin.Location = new System.Drawing.Point(42, 89);
             this.checkedListBox_Admin.Name = "checkedListBox_Admin";
-            this.checkedListBox_Admin.Size = new System.Drawing.Size(255, 198);
+            this.checkedListBox_Admin.Size = new System.Drawing.Size(255, 189);
             this.checkedListBox_Admin.TabIndex = 2;
             this.checkedListBox_Admin.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_Admin_SelectedIndexChanged);
             // 
@@ -143,7 +144,7 @@ namespace PROJECT
             // 
             // Form_Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(571, 387);
