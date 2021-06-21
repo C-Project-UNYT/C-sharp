@@ -17,10 +17,10 @@ Calculus,1117,54
 Java,1114,74
 Java,1116,87
 Java,1117,92
-C#,1114,90
-C#,1116,100
 Data Structures,1114,52
 Photography,1115,40
 Photography,1116,68
 Intro to Psychology,1117,74
 Intro to Psychology,1117,100
+C#,1114,90
+C#,1116,100

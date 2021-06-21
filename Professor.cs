@@ -167,7 +167,6 @@ namespace PROJECT
         // method to add grades of a professor's course
         public void AddGrades(string[] data)
         {
-
             if (data.Length == 0)
                 throw new InvalidInputException("You did not enter any grades!\nThe format is: STUDENTID,GRADE");
 
@@ -184,7 +183,7 @@ namespace PROJECT
                     if (getStudentFromID(inputs[0]) == null)
                         throw new InvalidInputException("The student whose ID you entered is not enrolled in the course!");
 
-                    writer.WriteLine(Professor.getRecentProfessor().ActiveCourse + "," + grade);
+                    writer.WriteLine("\n"+Professor.getRecentProfessor().ActiveCourse + "," + grade);
                 }
 
                 writer.Close();

@@ -162,7 +162,7 @@ namespace PROJECT
             this.button_HighestScore.Location = new System.Drawing.Point(48, 301);
             this.button_HighestScore.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_HighestScore.Name = "button_HighestScore";
-            this.button_HighestScore.Size = new System.Drawing.Size(233, 76);
+            this.button_HighestScore.Size = new System.Drawing.Size(233, 70);
             this.button_HighestScore.TabIndex = 15;
             this.button_HighestScore.Text = "5. Show student with highest score";
             this.button_HighestScore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
