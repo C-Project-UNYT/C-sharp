@@ -26,7 +26,7 @@ namespace PROJECT
                 label5.Hide();
                 label6.Hide();
                 textBox5.Hide();
-                textBox6.Hide();
+                comboBox1.Hide();
                 label1.Text = "Name: ";
                 label2.Text = "Surname: ";
                 label3.Text = "Username: ";
@@ -46,11 +46,16 @@ namespace PROJECT
                 label1.Text = "Subject: ";
                 label2.Text = "Time: ";
                 label3.Text = "Credits: ";
-                label4.Text = " Professor: ";
+                label4.Hide();
                 label5.Hide();
-                label6.Hide();
+                label6.Text = " Professor: ";
                 textBox5.Hide();
-                textBox6.Hide();
+                textBox4.Hide();
+                comboBox1.Items.Clear();
+                for (int i =0; i < admin.professorList.Count; i++)
+                {
+                    comboBox1.Items.Add(admin.professorList.ElementAt(i).Name + " " + admin.professorList.ElementAt(i).Surname);
+                }
             }
             
         }
@@ -64,16 +69,16 @@ namespace PROJECT
         }
         public void addStudent()
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || comboBox1.SelectedItem.ToString() == "")
                 throw new InvalidInputException("Invalid input");
-            Student stud = new Student(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
+            Student stud = new Student(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, comboBox1.SelectedItem.ToString());
             admin.addStudent(stud);
         }
         public void addCourse()
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.SelectedItem.ToString() == "")
                 throw new InvalidInputException("Invalid input");
-            Courses course = new Courses(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+            Courses course = new Courses(textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.SelectedItem.ToString());
             admin.addCourse(course);
         }
 
