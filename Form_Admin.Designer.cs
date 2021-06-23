@@ -73,7 +73,7 @@ namespace PROJECT
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Lucida Console", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonExit.Location = new System.Drawing.Point(265, 0);
+            this.buttonExit.Location = new System.Drawing.Point(181, 0);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(56, 40);
@@ -147,7 +147,7 @@ namespace PROJECT
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(469, 313);
+            this.ClientSize = new System.Drawing.Size(483, 334);
             this.Controls.Add(this.button_Back);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
@@ -156,7 +156,6 @@ namespace PROJECT
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IsMdiContainer = true;
             this.Name = "Form_Admin";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

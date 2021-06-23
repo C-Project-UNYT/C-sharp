@@ -37,7 +37,9 @@ namespace PROJECT
         //check the validity of the username and the password of the admin
         public bool isUsernameAndPasswordValid(string username, string password)
         {
-            return username.Equals(this.getUsername()) && password.Equals(this.getPassword());
+            if (username.Equals(this.getUsername()) && password.Equals(this.getPassword()))
+                return true;
+            throw new InvalidLoginInfoException("Username and Password do not match!");
         }
 
         public void addProfessor(Professor prof)
@@ -59,6 +61,18 @@ namespace PROJECT
             {
                 if (coursesList.ElementAt(j).Professor.Equals(name + " " + surname))
                 {
+                    for(int k = 0; k < studentList.Count; k++)
+                    {
+                        if(studentList.ElementAt(k).Courses.Count > 0)
+                        {
+                            for (int x = 0; x < studentList.ElementAt(k).Courses.Count; x++)
+                            {
+                                if (coursesList.ElementAt(j).Subject.Equals(studentList.ElementAt(k).Courses[x]))
+                                    studentList.ElementAt(k).Courses.RemoveAt(x);
+                            }
+                        }
+                    }
+                    
                     coursesList.RemoveAt(j);
                     j--;
                 }
@@ -82,7 +96,7 @@ namespace PROJECT
         {
             coursesList.Add(course);
 
-            for(int i = 0; i < professorList.Count; i++)
+            for (int i = 0; i < professorList.Count; i++)
             {
                 if (course.Professor.Equals(professorList.ElementAt(i).Name + " " + professorList.ElementAt(i).Surname))
                     professorList.ElementAt(i).Courses.Add(course.Subject);
