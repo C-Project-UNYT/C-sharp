@@ -34,6 +34,7 @@ namespace PROJECT
             return password;
         }
 
+        //check the validity of the username and the password of the admin
         public bool isUsernameAndPasswordValid(string username, string password)
         {
             return username.Equals(this.getUsername()) && password.Equals(this.getPassword());
@@ -154,18 +155,7 @@ namespace PROJECT
         }
         public void writeFiles()
         {
-           /* using (StreamWriter writer = new StreamWriter(@"C:\Users\user\Documents\GitHub\C-sharp\ProfessorFile.txt"))
-            {
-                for (int i = 0; i < professorList.Count; i++)
-                {
-                    string profData = professorList.ElementAt(i).toString();
-                    writer.WriteLine(profData);
-                }
-            }*/
-
-            Encoding encoding = Encoding.ASCII;
-
-            using (StreamWriter ProfessorFile = new StreamWriter(path[0] + "ProfesoorFile.txt", true, encoding))
+            using (StreamWriter ProfessorFile = new StreamWriter(path[0] + "ProfessorFile.txt", false))
             {
 
                 for (int i = 0; i < professorList.Count; i++)
@@ -175,22 +165,21 @@ namespace PROJECT
                 }
             }
 
-            StreamWriter StudentFile = new StreamWriter(path[0] + "StudentFile.txt", false);
-            for (int i = 0; i < studentList.Count; i++)
+            using (StreamWriter StudentFile = new StreamWriter(path[0] + "StudentFile.txt", false))
             {
-                StudentFile.WriteLine(studentList.ElementAt(i).toString());
+                for (int i = 0; i < studentList.Count; i++)
+                {
+                    StudentFile.WriteLine(studentList.ElementAt(i).toString());
+                }
             }
 
-
-            StreamWriter CoursesFile = new StreamWriter(path[0] + "CoursesFile.txt", false);
-            for (int i = 0; i < coursesList.Count; i++)
+            using (StreamWriter CoursesFile = new StreamWriter(path[0] + "CoursesFile.txt", false))
             {
-                StudentFile.WriteLine(coursesList.ElementAt(i).toString());
+                for (int i = 0; i < coursesList.Count; i++)
+                {
+                    CoursesFile.WriteLine(coursesList.ElementAt(i).toString());
+                }
             }
-
-            //ProfessorFile.Close();
-            StudentFile.Close();
-            CoursesFile.Close();
         }
     }
 }

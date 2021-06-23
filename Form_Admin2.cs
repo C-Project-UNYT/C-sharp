@@ -21,12 +21,13 @@ namespace PROJECT
             this.admin = admin;
             this.index = index;
 
-            if(index == 1)
+            //fixing the display for different user choice
+            if (index == 1)
             {
                 label5.Hide();
                 label6.Hide();
                 textBox5.Hide();
-                textBox6.Hide();
+                comboBox1.Hide();
                 label1.Text = "Name: ";
                 label2.Text = "Surname: ";
                 label3.Text = "Username: ";
@@ -46,47 +47,71 @@ namespace PROJECT
                 label1.Text = "Subject: ";
                 label2.Text = "Time: ";
                 label3.Text = "Credits: ";
-                label4.Text = " Professor: ";
+                label4.Hide();
                 label5.Hide();
-                label6.Hide();
+                label6.Text = " Professor: ";
                 textBox5.Hide();
-                textBox6.Hide();
+                textBox4.Hide();
+                comboBox1.Items.Clear();
+                for (int i = 0; i < admin.professorList.Count; i++)
+                {
+                    comboBox1.Items.Add(admin.professorList.ElementAt(i).Name + " " + admin.professorList.ElementAt(i).Surname);
+                }
             }
-            
+
         }
 
         public void addProfessor()
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
-                throw new InvalidInputException("Invalid input");
             Professor prof = new Professor(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
             admin.addProfessor(prof);
         }
         public void addStudent()
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
-                throw new InvalidInputException("Invalid input");
-            Student stud = new Student(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
+            Student stud = new Student(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, comboBox1.SelectedText);
             admin.addStudent(stud);
         }
         public void addCourse()
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
-                throw new InvalidInputException("Invalid input");
-            Courses course = new Courses(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+            Courses course = new Courses(textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.SelectedText);
             admin.addCourse(course);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (index == 1)
-                this.addProfessor();
+            {
+                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
+                    MessageBox.Show("Input all data!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    this.addProfessor();
+                    MessageBox.Show("Complete!");
+                    this.Close();
+                }
+            }
             if (index == 2)
-                this.addStudent();
+            {
+                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || comboBox1.SelectedText == "")
+                    MessageBox.Show("Input all data!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    this.addStudent();
+                    MessageBox.Show("Complete!");
+                    this.Close();
+                }
+            }
             if (index == 3)
-                this.addCourse();
-            MessageBox.Show("Complete!");
-            this.Close();
+            {
+                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.SelectedText == "")
+                    MessageBox.Show("Input all data!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    this.addCourse();
+                    MessageBox.Show("Complete!");
+                    this.Close();
+                }
+            }
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

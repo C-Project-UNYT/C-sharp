@@ -223,8 +223,7 @@ namespace PROJECT
             {
                 foreach (Student stud in student)
                 {
-                    writer1.Write(stud.Name + "," + stud.Surname + "," + stud.Username + "," + stud.Password + "," + stud.StudentID + "," +
-                        stud.Major);
+                    writer1.Write(stud.Name + "," + stud.Surname + "," + stud.Username + "," + stud.Password + "," + stud.StudentID + "," + stud.Major);
                    
                     if (stud.studentID.Equals(theStudentID) == true)
                     {
