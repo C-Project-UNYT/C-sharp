@@ -36,44 +36,31 @@ namespace PROJECT
             if(checkedListBox_Admin.SelectedItem.Equals("Add professor"))
             {
                 Form_Admin2 child1 = new Form_Admin2(1, ref admin);
-                //child1.MdiParent = this;
-
                 child1.Show();
             }
             if (checkedListBox_Admin.SelectedItem.Equals("Add student"))
             {
                 Form_Admin2 child1 = new Form_Admin2(2, ref admin);
-                //child1.MdiParent = this;
-
-
                 child1.Show();
             }
             if (checkedListBox_Admin.SelectedItem.Equals("Add course"))
             {
                 Form_Admin2 child1 = new Form_Admin2(3, ref admin);
-                //child1.MdiParent = this;
-
                 child1.Show();
             }
             if (checkedListBox_Admin.SelectedItem.Equals("Remove professor"))
             {
                 Form_Admin3 child1 = new Form_Admin3(4, ref admin);
-                //child1.MdiParent = this;
-
                 child1.Show();
             }
             if (checkedListBox_Admin.SelectedItem.Equals("Remove student"))
             {
                 Form_Admin3 child1 = new Form_Admin3(5, ref admin);
-                //child1.MdiParent = this;
-
                 child1.Show();
             }
             if (checkedListBox_Admin.SelectedItem.Equals("Remove course"))
             {
                 Form_Admin3 child1 = new Form_Admin3(6, ref admin);
-                //child1.MdiParent = this;
-
                 child1.Show();
             }
         }
