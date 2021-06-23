@@ -38,7 +38,7 @@ namespace PROJECT
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

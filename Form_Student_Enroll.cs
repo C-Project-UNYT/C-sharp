@@ -26,7 +26,7 @@ namespace PROJECT
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void button_Back_Click(object sender, EventArgs e)

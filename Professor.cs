@@ -50,10 +50,7 @@ namespace PROJECT
                     }
                 }
             }
-            
-
         }
-
 
         // method to determine if the login info is valid
         public bool isUsernameAndPasswordValid(string username, string password)
@@ -85,10 +82,8 @@ namespace PROJECT
 
                 while (!reader.EndOfStream)
                 {
-
                     var line = reader.ReadLine();
                     var data = line.Split(",");
-
 
                     Professor prof = new Professor(data[0], data[1], data[2], data[3]);
 
@@ -97,7 +92,6 @@ namespace PROJECT
 
                     list.Add(prof);
                 }
-
                 reader.Close();
             }
             return list;
@@ -160,7 +154,6 @@ namespace PROJECT
                 if (grades.Subject.Equals(ActiveCourse))
                     gradeList.Add(grades.Grade);
             }
-
             return gradeList;
         }
 

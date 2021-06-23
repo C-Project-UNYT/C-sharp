@@ -157,9 +157,6 @@ namespace PROJECT
                 }
             }
 
-            if (myCourse.Count == 0)
-                throw new InvalidInputException("You are not enrolled in any course");
-
             return myCourse;
         }
 
