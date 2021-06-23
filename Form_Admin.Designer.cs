@@ -46,7 +46,7 @@ namespace PROJECT
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label4.Location = new System.Drawing.Point(36, 62);
+            this.label4.Location = new System.Drawing.Point(169, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 22);
             this.label4.TabIndex = 22;
@@ -97,9 +97,9 @@ namespace PROJECT
             "Remove professor",
             "Remove student",
             "Remove course"});
-            this.checkedListBox_Admin.Location = new System.Drawing.Point(42, 89);
+            this.checkedListBox_Admin.Location = new System.Drawing.Point(13, 62);
             this.checkedListBox_Admin.Name = "checkedListBox_Admin";
-            this.checkedListBox_Admin.Size = new System.Drawing.Size(255, 189);
+            this.checkedListBox_Admin.Size = new System.Drawing.Size(191, 162);
             this.checkedListBox_Admin.TabIndex = 2;
             this.checkedListBox_Admin.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_Admin_SelectedIndexChanged);
             // 
@@ -107,7 +107,7 @@ namespace PROJECT
             // 
             this.button_select.BackColor = System.Drawing.Color.DarkBlue;
             this.button_select.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button_select.Location = new System.Drawing.Point(126, 318);
+            this.button_select.Location = new System.Drawing.Point(43, 247);
             this.button_select.Name = "button_select";
             this.button_select.Size = new System.Drawing.Size(114, 54);
             this.button_select.TabIndex = 4;
@@ -118,7 +118,7 @@ namespace PROJECT
             // pictureBox1
             // 
             this.pictureBox1.ImageLocation = "https://image.flaticon.com/icons/png/512/2416/2416656.png";
-            this.pictureBox1.Location = new System.Drawing.Point(46, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 87);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(148, 201);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -147,7 +147,7 @@ namespace PROJECT
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(571, 387);
+            this.ClientSize = new System.Drawing.Size(469, 313);
             this.Controls.Add(this.button_Back);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
