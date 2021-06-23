@@ -24,8 +24,22 @@ namespace PROJECT
 
         private void Form_Welcome_Load_1(object sender, EventArgs e)
         {
-
+            foreach (Control ctl in this.Controls)
+            {
+                MdiClient ctlMDI;
+                try
+                {
+                    ctlMDI = (MdiClient)ctl;
+                    ctlMDI.BackColor = Color.DarkBlue;
+                    menuStrip1.Enabled = true;
+                }
+                catch (InvalidCastException ex)
+                {
+                    string message = ex.Message;
+                }
+            }
         }
+    
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
