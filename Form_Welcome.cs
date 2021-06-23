@@ -30,7 +30,7 @@ namespace PROJECT
                 try
                 {
                     ctlMDI = (MdiClient)ctl;
-                    ctlMDI.BackColor = Color.WhiteSmoke;
+                    ctlMDI.BackColor = Color.DarkBlue;
                     menuStrip1.Enabled = true;
                 }
                 catch (InvalidCastException ex)
