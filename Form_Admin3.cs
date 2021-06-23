@@ -52,18 +52,44 @@ namespace PROJECT
         {
             if(index == 4)
             {
-                admin.removeProfessor(admin.professorList.ElementAt(comboBox1.SelectedIndex));
+                if (comboBox1.SelectedText == "")
+                {
+                    MessageBox.Show("Select a professor!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    admin.removeProfessor(admin.professorList.ElementAt(comboBox1.SelectedIndex));
+                    MessageBox.Show("Complete!");
+                    this.Close();
+                }
             }
             if(index == 5)
             {
-                admin.removeStudent(admin.studentList.ElementAt(comboBox1.SelectedIndex));
+                if (comboBox1.SelectedText == "")
+                {
+                    MessageBox.Show("Select a Student!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    admin.removeStudent(admin.studentList.ElementAt(comboBox1.SelectedIndex));
+                    MessageBox.Show("Complete!");
+                    this.Close();
+                }
             }
             if(index == 6)
             {
-                admin.removeCourse(admin.coursesList.ElementAt(comboBox1.SelectedIndex));
+                if (comboBox1.SelectedText == "")
+                {
+                    MessageBox.Show("Select a Course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    admin.removeCourse(admin.coursesList.ElementAt(comboBox1.SelectedIndex));
+                    MessageBox.Show("Complete!");
+                    this.Close();
+                }
             }
-            MessageBox.Show("Complete!");
-            this.Close();
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
