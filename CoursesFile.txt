@@ -13,4 +13,3 @@ Money and Banking,3,3,Arta Sinamati
 Java,4,4,Ina Papadhopulli
 Data Structures,3,3,Ina Papadhopulli
 System Analysis,3,3,Ina Papadhopulli
-Comp Ethics,THUR 13:16,3,Silvester Hasani
