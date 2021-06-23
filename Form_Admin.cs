@@ -91,7 +91,7 @@ namespace PROJECT
         private void buttonExit_Click_1(object sender, EventArgs e)
         {
             admin.writeFiles();
-            Application.Exit();
+            this.Close();
         }
 
         private void button_Back_Click_1(object sender, EventArgs e)
@@ -105,6 +105,11 @@ namespace PROJECT
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

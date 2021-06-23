@@ -95,7 +95,7 @@ namespace PROJECT
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void label_Login_Click(object sender, EventArgs e)

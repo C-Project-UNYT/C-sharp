@@ -37,6 +37,7 @@ namespace PROJECT
             this.button_select = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_Back = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +56,7 @@ namespace PROJECT
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.buttonExit);
             this.panel2.Controls.Add(this.checkedListBox_Admin);
             this.panel2.Controls.Add(this.button_select);
@@ -76,7 +78,7 @@ namespace PROJECT
             this.buttonExit.Location = new System.Drawing.Point(181, 0);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(56, 40);
+            this.buttonExit.Size = new System.Drawing.Size(49, 40);
             this.buttonExit.TabIndex = 14;
             this.buttonExit.Text = "X";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -142,6 +144,23 @@ namespace PROJECT
             this.button_Back.Text = "<";
             this.button_Back.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Impact", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Location = new System.Drawing.Point(150, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 34);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "_";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -176,5 +195,6 @@ namespace PROJECT
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button_Back;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button button1;
     }
 }
