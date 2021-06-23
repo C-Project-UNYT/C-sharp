@@ -46,7 +46,7 @@ namespace PROJECT
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label4.Location = new System.Drawing.Point(169, 12);
+            this.label4.Location = new System.Drawing.Point(46, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 22);
             this.label4.TabIndex = 22;
@@ -118,7 +118,7 @@ namespace PROJECT
             // pictureBox1
             // 
             this.pictureBox1.ImageLocation = "https://image.flaticon.com/icons/png/512/2416/2416656.png";
-            this.pictureBox1.Location = new System.Drawing.Point(36, 87);
+            this.pictureBox1.Location = new System.Drawing.Point(33, 62);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(148, 201);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
