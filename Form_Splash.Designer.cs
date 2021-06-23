@@ -84,6 +84,7 @@ namespace PROJECT
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(637, 30);
             this.progressBar1.TabIndex = 3;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // Form_Splash
             // 

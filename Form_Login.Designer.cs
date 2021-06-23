@@ -42,6 +42,7 @@ namespace PROJECT
             this.textBox_Pass = new System.Windows.Forms.TextBox();
             this.textBox_Username = new System.Windows.Forms.TextBox();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -192,6 +193,24 @@ namespace PROJECT
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Impact", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button1.Location = new System.Drawing.Point(549, -12);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 45);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "_";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form_Login
             // 
             this.AcceptButton = this.button_Continue;
@@ -199,6 +218,7 @@ namespace PROJECT
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(639, 431);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.textBox_Username);
             this.Controls.Add(this.textBox_Pass);
@@ -236,7 +256,7 @@ namespace PROJECT
         private System.Windows.Forms.TextBox textBox_Username;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonExit;
-   
+        private System.Windows.Forms.Button button1;
     }
 }
 

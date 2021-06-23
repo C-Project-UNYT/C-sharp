@@ -28,15 +28,20 @@ namespace PROJECT
             if (progressBar1.Value == 100)
             {
                 timer1.Stop();
-                Form_Login login = new Form_Login();
+                Form_Welcome welcome = new Form_Welcome();
                 this.Hide();
-                login.Show();
+                welcome.Show();
             }
         }
 
         private void Form_Splash_Load(object sender, EventArgs e)
         {
             timer1.Start();     
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

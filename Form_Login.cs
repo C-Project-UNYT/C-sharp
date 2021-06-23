@@ -56,7 +56,7 @@ namespace PROJECT
                         Professor prof = new Professor(textBox_Username.Text, textBox_Pass.Text);
                         Professor.LoggedProfessors.Add(prof);
                         Form_Professor formProf = new Form_Professor();
-                        this.Hide();
+                    this.Hide();
                     formProf.Show();   
                 }
                 catch (InvalidLoginInfoException ex)
@@ -101,6 +101,11 @@ namespace PROJECT
         private void label_Login_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 
