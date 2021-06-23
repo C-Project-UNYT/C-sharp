@@ -20,16 +20,16 @@ namespace PROJECT
             this.index = index;
             this.admin = admin;
 
-            if(index == 4)
+            if (index == 4)
             {
                 this.label1.Text = "Select professor to remove: ";
-                for(int i = 0; i < admin.professorList.Count; i++)
+                for (int i = 0; i < admin.professorList.Count; i++)
                 {
                     comboBox1.Items.Add(admin.professorList.ElementAt(i).Name + " " + admin.professorList.ElementAt(i).Surname);
                 }
             }
-            
-            if(index == 5)
+
+            if (index == 5)
             {
                 this.label1.Text = "Select student to remove: ";
                 for (int i = 0; i < admin.studentList.Count; i++)
@@ -38,7 +38,7 @@ namespace PROJECT
                 }
             }
 
-            if(index == 6)
+            if (index == 6)
             {
                 this.label1.Text = "Select course to remove: ";
                 for (int i = 0; i < admin.coursesList.Count; i++)
@@ -50,9 +50,9 @@ namespace PROJECT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(index == 4)
+            if (index == 4)
             {
-                if (comboBox1.SelectedText == "")
+                if (comboBox1.SelectedItem == null)
                 {
                     MessageBox.Show("Select a professor!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -63,9 +63,9 @@ namespace PROJECT
                     this.Close();
                 }
             }
-            if(index == 5)
+            if (index == 5)
             {
-                if (comboBox1.SelectedText == "")
+                if (comboBox1.SelectedItem == null)
                 {
                     MessageBox.Show("Select a Student!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -76,9 +76,9 @@ namespace PROJECT
                     this.Close();
                 }
             }
-            if(index == 6)
+            if (index == 6)
             {
-                if (comboBox1.SelectedText == "")
+                if (comboBox1.SelectedItem == null)
                 {
                     MessageBox.Show("Select a Course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

@@ -1,5 +1,5 @@
-Visual Basic,4,4,NResulaj
-C#,3,3,NResulaj
+Visual Basic,4,4,Nevila Resulaj
+C#,3,3,Nevila Resulaj
 Calculus,4,4,Nertila Gjini
 Statistics,3,3,Nertila Gjini
 Intro to Sociology,3,3,Besmira Lahi
