@@ -61,6 +61,18 @@ namespace PROJECT
             {
                 if (coursesList.ElementAt(j).Professor.Equals(name + " " + surname))
                 {
+                    for(int k = 0; k < studentList.Count; k++)
+                    {
+                        if(studentList.ElementAt(k).Courses.Count > 0)
+                        {
+                            for (int x = 0; x < studentList.ElementAt(k).Courses.Count; x++)
+                            {
+                                if (coursesList.ElementAt(j).Subject.Equals(studentList.ElementAt(k).Courses[x]))
+                                    studentList.ElementAt(k).Courses.RemoveAt(x);
+                            }
+                        }
+                    }
+                    
                     coursesList.RemoveAt(j);
                     j--;
                 }
