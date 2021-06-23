@@ -61,9 +61,9 @@ namespace PROJECT
             {
                 if (coursesList.ElementAt(j).Professor.Equals(name + " " + surname))
                 {
-                    for(int k = 0; k < studentList.Count; k++)
+                    for (int k = 0; k < studentList.Count; k++)
                     {
-                        if(studentList.ElementAt(k).Courses.Count > 0)
+                        if (studentList.ElementAt(k).Courses.Count > 0)
                         {
                             for (int x = 0; x < studentList.ElementAt(k).Courses.Count; x++)
                             {
@@ -72,7 +72,6 @@ namespace PROJECT
                             }
                         }
                     }
-                    
                     coursesList.RemoveAt(j);
                     j--;
                 }
@@ -89,6 +88,7 @@ namespace PROJECT
                 if (stud.Equals(studentList.ElementAt(i)))
                 {
                     studentList.RemoveAt(i);
+                    break;
                 }
             }
         }
@@ -112,6 +112,17 @@ namespace PROJECT
                     {
                         if (course.Professor.Equals(professorList.ElementAt(j).Name + " " + professorList.ElementAt(j).Name))
                             professorList.ElementAt(j).Courses.Remove(course.Subject);
+                    }
+                    for (int k = 0; k < studentList.Count; k++)
+                    {
+                        if (studentList.ElementAt(k).Courses.Count > 0)
+                        {
+                            for (int x = 0; x < studentList.ElementAt(k).Courses.Count; x++)
+                            {
+                                if (course.Subject.Equals(studentList.ElementAt(k).Courses[x]))
+                                    studentList.ElementAt(k).Courses.RemoveAt(x);
+                            }
+                        }
                     }
                     coursesList.RemoveAt(i);
                 }
