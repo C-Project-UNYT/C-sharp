@@ -68,12 +68,12 @@ namespace PROJECT
         }
         public void addStudent()
         {
-            Student stud = new Student(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, comboBox1.SelectedText);
+            Student stud = new Student(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, comboBox1.SelectedItem.ToString());
             admin.addStudent(stud);
         }
         public void addCourse()
         {
-            Courses course = new Courses(textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.SelectedText);
+            Courses course = new Courses(textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.SelectedItem.ToString());
             admin.addCourse(course);
         }
 
@@ -92,7 +92,7 @@ namespace PROJECT
             }
             if (index == 2)
             {
-                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || comboBox1.SelectedText == "")
+                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || comboBox1.SelectedItem == null)
                     MessageBox.Show("Input all data!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
@@ -103,7 +103,7 @@ namespace PROJECT
             }
             if (index == 3)
             {
-                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.SelectedText == "")
+                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.SelectedItem == null)
                     MessageBox.Show("Input all data!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
