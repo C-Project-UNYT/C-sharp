@@ -144,22 +144,6 @@ namespace PROJECT
             return student;
         }
 
-        public List<string> showListOfCourses()
-        {
-            List<Student> student = readStudentFile();
-            List<string> myCourse = new List<string>();
-
-            foreach (Student stud in student)
-            {
-                foreach (string i in stud.Courses)
-                {
-                    myCourse.Add(i);
-                }
-            }
-
-            return myCourse;
-        }
-
         public string showStudentName() {
 
             List<Student> stud = this.readStudentFile();
@@ -264,6 +248,7 @@ namespace PROJECT
                 writer1.Close();
             }
         }
+
         public List<string> allCoursesExcludingStudentCourses()
         {
             Courses course = new Courses();
