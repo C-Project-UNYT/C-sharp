@@ -24,13 +24,7 @@ namespace PROJECT
         public static List<Professor> LoggedProfessors { get => loggedProfessors; set => loggedProfessors = value; }
 
         // constructors
-        public Professor(string name, string surname, string username, string password) : base(name, surname, username, password)
-        {
-            this.Name = name;
-            this.Surname = surname;
-            this.Username = username;
-            this.Password = password;
-        }
+        public Professor(string name, string surname, string username, string password) : base(name, surname, username, password) { }
 
         public Professor(string username, string password) 
         {
@@ -115,7 +109,7 @@ namespace PROJECT
 
 
 
-        // method to get student object from ID
+        // method to get student that is in the course from ID
         public Student getStudentFromID(string Id)
         {
             foreach (Student student in getStudents())
@@ -176,7 +170,7 @@ namespace PROJECT
                     if (getStudentFromID(inputs[0]) == null)
                         throw new InvalidInputException("The student whose ID you entered is not enrolled in the course!");
 
-                    writer.WriteLine("\n"+Professor.getRecentProfessor().ActiveCourse + "," + grade);
+                    writer.Write("\n"+Professor.getRecentProfessor().ActiveCourse + "," + grade);
                 }
 
                 writer.Close();
@@ -242,7 +236,7 @@ namespace PROJECT
 
             foreach (Grades grade in getGrades())
             {
-                if (Convert.ToDouble(grade.Grade) == MaxGrade())
+                if (grade.Grade == MaxGrade())
                 {
                     studentID = grade.StudentID;
                     break;
