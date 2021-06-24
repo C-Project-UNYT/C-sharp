@@ -53,9 +53,9 @@ namespace PROJECT
             this.label_Login.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label_Login.Font = new System.Drawing.Font("Impact", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_Login.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label_Login.Location = new System.Drawing.Point(365, 27);
+            this.label_Login.Location = new System.Drawing.Point(319, 20);
             this.label_Login.Name = "label_Login";
-            this.label_Login.Size = new System.Drawing.Size(125, 54);
+            this.label_Login.Size = new System.Drawing.Size(100, 43);
             this.label_Login.TabIndex = 0;
             this.label_Login.Text = "Login";
             this.label_Login.Click += new System.EventHandler(this.label_Login_Click);
@@ -66,9 +66,9 @@ namespace PROJECT
             this.label_Username.BackColor = System.Drawing.Color.Transparent;
             this.label_Username.Font = new System.Drawing.Font("Yu Gothic UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_Username.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label_Username.Location = new System.Drawing.Point(191, 184);
+            this.label_Username.Location = new System.Drawing.Point(167, 138);
             this.label_Username.Name = "label_Username";
-            this.label_Username.Size = new System.Drawing.Size(130, 32);
+            this.label_Username.Size = new System.Drawing.Size(103, 25);
             this.label_Username.TabIndex = 1;
             this.label_Username.Text = "Username:";
             // 
@@ -77,9 +77,9 @@ namespace PROJECT
             this.label_Password.AutoSize = true;
             this.label_Password.Font = new System.Drawing.Font("Yu Gothic UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_Password.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label_Password.Location = new System.Drawing.Point(191, 267);
+            this.label_Password.Location = new System.Drawing.Point(167, 200);
             this.label_Password.Name = "label_Password";
-            this.label_Password.Size = new System.Drawing.Size(122, 32);
+            this.label_Password.Size = new System.Drawing.Size(97, 25);
             this.label_Password.TabIndex = 2;
             this.label_Password.Text = "Password:";
             // 
@@ -93,10 +93,9 @@ namespace PROJECT
             "Admin",
             "Professor",
             "Student"});
-            this.comboBox_Role.Location = new System.Drawing.Point(315, 121);
-            this.comboBox_Role.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox_Role.Location = new System.Drawing.Point(276, 91);
             this.comboBox_Role.Name = "comboBox_Role";
-            this.comboBox_Role.Size = new System.Drawing.Size(203, 29);
+            this.comboBox_Role.Size = new System.Drawing.Size(178, 25);
             this.comboBox_Role.TabIndex = 5;
             this.comboBox_Role.Text = "  Select Role";
             this.comboBox_Role.SelectedIndexChanged += new System.EventHandler(this.comboBox_Role_SelectedIndexChanged);
@@ -106,10 +105,9 @@ namespace PROJECT
             this.checkBox_ShowPass.AutoSize = true;
             this.checkBox_ShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox_ShowPass.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox_ShowPass.Location = new System.Drawing.Point(535, 275);
-            this.checkBox_ShowPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBox_ShowPass.Location = new System.Drawing.Point(468, 206);
             this.checkBox_ShowPass.Name = "checkBox_ShowPass";
-            this.checkBox_ShowPass.Size = new System.Drawing.Size(65, 24);
+            this.checkBox_ShowPass.Size = new System.Drawing.Size(54, 19);
             this.checkBox_ShowPass.TabIndex = 7;
             this.checkBox_ShowPass.Text = "Show";
             this.checkBox_ShowPass.UseVisualStyleBackColor = true;
@@ -120,19 +118,17 @@ namespace PROJECT
             this.panel1.BackColor = System.Drawing.Color.DarkBlue;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(163, 436);
+            this.panel1.Size = new System.Drawing.Size(143, 327);
             this.panel1.TabIndex = 8;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.MidnightBlue;
             this.pictureBox1.ImageLocation = "https://th.bing.com/th/id/OIP.s8q4V6wni0Ip_zQCISipNQHaMG?pid=ImgDet&rs=1";
-            this.pictureBox1.Location = new System.Drawing.Point(33, 121);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(29, 91);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 175);
+            this.pictureBox1.Size = new System.Drawing.Size(81, 131);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -143,10 +139,9 @@ namespace PROJECT
             this.button_Continue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Continue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_Continue.ForeColor = System.Drawing.Color.White;
-            this.button_Continue.Location = new System.Drawing.Point(457, 340);
-            this.button_Continue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button_Continue.Location = new System.Drawing.Point(400, 255);
             this.button_Continue.Name = "button_Continue";
-            this.button_Continue.Size = new System.Drawing.Size(155, 57);
+            this.button_Continue.Size = new System.Drawing.Size(136, 43);
             this.button_Continue.TabIndex = 6;
             this.button_Continue.Text = "Continue";
             this.button_Continue.UseVisualStyleBackColor = false;
@@ -157,10 +152,9 @@ namespace PROJECT
             this.textBox_Pass.AllowDrop = true;
             this.textBox_Pass.BackColor = System.Drawing.Color.White;
             this.textBox_Pass.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox_Pass.Location = new System.Drawing.Point(315, 267);
-            this.textBox_Pass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_Pass.Location = new System.Drawing.Point(276, 200);
             this.textBox_Pass.Name = "textBox_Pass";
-            this.textBox_Pass.Size = new System.Drawing.Size(203, 27);
+            this.textBox_Pass.Size = new System.Drawing.Size(178, 23);
             this.textBox_Pass.TabIndex = 9;
             this.textBox_Pass.UseSystemPasswordChar = true;
             // 
@@ -169,10 +163,9 @@ namespace PROJECT
             this.textBox_Username.AllowDrop = true;
             this.textBox_Username.BackColor = System.Drawing.Color.White;
             this.textBox_Username.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox_Username.Location = new System.Drawing.Point(315, 191);
-            this.textBox_Username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_Username.Location = new System.Drawing.Point(276, 143);
             this.textBox_Username.Name = "textBox_Username";
-            this.textBox_Username.Size = new System.Drawing.Size(203, 27);
+            this.textBox_Username.Size = new System.Drawing.Size(178, 23);
             this.textBox_Username.TabIndex = 10;
             // 
             // buttonExit
@@ -184,10 +177,9 @@ namespace PROJECT
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonExit.Location = new System.Drawing.Point(592, -7);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonExit.Location = new System.Drawing.Point(518, -5);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(51, 45);
+            this.buttonExit.Size = new System.Drawing.Size(45, 34);
             this.buttonExit.TabIndex = 12;
             this.buttonExit.Text = "X";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -202,10 +194,9 @@ namespace PROJECT
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Impact", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button1.Location = new System.Drawing.Point(549, -12);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(468, -5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 45);
+            this.button1.Size = new System.Drawing.Size(45, 34);
             this.button1.TabIndex = 13;
             this.button1.Text = "_";
             this.button1.UseVisualStyleBackColor = true;
@@ -214,10 +205,10 @@ namespace PROJECT
             // Form_Login
             // 
             this.AcceptButton = this.button_Continue;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(639, 431);
+            this.ClientSize = new System.Drawing.Size(559, 323);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.textBox_Username);
@@ -231,7 +222,6 @@ namespace PROJECT
             this.Controls.Add(this.label_Login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "University System";
