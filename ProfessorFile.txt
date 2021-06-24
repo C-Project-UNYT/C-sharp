@@ -6,5 +6,3 @@ Gerta,Jakupi,GJakupi,unyt226,Financial Accounting,Managerial Accounting
 Juna,Miluka,JMiluka,unyt228,Intro to Micro,Intro to Macro
 Arta,Sinamati,ASinamati,unyt229,Corporate Finance,Money and Banking
 Ina,Papadhopulli,IPapadhopulli,unyt230,Java,System Analysis,Data Structures
-Marjana,Prifti,marjana,unyt123
-Silvester,Hasani,silvester,tuiti,Comp Ethics

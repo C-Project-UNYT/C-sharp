@@ -14,6 +14,7 @@ namespace PROJECT
         public List<string> courses = new List<string>();
 
         static string theStudentID = "";
+        static string theStudentFullName = "";
         static string path1 = Path.Combine(Directory.GetCurrentDirectory());
         static string[] path = path1.Split("bin");
 
@@ -56,16 +57,14 @@ namespace PROJECT
             }
         }
 
+
         public Student()
         {
 
         }
+
         public Student(string name, string surname, string username, string password, string studentID, string major, List<String> courses) : base(name, surname, username, password)
         {
-            this.Name = name;
-            this.Surname = surname;
-            this.Username = username;
-            this.Password = password;
             this.studentID = studentID;
             this.major = major;
             this.courses = courses;
@@ -73,10 +72,6 @@ namespace PROJECT
 
         public Student(string name, string surname, string username, string password, string studentID, string major) : base(name, surname, username, password)
         {
-            this.Name = name;
-            this.Surname = surname;
-            this.Username = username;
-            this.Password = password;
             this.studentID = studentID;
             this.major = major;
         }
@@ -85,24 +80,25 @@ namespace PROJECT
         {
             if (isUsernameAndPasswordValid(username, password))
             {
-                this.Username = username;
-                this.Password = password;
+                Username = username;
+                Password = password;
 
                 foreach (Student stud in readStudentFile())
                 {
                     if (stud.Username.Equals(username) && stud.Password.Equals(password))
                     {
-                        this.Name = stud.Name;
-                        this.Surname = stud.Surname;
-                        this.studentID = stud.studentID;
-                        this.major = stud.major;
-                        this.courses = stud.courses;
+                        Name = stud.Name;
+                        Surname = stud.Surname;
+                        studentID = stud.studentID;
+                        major = stud.major;
+                        courses = stud.courses;
                         break;
                     }
                 }
             }
         }
 
+        // Method to check the username and password
         public bool isUsernameAndPasswordValid(string username, string password)
         {
             List<Student> student = readStudentFile();
@@ -112,13 +108,14 @@ namespace PROJECT
                 if (stud.Username.Equals(username) && stud.Password.Equals(password))
                 {
                     theStudentID = stud.studentID;
+                    theStudentFullName = stud.Name + " " + stud.Surname;
                     return true;
                 }
             }
             throw new InvalidLoginInfoException("Username and Password do not match!");
         }
 
-
+        // Method to read the Student File
         public List<Student> readStudentFile()
         {
             List<Student> student = new List<Student>();
@@ -144,20 +141,13 @@ namespace PROJECT
             return student;
         }
 
-        public string showStudentName() {
-
-            List<Student> stud = this.readStudentFile();
-
-            foreach(Student s in stud)
-            {
-                if (s.studentID.Equals(theStudentID))
-                {
-                    return (s.Name + " " + s.Surname);
-                }
-            }
-            return null;
+        // Method to print the full name of the student
+        public string showStudentName()
+        {
+            return theStudentFullName;
         }
 
+        // Method to show all the university courses
         public List<string> showAllCourses()
         {
             Courses course = new Courses();
@@ -166,11 +156,12 @@ namespace PROJECT
 
             foreach (Courses c in theCourses)
             {
-               allCourses.Add(c.Subject);
+                allCourses.Add(c.Subject);
             }
             return allCourses;
         }
 
+        // Method to show the grades for the student
         public List<string> showCoursesGrade()
         {
             Grades grade = new Grades();
@@ -178,8 +169,8 @@ namespace PROJECT
             List<Grades> theStudentGrades = grade.readGradesFile();
             List<string> yourGrades = new List<string>();
 
-            foreach(Grades grades in theStudentGrades) 
-            { 
+            foreach (Grades grades in theStudentGrades)
+            {
                 try
                 {
                     if (theStudentID.Equals(grades.StudentID))
@@ -196,21 +187,22 @@ namespace PROJECT
             return yourGrades;
         }
 
+        // Write the course in the file
         public void writeANewCourse(string text)
         {
             List<Student> student = readStudentFile();
-            
+
             using (StreamWriter writer1 = new StreamWriter(path[0] + "StudentFile.txt"))
             {
                 foreach (Student stud in student)
                 {
                     writer1.Write(stud.Name + "," + stud.Surname + "," + stud.Username + "," + stud.Password + "," + stud.StudentID + "," + stud.Major);
-                   
+
                     if (stud.studentID.Equals(theStudentID) == true)
                     {
                         stud.courses.Add(text);
                     }
-                    
+
                     foreach (String cour in stud.Courses)
                     {
                         writer1.Write("," + cour);
@@ -222,6 +214,7 @@ namespace PROJECT
             }
         }
 
+        // Drop a course
         public void exitANewCourse(string text)
         {
             List<Student> student = readStudentFile();
@@ -249,6 +242,7 @@ namespace PROJECT
             }
         }
 
+        // Method to show all courses, except the courses that he is in
         public List<string> allCoursesExcludingStudentCourses()
         {
             Courses course = new Courses();
@@ -257,21 +251,21 @@ namespace PROJECT
             List<string> availableCourses = new List<string>();
             int token = 0;
 
-            foreach(Courses c in courses)
+            foreach (Courses c in courses)
             {
-                foreach(Student s in students)
+                foreach (Student s in students)
                 {
                     if (s.studentID.Equals(theStudentID))
                     {
                         token = 0;
-                        foreach(string a in s.Courses)
+                        foreach (string a in s.Courses)
                         {
                             if (a.Equals(c.Subject))
                             {
                                 token++;
                             }
                         }
-                        if(token == 0)
+                        if (token == 0)
                             availableCourses.Add(c.Subject);
                     }
                 }
@@ -279,6 +273,7 @@ namespace PROJECT
             return availableCourses;
         }
 
+        // Method to check all student courses
         public List<string> studentCourses()
         {
             Courses course = new Courses();
@@ -286,19 +281,13 @@ namespace PROJECT
             List<Courses> courses = course.readCoursesFromFile();
             List<string> myCourses = new List<string>();
 
-            foreach (Courses c in courses)
+            foreach (Student s in students)
             {
-                foreach (Student s in students)
+                if (s.studentID.Equals(theStudentID))
                 {
-                    if (s.studentID.Equals(theStudentID))
+                    foreach (string a in s.Courses)
                     {
-                        foreach (string a in s.Courses)
-                        {
-                            if (a.Equals(c.Subject))
-                            {
-                                myCourses.Add(c.Subject);
-                            }
-                        }
+                        myCourses.Add(a);
                     }
                 }
             }
