@@ -34,7 +34,9 @@ namespace PROJECT
                     menuStrip1.Enabled = true;
                 }
                 catch (InvalidCastException ex)
-                { }
+                {
+                     ex.ToString();
+                }
             }
         }
     
