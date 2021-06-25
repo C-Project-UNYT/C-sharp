@@ -59,7 +59,7 @@ namespace PROJECT
                 else
                 {
                     admin.removeProfessor(admin.professorList.ElementAt(comboBox1.SelectedIndex));
-                    MessageBox.Show("Complete!");
+                    MessageBox.Show("Professor removed successfully!", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Close();
                 }
             }
@@ -72,7 +72,7 @@ namespace PROJECT
                 else
                 {
                     admin.removeStudent(admin.studentList.ElementAt(comboBox1.SelectedIndex));
-                    MessageBox.Show("Complete!");
+                    MessageBox.Show("Student removed successfully!", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Close();
                 }
             }
@@ -85,7 +85,7 @@ namespace PROJECT
                 else
                 {
                     admin.removeCourse(admin.coursesList.ElementAt(comboBox1.SelectedIndex));
-                    MessageBox.Show("Complete!");
+                    MessageBox.Show("Course removed successfully!", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Close();
                 }
             }

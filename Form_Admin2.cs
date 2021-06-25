@@ -86,7 +86,7 @@ namespace PROJECT
                 else
                 {
                     this.addProfessor();
-                    MessageBox.Show("Complete!");
+                    MessageBox.Show("Professor added successfully!", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Close();
                 }
             }
@@ -97,7 +97,7 @@ namespace PROJECT
                 else
                 {
                     this.addStudent();
-                    MessageBox.Show("Complete!");
+                    MessageBox.Show("Student added successfully!", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Close();
                 }
             }
@@ -108,7 +108,7 @@ namespace PROJECT
                 else
                 {
                     this.addCourse();
-                    MessageBox.Show("Complete!");
+                    MessageBox.Show("Course added successfully!", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Close();
                 }
             }
