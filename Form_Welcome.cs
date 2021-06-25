@@ -34,16 +34,14 @@ namespace PROJECT
                     menuStrip1.Enabled = true;
                 }
                 catch (InvalidCastException ex)
-                {
-                    string message = ex.Message;
-                }
+                { }
             }
         }
     
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+                Application.Exit();
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)

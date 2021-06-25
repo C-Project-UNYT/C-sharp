@@ -20,7 +20,7 @@ namespace PROJECT
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Professor.LoggedProfessors.RemoveAt(Professor.LoggedProfessors.Count-1);
-            Application.Exit();
+            this.Close();
         }
 
         private void buttonLowestScore_Click(object sender, EventArgs e)

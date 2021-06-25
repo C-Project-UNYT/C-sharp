@@ -109,7 +109,7 @@ namespace PROJECT
 
 
 
-        // method to get student that is in the course from ID
+        // method to get student who is in the course from given ID
         public Student getStudentFromID(string Id)
         {
             foreach (Student student in getStudents())
@@ -141,11 +141,9 @@ namespace PROJECT
         public List<Double> getScores()
         {
             List<Double> gradeList = new List<Double>();
-            Grades grade = new Grades();
 
-            foreach (Grades grades in grade.readGradesFile())
+            foreach (Grades grades in getGrades())
             {
-                if (grades.Subject.Equals(ActiveCourse))
                     gradeList.Add(grades.Grade);
             }
             return gradeList;
@@ -200,61 +198,35 @@ namespace PROJECT
         // method to get the name of the lowest scoring student
         public string LowestScoringStudent()
         {
-            string studentID = "";
-
-            string studentName = "";
+            Student lowestScoring = new Student();
 
             foreach (Grades grade in getGrades())
             {
                 if (grade.Grade == MinGrade())
                 {
-                    studentID = grade.StudentID;
+                    lowestScoring = getStudentFromID(grade.StudentID);
                     break;
                 }
             }
 
-            List<Student> studentList = getStudents();
-
-            foreach (Student stud in studentList)
-            {
-                if (stud.StudentID.Equals(studentID))
-                {
-                    studentName = stud.Name + " " + stud.Surname;
-                    break;
-                }
-            }
-
-            return studentName;
+            return lowestScoring.Name + " " + lowestScoring.Surname;
         }
 
         // method to get the name of the highest scoring student
         public string HighestScoringStudent()
         {
-            string studentID = "";
-
-            string studentName = "";
+            Student highestScoring = new Student();
 
             foreach (Grades grade in getGrades())
             {
                 if (grade.Grade == MaxGrade())
                 {
-                    studentID = grade.StudentID;
+                    highestScoring = getStudentFromID(grade.StudentID);
                     break;
                 }
             }
 
-            List<Student> studentList = getStudents();
-
-            foreach (Student stud in studentList)
-            {
-                if (stud.StudentID.Equals(studentID))
-                {
-                    studentName = stud.Name + " " + stud.Surname;
-                    break;
-                }
-            }
-
-            return studentName;
+            return highestScoring.Name + " " + highestScoring.Surname;
         }
 
       
@@ -264,6 +236,7 @@ namespace PROJECT
             List<Double> gradeList = getScores();
 
             double min = gradeList.ElementAt(0);
+
             for (int i = 1; i < gradeList.Count; i++)
             {
                 if (gradeList.ElementAt(i) < min)
@@ -317,11 +290,11 @@ namespace PROJECT
                 return this.Name + "," + this.Surname + "," + this.Username + "," + this.Password;
             else
             {
-                string result = "";
-                result = this.Name + "," + this.Surname + "," + this.Username + "," + this.Password;
-                for (int j = 0; j < this.Courses.Count; j++)
+
+                string result = this.Name + "," + this.Surname + "," + this.Username + "," + this.Password;
+                for (int i = 0; i < this.Courses.Count; i++)
                 {
-                    result += "," + this.Courses[j];
+                    result += "," + this.Courses[i];
                 }
                 return result;
             }
