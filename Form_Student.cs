@@ -141,5 +141,58 @@ namespace PROJECT
 
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+
+            Student stud = new Student();
+            List<string> allCourses = stud.showAllCredits();
+
+            if (allCourses.Count != 0)
+            {
+                richTextBox1.AppendText("Credits of All the Courses are: " + Environment.NewLine);
+
+                foreach (string s in allCourses)
+                {
+                    richTextBox1.AppendText(s + Environment.NewLine);
+                }
+            }
+            else
+                MessageBox.Show("The university does not have any course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+
+            Student stud = new Student();
+            List<string> myCoursesCredits = stud.showMyCredits();
+
+            if (myCoursesCredits.Count != 0)
+            {
+                richTextBox1.AppendText("Credits of My Courses are: " + Environment.NewLine);
+
+                foreach (string s in myCoursesCredits)
+                {
+                    richTextBox1.AppendText(s + Environment.NewLine);
+                }
+            }
+            else
+                MessageBox.Show("The student is not enrolled in any course!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+
+            Student stud = new Student();
+          
+            richTextBox1.AppendText(stud.GPA() + Environment.NewLine);
+         
+        }
     }
 }

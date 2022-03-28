@@ -275,9 +275,7 @@ namespace PROJECT
         // Method to check all student courses
         public List<string> studentCourses()
         {
-            Courses course = new Courses();
             List<Student> students = readStudentFile();
-            List<Courses> courses = course.readCoursesFromFile();
             List<string> myCourses = new List<string>();
 
             foreach (Student s in students)
@@ -291,6 +289,73 @@ namespace PROJECT
                 }
             }
             return myCourses;
+        }
+
+        public List<string> showMyCredits()
+        {
+            Courses course = new Courses();
+            List<string> myCourses = studentCourses();
+            List<Courses> allCourses = course.readCoursesFromFile();
+            List<string> credits = new List<string>();
+
+            foreach(Courses c in allCourses)
+            {
+                foreach(string myc in myCourses)
+                {
+                    if (c.Subject.Equals(myc))
+                        credits.Add(c.Subject + " - " + c.Credits + " credits");
+                }
+            }
+            return credits;
+        }
+
+        public List<string> showAllCredits()
+        {
+            Courses course = new Courses();
+            List<Courses> theCourses = course.readCoursesFromFile();
+            List<string> allCourses = new List<string>();
+
+            foreach (Courses c in theCourses)
+            {
+                allCourses.Add(c.Subject + " - " + c.Credits + " credits");
+            }
+            return allCourses;
+        }
+
+        public string GPA()
+        {
+            Courses course = new Courses();
+            List<Courses> theCourses = course.readCoursesFromFile();
+            Grades grades = new Grades();
+            List<Grades> allGrades = grades.readGradesFile();
+            List<Double> summ = new List<Double>();
+            double gpa = 0;
+            int token = 0;
+
+            foreach (Courses c in theCourses)
+            {
+                foreach (Grades g in allGrades)
+                {
+                    if (g.StudentID.Equals(theStudentID))
+                    {
+                        gpa += g.Grade * c.Credits;
+                    }
+                }
+            }
+
+            if (token == 0)
+            {
+                return "No GPA";
+            }
+            gpa = gpa / token;
+            
+            return "My GPA is: " + Math.Round(gpa, 2);
+        }
+
+        private static int NewMethod(int token)
+        {
+            token++;
+            return token;
         }
 
         public string toString()

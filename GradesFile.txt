@@ -24,4 +24,3 @@ Intro to Psychology,1117,74
 Intro to Psychology,1117,100
 C#,1114,90
 C#,1116,100
-C#,1111,65
